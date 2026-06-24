@@ -289,46 +289,13 @@ export function MethodologySection({
                         </div>
                       </div>
 
-                      {/* Versão Desktop (Mapa Mental Cinematográfico com Curvas SVG) */}
-                      <div className="hidden md:flex w-full max-w-5xl h-[55vh] items-center justify-between relative px-4 select-none">
-                        
-                        {/* SVG com as Conexões Curvas */}
-                        <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1000 400" fill="none">
-                          {/* Curvas da Raiz para Posicionamento e Demanda */}
-                          <path d="M 180,200 C 230,200 230,100 280,100" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
-                          <path d="M 180,200 C 230,200 230,300 280,300" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
+                      {/* Versão Desktop Unificada por Coordenadas Internas ao SVG (ForeignObject) */}
+                      <div className="hidden md:block w-full max-w-5xl h-[60vh]">
+                        <svg className="w-full h-full" viewBox="0 0 1000 400" fill="none">
                           
-                          {/* Conectores com setas (SVG marker) */}
-                          <path d="M 280,100 L 295,100" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" markerEnd="url(#arrow)" />
-                          <path d="M 280,300 L 295,300" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" markerEnd="url(#arrow)" />
-
-                          {/* Linha Posicionamento -> Instagram */}
-                          <path d="M 430,100 L 490,100" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
-
-                          {/* Curvas Instagram -> Reels, Depoimento, Antes e Depois */}
-                          <path d="M 600,100 C 650,100 650,45 700,45" stroke="rgba(255,255,255,0.15)" strokeWidth="2" />
-                          <path d="M 600,100 L 700,100" stroke="rgba(255,255,255,0.15)" strokeWidth="2" />
-                          <path d="M 600,100 C 650,100 650,155 700,155" stroke="rgba(255,255,255,0.15)" strokeWidth="2" />
-
-                          {/* Linha Demanda -> Tráfego Pago */}
-                          <path d="M 430,300 L 490,300" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
-
-                          {/* Curvas Tráfego Pago -> Meta Ads e Google Ads */}
-                          <path d="M 590,300 C 640,300 640,250 680,250" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
-                          <path d="M 590,300 C 640,300 640,350 680,350" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
-
-                          {/* Ramificações de Continuidade para a Direita (Gradientes Coloridos) */}
-                          <path d="M 780,250 C 810,250 820,230 850,230" stroke="url(#metaGradient)" strokeWidth="2" />
-                          <path d="M 780,250 C 810,250 820,250 850,250" stroke="url(#metaGradient)" strokeWidth="2" />
-                          <path d="M 780,250 C 810,250 820,270 850,270" stroke="url(#metaGradient)" strokeWidth="2" />
-
-                          <path d="M 780,350 C 810,350 820,330 850,330" stroke="url(#googleGradient)" strokeWidth="2" />
-                          <path d="M 780,350 C 810,350 820,350 850,350" stroke="url(#googleGradient)" strokeWidth="2" />
-                          <path d="M 780,350 C 810,350 820,370 850,370" stroke="url(#googleGradient)" strokeWidth="2" />
-
                           {/* Definições de Marcadores e Gradientes */}
                           <defs>
-                            <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                            <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
                               <path d="M 0 1.5 L 7 5 L 0 8.5 z" fill="rgba(255,255,255,0.4)" />
                             </marker>
                             <linearGradient id="metaGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -340,88 +307,138 @@ export function MethodologySection({
                               <stop offset="100%" stopColor="#FBBC05" stopOpacity="0" />
                             </linearGradient>
                           </defs>
-                        </svg>
 
-                        {/* Coluna 1: Bloco Raiz */}
-                        <div className="absolute left-[20px] w-[160px] h-[70px] flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-600 to-yellow-500 shadow-[0_0_25px_rgba(245,158,11,0.2)] border border-amber-400/40 p-4 text-center z-10 hover:scale-105 transition-transform duration-300">
-                          <span className="font-montserrat text-xs md:text-sm font-bold text-white leading-tight uppercase">
-                            Geração de Demanda
-                          </span>
-                        </div>
+                          {/* ---------------- LINHAS DE CONEXÃO ---------------- */}
+                          {/* Curvas da Raiz para Posicionamento e Demanda */}
+                          <path d="M 190,200 C 235,200 240,100 270,100" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
+                          <path d="M 270,100 L 280,100" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" markerEnd="url(#arrow)" />
+                          
+                          <path d="M 190,200 C 235,200 240,300 270,300" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
+                          <path d="M 270,300 L 280,300" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" markerEnd="url(#arrow)" />
 
-                        {/* Coluna 2: Sub-raízes */}
-                        <div className="absolute left-[300px] flex flex-col justify-between h-[240px]">
+                          {/* Linha Posicionamento -> Instagram */}
+                          <path d="M 435,100 L 480,100" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
+
+                          {/* Curvas Instagram -> Reels, Depoimento, Antes e Depois */}
+                          <path d="M 620,100 C 660,100 665,43 705,43" stroke="rgba(255,255,255,0.15)" strokeWidth="2" />
+                          <path d="M 620,100 L 705,100" stroke="rgba(255,255,255,0.15)" strokeWidth="2" />
+                          <path d="M 620,100 C 660,100 665,157 705,157" stroke="rgba(255,255,255,0.15)" strokeWidth="2" />
+
+                          {/* Linha Demanda -> Tráfego Pago */}
+                          <path d="M 435,300 L 480,300" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
+
+                          {/* Curvas Tráfego Pago -> Meta Ads e Google Ads */}
+                          <path d="M 600,300 C 635,300 645,250 680,250" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
+                          <path d="M 600,300 C 635,300 645,350 680,350" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
+
+                          {/* Ramificações de Continuidade para a Direita (Gradientes Coloridos) */}
+                          <path d="M 790,250 C 820,250 830,230 860,230" stroke="url(#metaGradient)" strokeWidth="2" />
+                          <path d="M 790,250 C 820,250 830,250 860,250" stroke="url(#metaGradient)" strokeWidth="2" />
+                          <path d="M 790,250 C 820,250 830,270 860,270" stroke="url(#metaGradient)" strokeWidth="2" />
+
+                          <path d="M 790,350 C 820,350 830,330 860,330" stroke="url(#googleGradient)" strokeWidth="2" />
+                          <path d="M 790,350 C 820,350 830,350 860,350" stroke="url(#googleGradient)" strokeWidth="2" />
+                          <path d="M 790,350 C 820,350 830,370 860,370" stroke="url(#googleGradient)" strokeWidth="2" />
+
+                          {/* ---------------- ELEMENTOS HTML INTERNOS (ForeignObjects) ---------------- */}
+                          
+                          {/* Coluna 1: Bloco Raiz */}
+                          <foreignObject x="10" y="165" width="180" height="70">
+                            <div className="w-full h-full flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-600 to-yellow-500 shadow-[0_0_20px_rgba(245,158,11,0.25)] border border-amber-400/40 p-3 text-center">
+                              <span className="font-montserrat text-xs sm:text-sm font-bold text-white leading-tight uppercase">
+                                Geração de Demanda
+                              </span>
+                            </div>
+                          </foreignObject>
+
+                          {/* Coluna 2: Sub-raízes */}
                           {/* Bloco Posicionamento */}
-                          <div className="w-[130px] h-[44px] flex items-center justify-center rounded-lg bg-black border border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.05)] text-center px-3 z-10 hover:border-amber-400 transition-colors duration-300">
-                            <span className="font-display text-[10px] md:text-xs font-bold text-white tracking-widest uppercase">
-                              Posicionamento
-                            </span>
-                          </div>
+                          <foreignObject x="285" y="78" width="150" height="44">
+                            <div className="w-full h-full flex items-center justify-center rounded-lg bg-black border border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.05)] text-center px-3 hover:border-amber-400 transition-colors duration-300">
+                              <span className="font-display text-[10px] md:text-xs font-bold text-white tracking-widest uppercase">
+                                Posicionamento
+                              </span>
+                            </div>
+                          </foreignObject>
+
                           {/* Bloco Demanda */}
-                          <div className="w-[130px] h-[44px] flex items-center justify-center rounded-lg bg-black border border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.05)] text-center px-3 z-10 hover:border-amber-400 transition-colors duration-300">
-                            <span className="font-display text-[10px] md:text-xs font-bold text-white tracking-widest uppercase">
-                              Demanda
-                            </span>
-                          </div>
-                        </div>
+                          <foreignObject x="285" y="278" width="150" height="44">
+                            <div className="w-full h-full flex items-center justify-center rounded-lg bg-black border border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.05)] text-center px-3 hover:border-amber-400 transition-colors duration-300">
+                              <span className="font-display text-[10px] md:text-xs font-bold text-white tracking-widest uppercase">
+                                Demanda
+                              </span>
+                            </div>
+                          </foreignObject>
 
-                        {/* Coluna 3: Canais / Mecanismos */}
-                        {/* Bloco Instagram (Alinhado com Posicionamento no Y) */}
-                        <div className="absolute left-[490px] top-[48px] flex flex-col items-center text-center w-[120px] z-10">
-                          {/* Logo Instagram */}
-                          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#f9ce71] via-[#ee305a] to-[#6228d7] flex items-center justify-center shadow-lg mb-2">
-                            <svg viewBox="0 0 24 24" className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2.2">
-                              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                            </svg>
-                          </div>
-                          <span className="font-sans text-xs md:text-sm font-bold text-white">Instagram</span>
-                          <span className="font-sans text-[8px] md:text-[9px] font-semibold text-yellow-500 mt-1 leading-snug">
-                            Stories Diário<br/>+ 5 Postagens<br/>por Semana
-                          </span>
-                        </div>
+                          {/* Coluna 3: Canais / Mecanismos */}
+                          {/* Bloco Instagram (Alinhado com Posicionamento no Y) */}
+                          <foreignObject x="480" y="25" width="140" height="150">
+                            <div className="w-full h-full flex flex-col items-center text-center">
+                              {/* Logo Instagram */}
+                              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#f9ce71] via-[#ee305a] to-[#6228d7] flex items-center justify-center shadow-lg mb-1.5">
+                                <svg viewBox="0 0 24 24" className="w-5.5 h-5.5 text-white" fill="none" stroke="currentColor" strokeWidth="2.2">
+                                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                                </svg>
+                              </div>
+                              <span className="font-sans text-[11px] md:text-xs font-bold text-white">Instagram</span>
+                              <span className="font-sans text-[8px] md:text-[9px] font-semibold text-yellow-500 mt-1 leading-snug">
+                                Stories Diário<br/>+ 5 Postagens<br/>por Semana
+                              </span>
+                            </div>
+                          </foreignObject>
 
-                        {/* Bloco Tráfego Pago (Alinhado com Demanda no Y) */}
-                        <div className="absolute left-[490px] bottom-[72px] w-[120px] text-center z-10">
-                          <span className="font-display text-xs md:text-sm font-bold text-white tracking-wide uppercase">
-                            Tráfego Pago
-                          </span>
-                        </div>
+                          {/* Bloco Tráfego Pago (Alinhado com Demanda no Y) */}
+                          <foreignObject x="480" y="280" width="120" height="40">
+                            <div className="w-full h-full flex items-center justify-center text-center">
+                              <span className="font-display text-xs md:text-sm font-bold text-white tracking-wide uppercase">
+                                Tráfego Pago
+                              </span>
+                            </div>
+                          </foreignObject>
 
-                        {/* Coluna 4: Resultados / Plataformas */}
-                        {/* Ramificação Instagram */}
-                        <div className="absolute left-[700px] top-[15px] flex flex-col justify-between h-[155px]">
-                          <div className="w-[110px] h-[34px] flex items-center justify-center rounded-md bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] transition-colors duration-300">
-                            <span className="font-sans text-[10px] md:text-xs font-semibold text-white/95">Reels</span>
-                          </div>
-                          <div className="w-[110px] h-[34px] flex items-center justify-center rounded-md bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] transition-colors duration-300">
-                            <span className="font-sans text-[10px] md:text-xs font-semibold text-white/95">Depoimento</span>
-                          </div>
-                          <div className="w-[110px] h-[34px] flex items-center justify-center rounded-md bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] transition-colors duration-300">
-                            <span className="font-sans text-[10px] md:text-xs font-semibold text-white/95">Antes e Depois</span>
-                          </div>
-                        </div>
+                          {/* Coluna 4: Resultados / Plataformas */}
+                          {/* Ramificação Instagram */}
+                          <foreignObject x="705" y="25" width="110" height="36">
+                            <div className="w-full h-full flex items-center justify-center rounded-md bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] transition-colors duration-300 text-center">
+                              <span className="font-sans text-[10px] md:text-xs font-semibold text-white/90">Reels</span>
+                            </div>
+                          </foreignObject>
+                          <foreignObject x="705" y="82" width="110" height="36">
+                            <div className="w-full h-full flex items-center justify-center rounded-md bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] transition-colors duration-300 text-center">
+                              <span className="font-sans text-[10px] md:text-xs font-semibold text-white/90">Depoimento</span>
+                            </div>
+                          </foreignObject>
+                          <foreignObject x="705" y="139" width="110" height="36">
+                            <div className="w-full h-full flex items-center justify-center rounded-md bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] transition-colors duration-300 text-center">
+                              <span className="font-sans text-[10px] md:text-xs font-semibold text-white/90">Antes e Depois</span>
+                            </div>
+                          </foreignObject>
 
-                        {/* Ramificação Tráfego Pago */}
-                        <div className="absolute left-[680px] bottom-[25px] flex flex-col justify-between h-[140px]">
+                          {/* Ramificação Tráfego Pago */}
                           {/* Meta Ads */}
-                          <div className="w-[110px] h-[40px] flex items-center justify-center gap-2 rounded-md bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] px-2 transition-colors duration-300">
-                            <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#0064e0]" fill="currentColor">
-                              <path d="M17.472 6c-1.39 0-2.673.684-3.528 1.83C13.09 6.683 11.808 6 10.418 6C8.016 6 6 8.016 6 10.418c0 1.347.608 2.553 1.572 3.359C6.444 14.542 5 16.275 5 18c0 .553.447 1 1 1s1-.447 1-1c0-1.748 1.942-3.582 4.418-3.582c.983 0 1.921-.295 2.672-.835c.751.54 1.69.835 2.672.835c2.476 0 4.418 1.834 4.418 3.582c0 .553.448 1 1 1s1-.447 1-1c0-1.725-1.444-3.458-2.572-4.223A4.412 4.412 0 0 0 20.144 10.42C20.144 8.016 18.128 6 15.726 6h1.746zm-7.054 6.836c-1.332 0-2.418-1.086-2.418-2.418s1.086-2.418 2.418-2.418s2.418 1.086 2.418 2.418s-1.086 2.418-2.418 2.418zm5.308 0c-1.332 0-2.418-1.086-2.418-2.418s1.086-2.418 2.418-2.418s2.418 1.086 2.418 2.418s-1.086 2.418-2.418 2.418z"/>
-                            </svg>
-                            <span className="font-sans text-[10px] md:text-xs font-semibold text-white/95">Meta Ads</span>
-                          </div>
-                          {/* Google Ads */}
-                          <div className="w-[110px] h-[40px] flex items-center justify-center gap-2 rounded-md bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] px-2 transition-colors duration-300">
-                            <svg viewBox="0 0 24 24" className="w-5 h-5">
-                              <path fill="#4285F4" d="M16.5 6L8.5 20h8l8-14z"/>
-                              <path fill="#FBBC05" d="M8.5 20L0 5.5l8-1.5 8.5 16z"/>
-                            </svg>
-                            <span className="font-sans text-[10px] md:text-xs font-semibold text-white/95">Google Ads</span>
-                          </div>
-                        </div>
+                          <foreignObject x="680" y="230" width="110" height="40">
+                            <div className="w-full h-full flex items-center justify-center gap-1.5 rounded-md bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] px-2 transition-colors duration-300">
+                              <svg viewBox="0 0 24 24" className="w-4.5 h-4.5 text-[#0064e0]" fill="currentColor">
+                                <path d="M17.472 6c-1.39 0-2.673.684-3.528 1.83C13.09 6.683 11.808 6 10.418 6C8.016 6 6 8.016 6 10.418c0 1.347.608 2.553 1.572 3.359C6.444 14.542 5 16.275 5 18c0 .553.447 1 1 1s1-.447 1-1c0-1.748 1.942-3.582 4.418-3.582c.983 0 1.921-.295 2.672-.835c.751.54 1.69.835 2.672.835c2.476 0 4.418 1.834 4.418 3.582c0 .553.448 1 1 1s1-.447 1-1c0-1.725-1.444-3.458-2.572-4.223A4.412 4.412 0 0 0 20.144 10.42C20.144 8.016 18.128 6 15.726 6h1.746zm-7.054 6.836c-1.332 0-2.418-1.086-2.418-2.418s1.086-2.418 2.418-2.418s2.418 1.086 2.418 2.418s-1.086 2.418-2.418 2.418zm5.308 0c-1.332 0-2.418-1.086-2.418-2.418s1.086-2.418 2.418-2.418s2.418 1.086 2.418 2.418s-1.086 2.418-2.418 2.418z"/>
+                              </svg>
+                              <span className="font-sans text-[10px] md:text-xs font-semibold text-white/95">Meta Ads</span>
+                            </div>
+                          </foreignObject>
 
+                          {/* Google Ads */}
+                          <foreignObject x="680" y="330" width="110" height="40">
+                            <div className="w-full h-full flex items-center justify-center gap-1.5 rounded-md bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] px-2 transition-colors duration-300">
+                              <svg viewBox="0 0 24 24" className="w-4.5 h-4.5">
+                                <path fill="#4285F4" d="M16.5 6L8.5 20h8l8-14z"/>
+                                <path fill="#FBBC05" d="M8.5 20L0 5.5l8-1.5 8.5 16z"/>
+                              </svg>
+                              <span className="font-sans text-[10px] md:text-xs font-semibold text-white/95">Google Ads</span>
+                            </div>
+                          </foreignObject>
+
+                        </svg>
                       </div>
 
                     </div>
