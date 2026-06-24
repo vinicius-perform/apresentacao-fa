@@ -19,19 +19,8 @@ export const presentationContent = {
   whatIs: {
     kicker: "01 — Metodologia",
     headline: "O que é a Fazendo Acontecer?",
-    intro: {
-      line1: "A Fazendo Acontecer não nasceu para ser apenas uma agência, consultoria ou empresa de tecnologia.",
-      line2: "Criamos uma metodologia própria chamada GVD, baseada nos três pilares que sustentam o crescimento de qualquer empresa:",
-    },
     methodName: "GVD",
     methodFull: "Geração de Demanda · Vendas · Dados",
-    methodDescription: [
-      "Porque nenhuma empresa cresce sem oportunidades.",
-      "Nenhuma empresa escala sem um processo comercial eficiente.",
-      "E nenhuma empresa evolui sem enxergar seus números com clareza.",
-    ],
-    methodClosing:
-      "É a união desses três pilares que nos permite ajudar empresários a crescer de forma previsível, sustentável e escalável.",
     pillars: [
       {
         letter: "G",
@@ -46,11 +35,11 @@ export const presentationContent = {
       {
         letter: "D",
         title: "Dados",
-        desc: "Tomar decisões baseadas em indicadores reais, não em achismos.",
+        desc: "Tomar decisões baseadas em indicadores reais e não em achismos.",
       },
     ],
-    mediaCaption: "Método proprietário FA",
   },
+
 
   future: {
     headline: "Mas isso é apenas o começo.",
