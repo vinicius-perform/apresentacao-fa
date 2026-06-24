@@ -1,29 +1,64 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SmoothScroll } from "@/components/presentation/SmoothScroll";
+import { ProgressRail } from "@/components/presentation/ProgressRail";
+import { TopBar } from "@/components/presentation/TopBar";
+import { HeroSection } from "@/components/presentation/sections/HeroSection";
+import { WhatIsSection } from "@/components/presentation/sections/WhatIsSection";
+import { FutureSection } from "@/components/presentation/sections/FutureSection";
+import { ExpansionSection } from "@/components/presentation/sections/ExpansionSection";
+import { PivotSection } from "@/components/presentation/sections/PivotSection";
+import { PainSection } from "@/components/presentation/sections/PainSection";
+import { SecretSection } from "@/components/presentation/sections/SecretSection";
+import { RevealSection } from "@/components/presentation/sections/RevealSection";
+import { DotSalesSection } from "@/components/presentation/sections/DotSalesSection";
+import { MachineSection } from "@/components/presentation/sections/MachineSection";
+import { ImpactSection } from "@/components/presentation/sections/ImpactSection";
+import { FutureBusinessSection } from "@/components/presentation/sections/FutureBusinessSection";
+import { EcosystemSection } from "@/components/presentation/sections/EcosystemSection";
+import { ClosingSection } from "@/components/presentation/sections/ClosingSection";
+import { InviteSection } from "@/components/presentation/sections/InviteSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "FA × DotSales — Keynote" },
+      {
+        name: "description",
+        content:
+          "A história da Fazendo Acontecer e a revelação do DotSales — o cérebro comercial que escala a operação.",
+      },
+      { property: "og:title", content: "FA × DotSales — Keynote" },
+      {
+        property: "og:description",
+        content: "Uma jornada cinematográfica sobre crescimento, processos e tecnologia.",
+      },
     ],
   }),
-  component: Index,
+  component: Keynote,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Keynote() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="relative bg-bg text-fg">
+      <SmoothScroll />
+      <ProgressRail />
+      <TopBar />
+
+      <HeroSection />
+      <WhatIsSection />
+      <FutureSection />
+      <ExpansionSection />
+      <PivotSection />
+      <PainSection />
+      <SecretSection />
+      <RevealSection />
+      <DotSalesSection />
+      <MachineSection />
+      <ImpactSection />
+      <FutureBusinessSection />
+      <EcosystemSection />
+      <ClosingSection />
+      <InviteSection />
+    </main>
   );
 }
