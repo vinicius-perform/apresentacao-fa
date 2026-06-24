@@ -3,13 +3,6 @@
  * Edite os textos aqui — toda a experiência consome este arquivo.
  */
 
-import fachadaAsset from "@/assets/fachada-aberta.png.asset.json";
-import corredorAsset from "@/assets/corredor-principal.png.asset.json";
-import escritorioAsset from "@/assets/escritorio.png.asset.json";
-import setorComercialAsset from "@/assets/setor-comercial.png.asset.json";
-import areaConvivenciaAsset from "@/assets/area-convivencia.png.asset.json";
-import recepcaoAsset from "@/assets/recepcao.png.asset.json";
-
 
 
 export const presentationContent = {
@@ -56,26 +49,6 @@ export const presentationContent = {
     headline: "Mas isso é apenas o começo.",
     overlay: "Estamos construindo algo muito maior.",
     videoPlaceholder: "/videos/nova-sede.mp4",
-  },
-
-  novaSede: {
-    kicker: "Nova Sede FA",
-    scenes: [
-      { headline: "Uma nova estrutura para uma nova fase.", label: "Fachada principal", image: fachadaAsset.url },
-      { headline: "Projetado para suportar crescimento.", label: "Corredor principal", image: corredorAsset.url },
-      { headline: "Onde ideias se transformam em resultados.", label: "Escritório", image: escritorioAsset.url },
-      { headline: "Mais pessoas. Mais oportunidades. Mais resultados.", label: "Setor comercial", image: setorComercialAsset.url },
-      { headline: "Espaços para respirar, conectar e recarregar ideias.", label: "Área de convivência", image: areaConvivenciaAsset.url },
-      { headline: "A primeira impressão de um novo momento.", label: "Recepção", image: recepcaoAsset.url },
-    ],
-    mosaic: [
-      { label: "Fachada", image: fachadaAsset.url },
-      { label: "Corredor", image: corredorAsset.url },
-      { label: "Escritório", image: escritorioAsset.url },
-      { label: "Comercial", image: setorComercialAsset.url },
-      { label: "Copa", image: areaConvivenciaAsset.url },
-      { label: "Recepção", image: recepcaoAsset.url },
-    ],
   },
 
   expansion: {
