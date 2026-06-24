@@ -83,23 +83,23 @@ export function MethodologySection({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4 md:p-8"
+            className="fixed inset-0 bg-[#050505] z-50 flex flex-col justify-center items-center select-none overflow-hidden"
             onClick={() => setIsModalOpen(false)}
           >
             <motion.div
-              initial={{ scale: 0.95, opacity: 0, y: 15 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 15 }}
-              transition={{ type: "spring", duration: 0.5 }}
-              className="relative w-[96vw] h-[96vh] max-w-[1700px] max-h-[950px] bg-[#050505] border border-white/[0.08] rounded-2xl overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.95),_0_0_60px_rgba(245,158,11,0.08)] flex flex-col justify-center items-center p-8 md:p-16 select-none"
+              initial={{ scale: 0.98, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.98, opacity: 0 }}
+              transition={{ type: "spring", duration: 0.4 }}
+              className="relative w-full h-full flex flex-col justify-center items-center p-6 sm:p-12 md:p-24"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Botão de Fechar */}
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="absolute top-4 right-4 md:top-6 md:right-6 text-white/40 hover:text-white bg-white/5 hover:bg-white/10 p-2.5 rounded-full transition-all duration-300 cursor-pointer z-30 border-0"
+                className="absolute top-6 right-6 text-white/40 hover:text-white bg-white/5 hover:bg-white/10 p-3 rounded-full transition-all duration-300 cursor-pointer z-30 border-0"
               >
-                <X className="w-5 h-5" />
+                <X className="w-6 h-6" />
               </button>
 
               {/* Linhas / Círculos de Fundo Concêntricos (Design da Imagem) */}
@@ -111,19 +111,21 @@ export function MethodologySection({
                 <div className="absolute w-[1250px] h-[1250px] border border-white/[0.01] rounded-full" />
                 <div className="absolute w-[1500px] h-[1500px] border border-white/[0.005] rounded-full" />
                 <div className="absolute w-[1800px] h-[1800px] border border-white/[0.003] rounded-full" />
+                <div className="absolute w-[2100px] h-[2100px] border border-white/[0.002] rounded-full" />
+                <div className="absolute w-[2400px] h-[2400px] border border-white/[0.001] rounded-full" />
                 {/* Degradê radial escuro adicional */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_35%,rgba(5,5,5,0.85)_85%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(5,5,5,0.9)_85%)]" />
               </div>
 
               {/* Conteúdo do Slide */}
-              <div className="relative z-10 flex flex-col items-center justify-between h-full w-full py-4 text-center">
+              <div className="relative z-10 flex flex-col items-center justify-between h-full w-full py-8 md:py-16 text-center">
                 
                 {/* Texto Superior */}
                 <motion.span 
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.15 }}
-                  className="font-display text-xs sm:text-sm md:text-base font-bold tracking-[0.4em] text-fg-dim uppercase"
+                  className="font-display text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-[0.45em] text-fg-dim uppercase"
                 >
                   Metodologia única e validada
                 </motion.span>
@@ -133,7 +135,7 @@ export function MethodologySection({
                   initial={{ scale: 0.9, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.25, type: "spring" }}
-                  className="font-montserrat text-8xl sm:text-[11rem] md:text-[15rem] lg:text-[18rem] xl:text-[22rem] font-black tracking-tight leading-none bg-gradient-to-b from-amber-400 via-yellow-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_16px_64px_rgba(245,158,11,0.35)] my-auto select-none"
+                  className="font-montserrat text-8xl sm:text-[12rem] md:text-[18rem] lg:text-[24rem] xl:text-[28rem] 2xl:text-[32rem] font-black tracking-tight leading-none bg-gradient-to-b from-amber-400 via-yellow-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_20px_80px_rgba(245,158,11,0.4)] my-auto select-none"
                 >
                   GVD
                 </motion.h1>
@@ -143,7 +145,7 @@ export function MethodologySection({
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.35 }}
-                  className="flex flex-row justify-around sm:justify-between w-full max-w-4xl px-2 sm:px-6 text-xs sm:text-sm md:text-base font-bold tracking-[0.28em] text-white/70"
+                  className="flex flex-row justify-around sm:justify-between w-full max-w-5xl px-4 sm:px-12 text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-[0.3em] text-white/80"
                 >
                   <span>GERAÇÃO DE DEMANDA</span>
                   <span className="hidden sm:inline text-white/20">|</span>
