@@ -16,7 +16,7 @@ export function FutureSection() {
           playsInline
           poster=""
         >
-          <source src={c.videoPlaceholder} type="video/mp4" />
+          <source src={c.videoPlaceholder} type="video/webm" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-bg via-bg/40 to-bg" />
 

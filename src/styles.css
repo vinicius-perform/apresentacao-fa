@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap');
 @import "tailwindcss" source(none);
 @source "../src";
 
@@ -38,6 +39,7 @@
   --color-ring: var(--neon);
 
   --font-display: "Space Grotesk", "SF Pro Display", "Inter", system-ui, sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
   --font-sans: "Inter", "SF Pro Display", system-ui, sans-serif;
 
   --radius-sm: 6px;
@@ -78,6 +80,10 @@
 @utility font-display {
   font-family: var(--font-display);
   letter-spacing: -0.035em;
+}
+
+@utility font-montserrat {
+  font-family: var(--font-montserrat);
 }
 
 @utility text-balance {

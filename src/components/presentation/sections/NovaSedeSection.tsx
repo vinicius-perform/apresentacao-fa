@@ -1,144 +1,53 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
 import { Kicker, Reveal, Section } from "@/components/presentation/primitives";
 import { presentationContent } from "@/lib/presentation-content";
 
-function Scene({
-  index,
-  total,
-  image,
-  title,
-  caption,
-}: {
-  index: number;
-  total: number;
-  image: string;
-  title: string;
-  caption?: string;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const scale = useTransform(scrollYProgress, [0, 1], [1.15, 1.02]);
-  const y = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
-
-  return (
-    <section ref={ref} className="relative w-full h-screen overflow-hidden">
-      <motion.div
-        style={{ scale, y }}
-        className="absolute inset-0"
-      >
-        <img
-          src={image}
-          alt={title}
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-b from-bg/40 via-bg/10 to-bg/60" />
-
-      <motion.div
-        style={{ opacity }}
-        className="relative z-10 flex h-full flex-col justify-end px-6 md:px-16 lg:px-28 pb-20"
-      >
-        <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-fg-muted mb-6">
-          <span className="h-px w-8 bg-neon" />
-          <span className="tabular-nums">
-            {String(index).padStart(2, "0")} / {String(total).padStart(2, "0")}
-          </span>
-        </div>
-        <h3 className="font-display text-3xl md:text-5xl lg:text-6xl font-semibold text-fg max-w-4xl leading-[1.05]">
-          {title}
-        </h3>
-        {caption ? (
-          <p className="mt-4 text-sm md:text-base text-fg-dim max-w-2xl">
-            {caption}
-          </p>
-        ) : null}
-      </motion.div>
-    </section>
-  );
-}
-
 export function NovaSedeSection() {
   const { novaSede } = presentationContent;
-  const scenes = novaSede.scenes;
 
   return (
-    <div id="nova-sede" className="relative">
-      <Section className="!min-h-[60vh]">
-        <div className="max-w-5xl">
+    <Section className="flex flex-col justify-center pt-24 pb-4 !min-h-0" id="nova-sede">
+      <div className="w-full max-w-5xl mx-auto px-6 space-y-12">
+        <div className="text-center max-w-3xl mx-auto space-y-4">
           <Reveal>
             <Kicker>{novaSede.kicker}</Kicker>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="mt-6 font-display text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight">
+            <h2 className="font-display text-4xl md:text-6xl font-semibold tracking-tight leading-tight">
               {novaSede.headline}
             </h2>
           </Reveal>
           {novaSede.description ? (
             <Reveal delay={0.2}>
-              <p className="mt-8 max-w-2xl text-base md:text-lg text-fg-dim leading-relaxed">
+              <p className="max-w-2xl mx-auto text-base md:text-lg text-fg-dim leading-relaxed">
                 {novaSede.description}
               </p>
             </Reveal>
           ) : null}
         </div>
-      </Section>
 
-      {scenes.map((scene, i) => (
-        <Scene
-          key={scene.title}
-          index={i + 1}
-          total={scenes.length}
-          image={scene.image}
-          title={scene.title}
-          caption={scene.caption}
-        />
-      ))}
-
-      <Section className="!min-h-[80vh]">
-        <div className="w-full max-w-7xl">
-          <Reveal>
-            <Kicker>Mosaico</Kicker>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <h3 className="mt-6 font-display text-3xl md:text-5xl font-semibold tracking-tight">
-              Um ecossistema em construção.
-            </h3>
-          </Reveal>
-
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-            {scenes.map((scene, i) => (
-              <motion.div
-                key={`m-${scene.title}`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-10% 0px" }}
-                transition={{ duration: 0.8, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-                className={
-                  "relative overflow-hidden rounded-xl hairline group " +
-                  (i % 5 === 0 ? "md:col-span-2 md:row-span-2 aspect-square" : "aspect-[4/3]")
-                }
-              >
-                <img
-                  src={scene.image}
-                  alt={scene.title}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent" />
-                <div className="absolute bottom-3 left-4 right-4 text-[11px] uppercase tracking-[0.3em] text-fg-dim">
-                  {scene.title}
-                </div>
-              </motion.div>
-            ))}
+        <Reveal delay={0.3} className="w-full">
+          <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black/40 group">
+            <video
+              className="w-full h-full object-cover"
+              controls
+              muted
+              loop
+              playsInline
+              poster="https://fazendoacontecer.site/wp-content/uploads/2026/06/fe62b053-4107-419d-877b-3fb76ff26be2.webp"
+            >
+              {/* Prioriza o vídeo local /videos/nova-sede.mp4 e usa um fallback corporativo de alta qualidade online */}
+              <source src="https://fazendoacontecer.site/wp-content/uploads/2026/06/PONTO-FA.webm" type="video/webm" />
+              <source src="/videos/nova-sede.mp4" type="video/mp4" />
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-office-space-with-people-working-40348-large.mp4" type="video/mp4" />
+              Seu navegador não suporta a reprodução de vídeos.
+            </video>
+            
+            {/* Efeito estético de borda/brilho */}
+            <div className="absolute inset-0 pointer-events-none rounded-2xl border border-white/5 ring-1 ring-white/10" />
           </div>
-        </div>
-      </Section>
-    </div>
+        </Reveal>
+      </div>
+    </Section>
   );
 }
+

@@ -1,53 +1,78 @@
-import { motion } from "motion/react";
-import { FALogo, Section } from "../primitives";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { FALogo } from "../primitives";
 import { presentationContent } from "@/lib/presentation-content";
 
 export function HeroSection() {
   const c = presentationContent.opening;
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Mapeia a rolagem do container de 200vh
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+  // Animações do logo "FA" baseadas no scroll (deslocamento inicial à esquerda)
+  const faX = useTransform(scrollYProgress, [0, 0.7], ["-25vw", "0vw"]);
+  const faY = useTransform(scrollYProgress, [0, 0.7], ["0vh", "-6vh"]);
+  const faScale = useTransform(scrollYProgress, [0, 0.7], [10, 3.6]);
+
+  // Animações da Pergunta que surge abaixo do logo
+  const textOpacity = useTransform(scrollYProgress, [0.35, 0.75], [0, 1]);
+  const textY = useTransform(scrollYProgress, [0.35, 0.75], [40, 0]);
+
+  // Animações do indicador de scroll
+  const hintOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+
   return (
-    <Section className="vignette">
-      <div className="absolute inset-0 grid-bg" />
-      <div className="relative z-10 flex flex-col items-center text-center max-w-5xl">
+    <div ref={containerRef} className="relative h-[200vh] w-full">
+      {/* Container sticky que fica fixado na tela durante a rolagem do Hero */}
+      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-bg vignette">
+        <div className="absolute inset-0 grid-bg" />
+
+        <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-5xl px-6">
+          
+          {/* Logo "FA" que se move da esquerda para o centro e encolhe */}
+          <motion.div
+            style={{
+              x: faX,
+              y: faY,
+              scale: faScale,
+            }}
+            className="relative origin-center select-none flex items-center"
+          >
+            <FALogo className="text-4xl" />
+          </motion.div>
+
+          {/* Pergunta posicionada de forma absoluta para surgir perfeitamente abaixo do FA */}
+          <motion.div
+            style={{
+              opacity: textOpacity,
+              y: textY,
+            }}
+            className="absolute top-[56%] left-1/2 -translate-x-1/2 w-[90%] max-w-3xl text-center"
+          >
+            <p className="font-display text-2xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight text-balance text-fg">
+              {c.sub}
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Indicador de rolagem (desaparece ao rolar) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+          style={{ opacity: hintOpacity }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-fg-dim"
         >
-          <FALogo className="text-5xl md:text-6xl" />
+          <span className="text-[10px] uppercase tracking-[0.4em]">{c.scrollHint}</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            className="h-10 w-px bg-gradient-to-b from-fg-dim to-transparent"
+          />
         </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30, filter: "blur(12px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1.6, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-balance mt-16 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold leading-[1.02]"
-        >
-          {c.headline}
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.4, delay: 2.4, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-8 max-w-2xl text-balance text-base md:text-lg text-fg-muted"
-        >
-          {c.sub}
-        </motion.p>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 3.2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-fg-dim"
-      >
-        <span className="text-[10px] uppercase tracking-[0.4em]">{c.scrollHint}</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          className="h-10 w-px bg-gradient-to-b from-fg-dim to-transparent"
-        />
-      </motion.div>
-    </Section>
+    </div>
   );
 }
+

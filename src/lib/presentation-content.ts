@@ -3,16 +3,6 @@
  * Edite os textos aqui — toda a experiência consome este arquivo.
  */
 
-import fachadaAberta from "@/assets/fachada-aberta.png";
-import corredorPrincipal from "@/assets/corredor-principal.png";
-import escritorio from "@/assets/escritorio.png";
-import setorComercial from "@/assets/setor-comercial.png";
-import areaConvivencia from "@/assets/area-convivencia.png";
-import recepcao from "@/assets/recepcao.png";
-
-
-
-
 
 export const presentationContent = {
   brand: {
@@ -23,7 +13,7 @@ export const presentationContent = {
 
   opening: {
     headline: "Tudo começou com uma pergunta.",
-    sub: "Como construir uma empresa capaz de crescer sem depender de uma única pessoa?",
+    sub: "Como construir uma empresa com segurança e previsibilidade?",
     scrollHint: "Role para começar",
   },
 
@@ -57,7 +47,7 @@ export const presentationContent = {
   future: {
     headline: "Mas isso é apenas o começo.",
     overlay: "Estamos construindo algo muito maior.",
-    videoPlaceholder: "/videos/nova-sede.mp4",
+    videoPlaceholder: "https://fazendoacontecer.site/wp-content/uploads/2026/06/PONTO-FA.webm",
   },
 
   novaSede: {
@@ -65,53 +55,26 @@ export const presentationContent = {
     headline: "Uma nova casa para uma nova fase.",
     description:
       "Mais do que paredes novas: um ambiente projetado para suportar o próximo ciclo de crescimento da Fazendo Acontecer.",
-    scenes: [
-      {
-        image: fachadaAberta,
-        title: "Uma nova estrutura para uma nova fase.",
-        caption: "Fachada principal — a entrada do próximo ciclo.",
-      },
-      {
-        image: corredorPrincipal,
-        title: "Projetado para suportar crescimento.",
-        caption: "Corredor principal — fluxo, conexão e expansão.",
-      },
-      {
-        image: setorComercial,
-        title: "Mais pessoas. Mais oportunidades. Mais resultados.",
-        caption: "Setor comercial — o coração da operação.",
-      },
-      {
-        image: escritorio,
-        title: "Onde estratégia vira execução.",
-        caption: "Escritórios — ambientes pensados para foco e performance.",
-      },
-      {
-        image: areaConvivencia,
-        title: "Espaços para respirar, conectar e recarregar ideias.",
-        caption: "Copa e área de descanso.",
-      },
-      {
-        image: recepcao,
-        title: "Estamos construindo um ecossistema empresarial.",
-        caption: "Recepção — o primeiro contato com a nova FA.",
-      },
-    ],
   },
 
 
 
-  futuroFa: {
-    kicker: "O futuro da FA",
-    headline: "O que vem a seguir.",
+  andarSuperior: {
+    kicker: "Visita Guiada",
+    headline: "FA - O Futuro",
     description:
-      "Um carrossel com as imagens do novo projeto. Substitua os placeholders pelas fotos finais quando estiverem prontas.",
+      "Uma galeria de fotos detalhando o design moderno, salas de reunião tecnológicas e áreas colaborativas projetadas para o andar superior da nova sede.",
     slides: [
-      { label: "Imagem 01", title: "Em breve", caption: "Substitua este placeholder pela primeira imagem do novo projeto." },
-      { label: "Imagem 02", title: "Em breve", caption: "Substitua este placeholder pela segunda imagem do novo projeto." },
-      { label: "Imagem 03", title: "Em breve", caption: "Substitua este placeholder pela terceira imagem do novo projeto." },
-      { label: "Imagem 04", title: "Em breve", caption: "Substitua este placeholder pela quarta imagem do novo projeto." },
-      { label: "Imagem 05", title: "Em breve", caption: "Substitua este placeholder pela quinta imagem do novo projeto." },
+      { label: "Imagem 01", image: "https://fazendoacontecer.site/wp-content/uploads/2026/06/9dcac65e-3c69-47a0-912e-9d36dc95130e.png" },
+      { label: "Imagem 02", image: "https://fazendoacontecer.site/wp-content/uploads/2026/06/07d9ccf8-0ee5-4ae7-8fa9-b130a1f6d3ed.png" },
+      { label: "Imagem 03", image: "https://fazendoacontecer.site/wp-content/uploads/2026/06/65ff1df5-d92a-4f95-a0de-493f9cb8ac9f.png" },
+      { label: "Imagem 04", image: "https://fazendoacontecer.site/wp-content/uploads/2026/06/imagem-2.png" },
+      { label: "Imagem 05", image: "https://fazendoacontecer.site/wp-content/uploads/2026/06/imagem-1.png" },
+      { label: "Imagem 06", image: "https://fazendoacontecer.site/wp-content/uploads/2026/06/salao-cima-1.png" },
+      { label: "Imagem 07", image: "https://fazendoacontecer.site/wp-content/uploads/2026/06/f29f0e78-f7eb-4259-ab98-8f3b3dc06491.png" },
+      { label: "Imagem 08", image: "https://fazendoacontecer.site/wp-content/uploads/2026/06/c2313d79-a363-4190-ba91-665deaf5e1ba.png" },
+      { label: "Imagem 09", image: "https://fazendoacontecer.site/wp-content/uploads/2026/06/3dae8b6c-1847-4136-a271-487ef67e22e0.png" },
+      { label: "Imagem 10", image: "https://fazendoacontecer.site/wp-content/uploads/2026/06/53011497-7426-45ab-9b6d-1caec99363ea.png" },
     ] as Array<{ label?: string; title?: string; caption?: string; image?: string }>,
   },
 
@@ -160,32 +123,32 @@ export const presentationContent = {
   },
 
   reveal: {
-    headline: "O cérebro comercial da FA.",
-    sub: "A plataforma que conecta marketing, atendimento, processos e vendas.",
+    headline: "Método GVD",
+    sub: "A engrenagem que integra atração, processos comerciais e inteligência de dados.",
   },
 
   dotsales: {
-    kicker: "04 — DotSales",
-    headline: "Não é um CRM. É um sistema operacional comercial.",
+    kicker: "03 — Método GVD",
+    headline: "Não é apenas teoria. É um sistema operacional de crescimento.",
     features: [
-      { title: "Inbox Omnichannel", desc: "WhatsApp, Instagram, e-mail e site em uma única caixa." },
-      { title: "Pipeline Inteligente", desc: "Cada oportunidade no estágio certo, no tempo certo." },
-      { title: "IA Comercial", desc: "Responde, qualifica e prioriza antes do vendedor abrir o app." },
-      { title: "Automação", desc: "Tarefas, follow-ups e cadências rodando sozinhas." },
-      { title: "Gestão em Tempo Real", desc: "Cada conversa, cada lead, cada métrica visível." },
-      { title: "Dashboard Executivo", desc: "Decisões com dados, não com achismo." },
+      { title: "Geração de Demanda", desc: "Atrair oportunidades qualificadas e constantes para abastecer o funil comercial." },
+      { title: "Vendas", desc: "Transformar interesse em faturamento com processos ágeis e acompanhamento diário." },
+      { title: "Dados", desc: "Análise de métricas em tempo real para tomar decisões seguras e sem achismos." },
+      { title: "Processo Escalável", desc: "Rotinas claras e repetíveis que permitem a empresa crescer sem depender de pessoas específicas." },
+      { title: "Gestão de Leads", desc: "Garantia de que 100% dos contatos gerados recebam atendimento e follow-up estruturados." },
+      { title: "Previsibilidade", desc: "Visão executiva com indicadores consolidados para planejar os próximos ciclos." },
     ],
     flow: [
-      "Lead entra",
-      "IA responde",
-      "Vendedor recebe",
-      "Pipeline avança",
-      "Venda acontece",
+      "Atração",
+      "Qualificação",
+      "Negociação",
+      "Análise de Dados",
+      "Previsibilidade",
     ],
   },
 
   machine: {
-    kicker: "05 — A máquina de crescimento",
+    kicker: "04 — A máquina de crescimento",
     steps: [
       { n: "01", label: "Marketing", desc: "Atração com intenção." },
       { n: "02", label: "Captação", desc: "Cada lead capturado e identificado." },
@@ -197,7 +160,7 @@ export const presentationContent = {
   },
 
   impact: {
-    kicker: "06 — Impacto",
+    kicker: "05 — Impacto",
     metrics: [
       { value: 0, suffix: "", label: "Leads respondidos" },
       { value: 0, suffix: "", label: "Conversas organizadas" },
@@ -209,7 +172,7 @@ export const presentationContent = {
   },
 
   futureBusiness: {
-    kicker: "07 — O futuro dos negócios",
+    kicker: "06 — O futuro dos negócios",
     lines: [
       "Os próximos anos serão das empresas que dominarem dados.",
       "Os próximos anos serão das empresas que dominarem processos.",
@@ -219,7 +182,7 @@ export const presentationContent = {
   },
 
   ecosystem: {
-    kicker: "08 — Ecossistema FA",
+    kicker: "07 — Ecossistema FA",
     headline: "Uma nova casa para uma nova era.",
     body:
       "Novo prédio, novos times, nova cultura. Um ecossistema empresarial pensado para crescer com você.",
@@ -242,7 +205,14 @@ export const presentationContent = {
 
   thanks: {
     title: "Obrigado.",
-    sub: "FA × DotSales",
+    sub: "FA × Método GVD",
+  },
+
+  methodologyGvd: {
+    kicker: "A engrenagem do sucesso",
+    headline: "O responsável por esse crescimento previsível foi a metodologia GVD",
+    buttonText: "Apresentação da Metodologia",
+    buttonUrl: "https://dotsales.com.br", // Substitua por sua URL externa quando necessário
   },
 } as const;
 

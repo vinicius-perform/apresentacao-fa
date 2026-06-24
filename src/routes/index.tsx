@@ -1,4 +1,6 @@
+import { useRef } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { motion, useScroll, useTransform } from "motion/react";
 import { SmoothScroll } from "@/components/presentation/SmoothScroll";
 import { ProgressRail } from "@/components/presentation/ProgressRail";
 import { TopBar } from "@/components/presentation/TopBar";
@@ -6,22 +8,11 @@ import { HeroSection } from "@/components/presentation/sections/HeroSection";
 import { WhatIsSection } from "@/components/presentation/sections/WhatIsSection";
 import { FutureSection } from "@/components/presentation/sections/FutureSection";
 import { NovaSedeSection } from "@/components/presentation/sections/NovaSedeSection";
-import { FuturoFaSection } from "@/components/presentation/sections/FuturoFaSection";
+import { AndarSuperiorSection } from "@/components/presentation/sections/AndarSuperiorSection";
 import { ExpansionSection } from "@/components/presentation/sections/ExpansionSection";
-
-
-import { WhySection } from "@/components/presentation/sections/WhySection";
-import { GrowthSection } from "@/components/presentation/sections/GrowthSection";
 import { PivotSection } from "@/components/presentation/sections/PivotSection";
-import { PainSection } from "@/components/presentation/sections/PainSection";
 import { SecretSection } from "@/components/presentation/sections/SecretSection";
-import { RevealSection } from "@/components/presentation/sections/RevealSection";
-import { DotSalesSection } from "@/components/presentation/sections/DotSalesSection";
-import { MachineSection } from "@/components/presentation/sections/MachineSection";
-import { ImpactSection } from "@/components/presentation/sections/ImpactSection";
-import { FutureBusinessSection } from "@/components/presentation/sections/FutureBusinessSection";
-import { ClosingSection } from "@/components/presentation/sections/ClosingSection";
-import { InviteSection } from "@/components/presentation/sections/InviteSection";
+import { MethodologySection } from "@/components/presentation/sections/MethodologySection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,8 +34,23 @@ export const Route = createFileRoute("/")({
 });
 
 function Keynote() {
+  const methodologyRef = useRef<HTMLDivElement>(null);
+
+  // Monitora a entrada da MethodologySection na viewport
+  const { scrollYProgress } = useScroll({
+    target: methodologyRef,
+    offset: ["start end", "start start"],
+  });
+
+  // Interpola o background e cor de texto globais do site
+  const backgroundColor = useTransform(scrollYProgress, [0.3, 0.95], ["#000000", "#ffffff"]);
+  const color = useTransform(scrollYProgress, [0.3, 0.95], ["#ffffff", "#000000"]);
+
   return (
-    <main className="relative bg-bg text-fg">
+    <motion.main 
+      style={{ backgroundColor, color }}
+      className="relative bg-bg text-fg transition-colors duration-100"
+    >
       <SmoothScroll />
       <ProgressRail />
       <TopBar />
@@ -53,22 +59,12 @@ function Keynote() {
       <WhatIsSection />
       <FutureSection />
       <NovaSedeSection />
-      <FuturoFaSection />
+      <AndarSuperiorSection />
       <ExpansionSection />
-
-
-      <WhySection />
-      <GrowthSection />
       <PivotSection />
-      <PainSection />
       <SecretSection />
-      <RevealSection />
-      <DotSalesSection />
-      <MachineSection />
-      <ImpactSection />
-      <FutureBusinessSection />
-      <ClosingSection />
-      <InviteSection />
-    </main>
+      <MethodologySection containerRef={methodologyRef} scrollYProgress={scrollYProgress} />
+    </motion.main>
   );
 }
+

@@ -1,4 +1,4 @@
-import { motion, useInView, useMotionValue, useTransform, animate } from "motion/react";
+import { motion, useInView, useMotionValue, useTransform, animate, type HTMLMotionProps } from "motion/react";
 import { useEffect, useRef, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
@@ -7,23 +7,25 @@ export function Section({
   className,
   id,
   fullBleed = false,
+  ...props
 }: {
   children: ReactNode;
   className?: string;
   id?: string;
   fullBleed?: boolean;
-}) {
+} & HTMLMotionProps<"section">) {
   return (
-    <section
+    <motion.section
       id={id}
       className={cn(
         "relative w-full min-h-screen flex items-center justify-center overflow-hidden",
         !fullBleed && "px-6 md:px-16 lg:px-28 py-24",
         className,
       )}
+      {...props}
     >
       {children}
-    </section>
+    </motion.section>
   );
 }
 
@@ -96,7 +98,7 @@ export function Counter({
 
 export function FALogo({ className }: { className?: string }) {
   return (
-    <div className={cn("inline-flex items-center gap-2 font-display font-bold", className)}>
+    <div className={cn("inline-flex items-center gap-2 font-montserrat font-extrabold", className)}>
       <span className="relative">
         <span className="text-fg">FA</span>
         <span className="absolute -right-2 top-0 h-1.5 w-1.5 rounded-full bg-neon shadow-[0_0_12px_var(--neon)]" />
@@ -110,6 +112,15 @@ export function DotSalesLogo({ className }: { className?: string }) {
     <div className={cn("inline-flex items-center gap-2 font-display font-semibold tracking-tight", className)}>
       <span className="relative inline-flex items-center justify-center h-3 w-3 rounded-full bg-neon shadow-[0_0_24px_var(--neon)]" />
       <span>DotSales</span>
+    </div>
+  );
+}
+
+export function GVDLogo({ className }: { className?: string }) {
+  return (
+    <div className={cn("inline-flex items-center gap-2.5 font-montserrat font-extrabold tracking-tight uppercase", className)}>
+      <span className="relative inline-flex items-center justify-center h-3.5 w-3.5 rounded-full bg-neon shadow-[0_0_24px_var(--neon)]" />
+      <span>Método GVD</span>
     </div>
   );
 }

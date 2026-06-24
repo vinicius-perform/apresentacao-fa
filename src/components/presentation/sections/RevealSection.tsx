@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { DotSalesLogo, Reveal, Section } from "../primitives";
+import { GVDLogo, Reveal, Section } from "../primitives";
 import { presentationContent } from "@/lib/presentation-content";
 
 export function RevealSection() {
@@ -16,7 +16,7 @@ export function RevealSection() {
           viewport={{ once: true, margin: "-20%" }}
           transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <DotSalesLogo className="text-4xl md:text-6xl justify-center" />
+          <GVDLogo className="text-4xl md:text-6xl justify-center" />
         </motion.div>
         <Reveal delay={0.6}>
           <h2 className="font-display text-balance text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight">
