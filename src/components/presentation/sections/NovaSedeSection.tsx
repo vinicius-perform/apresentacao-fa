@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { Kicker, Reveal } from "../primitives";
-import { MediaPlaceholder } from "../MediaPlaceholder";
 import { presentationContent } from "@/lib/presentation-content";
 
 function Scene({
