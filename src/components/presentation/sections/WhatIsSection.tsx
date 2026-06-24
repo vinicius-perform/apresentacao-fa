@@ -7,80 +7,48 @@ export function WhatIsSection() {
   return (
     <Section id="metodologia-gvd">
       <div className="relative z-10 w-full max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-          {/* Left column: narrative */}
-          <div className="lg:col-span-5 space-y-8">
+        <div className="space-y-16 md:space-y-20">
+          <div className="max-w-3xl">
             <Reveal>
               <Kicker>{c.kicker}</Kicker>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="font-display text-balance text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05]">
+              <h2 className="mt-6 font-display text-balance text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05]">
                 {c.headline}
               </h2>
             </Reveal>
-            <Reveal delay={0.2}>
-              <div className="space-y-4 text-fg-muted text-balance text-base md:text-lg leading-relaxed">
-                <p>{c.intro.line1}</p>
-                <p>{c.intro.line2}</p>
-              </div>
-            </Reveal>
-            <Reveal delay={0.3}>
-              <div className="space-y-3 text-fg-muted text-sm md:text-base leading-relaxed">
-                {c.methodDescription.map((line) => (
-                  <p key={line} className="flex items-start gap-3">
-                    <span className="mt-2 h-1 w-1 rounded-full bg-neon shadow-[0_0_8px_var(--neon)]" />
-                    <span>{line}</span>
-                  </p>
-                ))}
-              </div>
-            </Reveal>
-            <Reveal delay={0.4}>
-              <p className="text-fg text-balance text-base md:text-lg leading-relaxed">
-                {c.methodClosing}
-              </p>
-            </Reveal>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-fg-dim pt-2">
-              {c.mediaCaption}
-            </p>
           </div>
 
-          {/* Right column: GVD methodology — protagonist */}
-          <div className="lg:col-span-7">
-            <Reveal delay={0.15}>
-              <div className="border border-line bg-bg-elev/40 p-8 md:p-12">
-                <div className="flex items-center gap-4 mb-10">
-                  <span className="font-display text-6xl md:text-7xl font-bold tracking-tighter text-fg">
-                    {c.methodName}
-                  </span>
-                  <span className="h-px flex-1 bg-line" />
-                  <span className="text-[11px] uppercase tracking-[0.25em] text-fg-muted text-right">
-                    {c.methodFull.split(" · ").map((part) => (
-                      <span key={part} className="block">{part}</span>
-                    ))}
-                  </span>
-                </div>
+          <Reveal delay={0.2}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-px border border-line bg-line">
+              {c.pillars.map((pillar, i) => (
+                <PillarBlock
+                  key={pillar.letter}
+                  letter={pillar.letter}
+                  title={pillar.title}
+                  desc={pillar.desc}
+                  index={i}
+                />
+              ))}
+            </div>
+          </Reveal>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {c.pillars.map((pillar, i) => (
-                    <PillarCard
-                      key={pillar.letter}
-                      letter={pillar.letter}
-                      title={pillar.title}
-                      desc={pillar.desc}
-                      index={i}
-                    />
-                  ))}
-                </div>
-              </div>
-            </Reveal>
-          </div>
+          <Reveal delay={0.3}>
+            <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.25em] text-fg-muted">
+              <span className="font-display text-lg font-semibold tracking-tight text-fg">
+                {c.methodName}
+              </span>
+              <span className="h-px w-12 bg-line" />
+              <span>{c.methodFull}</span>
+            </div>
+          </Reveal>
         </div>
       </div>
     </Section>
   );
 }
 
-function PillarCard({
+function PillarBlock({
   letter,
   title,
   desc,
@@ -94,25 +62,29 @@ function PillarCard({
   return (
     <div
       className={cn(
-        "group relative p-6 md:p-7 border border-line bg-bg transition-colors hover:bg-bg-elev",
-        "flex flex-col gap-5 min-h-[260px]",
+        "group relative flex flex-col justify-between bg-bg p-8 md:p-10 lg:p-12 min-h-[380px] md:min-h-[460px]",
+        "transition-colors duration-500 hover:bg-bg-elev",
       )}
     >
       <div className="flex items-start justify-between">
-        <span className="font-display text-6xl md:text-7xl font-bold tracking-tighter text-fg transition-colors group-hover:text-neon">
+        <span className="font-display text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-fg transition-colors duration-500 group-hover:text-neon">
           {letter}
         </span>
         <span className="text-[10px] font-display text-fg-dim tabular-nums">
           {String(index + 1).padStart(2, "0")}
         </span>
       </div>
-      <div className="space-y-2 mt-auto">
-        <h3 className="font-display text-sm md:text-base font-semibold uppercase tracking-wide text-fg">
+
+      <div className="space-y-3 md:space-y-4">
+        <h3 className="font-display text-base md:text-lg font-semibold uppercase tracking-wide text-fg">
           {title}
         </h3>
-        <p className="text-xs md:text-sm text-fg-muted leading-relaxed">{desc}</p>
+        <p className="text-sm md:text-base text-fg-muted leading-relaxed max-w-xs">
+          {desc}
+        </p>
       </div>
-      <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-neon transition-all duration-500 group-hover:w-full" />
+
+      <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-neon transition-all duration-700 ease-out group-hover:w-full" />
     </div>
   );
 }
