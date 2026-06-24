@@ -17,7 +17,7 @@ export const presentationContent = {
   },
 
   whatIs: {
-    kicker: "01 — Origem",
+    kicker: "01 — Metodologia",
     headline: "O que é a Fazendo Acontecer?",
     intro: {
       line1: "A Fazendo Acontecer não nasceu para ser apenas uma agência, consultoria ou empresa de tecnologia.",
