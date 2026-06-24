@@ -5,9 +5,10 @@
 
 import fachadaAsset from "@/assets/fachada-aberta.png.asset.json";
 import corredorAsset from "@/assets/corredor-principal.png.asset.json";
+import escritorioAsset from "@/assets/escritorio.png.asset.json";
 import setorComercialAsset from "@/assets/setor-comercial.png.asset.json";
 import areaConvivenciaAsset from "@/assets/area-convivencia.png.asset.json";
-import conjuntoAsset from "@/assets/recepcao.png.asset.json";
+import recepcaoAsset from "@/assets/recepcao.png.asset.json";
 
 
 
