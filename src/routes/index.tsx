@@ -53,6 +53,7 @@ function Keynote() {
       <WhatIsSection />
       <FutureSection />
       <NovaSedeSection />
+      <FuturoFaSection />
       <ExpansionSection />
 
 
