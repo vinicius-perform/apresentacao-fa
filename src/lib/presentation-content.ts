@@ -60,6 +60,47 @@ export const presentationContent = {
     videoPlaceholder: "/videos/nova-sede.mp4",
   },
 
+  novaSede: {
+    kicker: "Visita guiada — Nova sede FA",
+    headline: "Uma nova casa para uma nova fase.",
+    description:
+      "Mais do que paredes novas: um ambiente projetado para suportar o próximo ciclo de crescimento da Fazendo Acontecer.",
+    scenes: [
+      {
+        image: fachadaAberta,
+        title: "Uma nova estrutura para uma nova fase.",
+        caption: "Fachada principal — a entrada do próximo ciclo.",
+      },
+      {
+        image: corredorPrincipal,
+        title: "Projetado para suportar crescimento.",
+        caption: "Corredor principal — fluxo, conexão e expansão.",
+      },
+      {
+        image: setorComercial,
+        title: "Mais pessoas. Mais oportunidades. Mais resultados.",
+        caption: "Setor comercial — o coração da operação.",
+      },
+      {
+        image: escritorio,
+        title: "Onde estratégia vira execução.",
+        caption: "Escritórios — ambientes pensados para foco e performance.",
+      },
+      {
+        image: areaConvivencia,
+        title: "Espaços para respirar, conectar e recarregar ideias.",
+        caption: "Copa e área de descanso.",
+      },
+      {
+        image: recepcao,
+        title: "Estamos construindo um ecossistema empresarial.",
+        caption: "Recepção — o primeiro contato com a nova FA.",
+      },
+    ],
+  },
+
+
+
   expansion: {
     kicker: "02 — Expansão",
     growth: {
