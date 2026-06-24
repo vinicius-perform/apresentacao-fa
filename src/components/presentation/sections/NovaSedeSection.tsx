@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { Kicker, Reveal } from "../primitives";
-import { MediaPlaceholder } from "../MediaPlaceholder";
 import { presentationContent } from "@/lib/presentation-content";
 
 function Scene({
@@ -86,6 +85,7 @@ function Mosaic() {
         <div className="mt-16 grid grid-cols-3 gap-3 md:gap-5">
           {c.mosaic.map((tile, i) => {
             const aspects = ["aspect-[3/4]", "aspect-square", "aspect-[4/5]"];
+            const aspect = i === 0 || i === 5 ? "aspect-[4/5]" : aspects[i % aspects.length];
             return (
               <motion.div
                 key={tile.label}
@@ -93,15 +93,22 @@ function Mosaic() {
                 className={`overflow-hidden ${i === 0 || i === 5 ? "col-span-2 row-span-2" : ""}`}
               >
                 <motion.div
-                  whileInView={{ scale: [1.08, 1] }}
+                  initial={{ scale: 1.08 }}
+                  whileInView={{ scale: 1 }}
                   transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
                   viewport={{ once: true, margin: "-10%" }}
+                  className={`relative w-full ${aspect}`}
                 >
-                  <MediaPlaceholder
-                    label={tile.label}
-                    aspect={i === 0 || i === 5 ? "aspect-[4/5]" : aspects[i % aspects.length]}
-                    className="rounded-none"
+                  <img
+                    src={tile.image}
+                    alt={tile.label}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-bg/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-4 left-4 text-[10px] uppercase tracking-[0.3em] text-fg-muted">
+                    {tile.label}
+                  </span>
                 </motion.div>
               </motion.div>
             );
