@@ -17,6 +17,11 @@ export function WhatIsSection() {
                 {c.headline}
               </h2>
             </Reveal>
+            <Reveal delay={0.15}>
+              <p className="mt-6 md:mt-8 text-base md:text-lg text-fg-muted leading-relaxed max-w-3xl">
+                {c.description}
+              </p>
+            </Reveal>
           </div>
 
           <Reveal delay={0.2}>
