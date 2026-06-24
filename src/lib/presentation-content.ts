@@ -3,6 +3,15 @@
  * Edite os textos aqui — toda a experiência consome este arquivo.
  */
 
+import fachadaAberta from "@/assets/fachada-aberta.png";
+import corredorPrincipal from "@/assets/corredor-principal.png";
+import escritorio from "@/assets/escritorio.png";
+import setorComercial from "@/assets/setor-comercial.png";
+import areaConvivencia from "@/assets/area-convivencia.png";
+import recepcao from "@/assets/recepcao.png";
+
+
+
 
 
 export const presentationContent = {
