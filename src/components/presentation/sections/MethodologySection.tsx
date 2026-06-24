@@ -3,6 +3,7 @@ import { ArrowUpRight, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal, Section } from "../primitives";
 import { presentationContent } from "@/lib/presentation-content";
 import { motion, AnimatePresence, useTransform, type MotionValue } from "motion/react";
+import crmFunil from "@/assets/crm-funil.png";
 
 export function MethodologySection({
   containerRef,
@@ -13,7 +14,7 @@ export function MethodologySection({
 }) {
   const c = presentationContent.methodologyGvd;
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeSlide, setActiveSlide] = useState(0); // 0: Introdução GVD, 1: Fluxograma Geração de Demanda
+  const [activeSlide, setActiveSlide] = useState(0); // 0: Introdução GVD, 1: Fluxograma Geração de Demanda, 2: Mapa Mental Vendas
 
   // Interpolações de cor de texto da seção baseadas no progresso compartilhado
   const color = useTransform(scrollYProgress, [0.3, 0.95], ["#ffffff", "#000000"]);
@@ -37,10 +38,10 @@ export function MethodologySection({
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isModalOpen) return;
-      if (e.key === "ArrowRight" && activeSlide === 0) {
-        setActiveSlide(1);
-      } else if (e.key === "ArrowLeft" && activeSlide === 1) {
-        setActiveSlide(0);
+      if (e.key === "ArrowRight" && activeSlide < 2) {
+        setActiveSlide(prev => prev + 1);
+      } else if (e.key === "ArrowLeft" && activeSlide > 0) {
+        setActiveSlide(prev => prev - 1);
       } else if (e.key === "Escape") {
         setIsModalOpen(false);
       }
@@ -127,9 +128,9 @@ export function MethodologySection({
               </button>
 
               {/* Botões de Navegação de Slide Laterais */}
-              {activeSlide === 1 && (
+              {activeSlide > 0 && (
                 <button
-                  onClick={() => setActiveSlide(0)}
+                  onClick={() => setActiveSlide(prev => prev - 1)}
                   className="absolute left-6 top-1/2 -translate-y-1/2 text-white/40 hover:text-white bg-white/5 hover:bg-white/10 p-4 rounded-full transition-all duration-300 cursor-pointer border-0 z-40"
                   title="Slide Anterior (Seta Esquerda)"
                 >
@@ -137,9 +138,9 @@ export function MethodologySection({
                 </button>
               )}
 
-              {activeSlide === 0 && (
+              {activeSlide < 2 && (
                 <button
-                  onClick={() => setActiveSlide(1)}
+                  onClick={() => setActiveSlide(prev => prev + 1)}
                   className="absolute right-6 top-1/2 -translate-y-1/2 text-white/40 hover:text-white bg-white/5 hover:bg-white/10 p-4 rounded-full transition-all duration-300 cursor-pointer border-0 z-40"
                   title="Próximo Slide (Seta Direita)"
                 >
@@ -193,7 +194,7 @@ export function MethodologySection({
                       <span>DADOS</span>
                     </div>
                   </motion.div>
-                ) : (
+                ) : activeSlide === 1 ? (
                   /* Slide 2: Mapa Mental Geração de Demanda (Pilar G) */
                   <motion.div
                     key="slide-g-pillar"
@@ -290,7 +291,7 @@ export function MethodologySection({
                       </div>
 
                       {/* Versão Desktop Unificada por Coordenadas Internas ao SVG (ForeignObject) */}
-                      <div className="hidden md:block w-full max-w-5xl h-[60vh]">
+                      <div className="hidden md:block w-full max-w-[98vw] h-[86vh]">
                         <svg className="w-full h-full" viewBox="0 0 1000 400" fill="none">
                           
                           {/* Definições de Marcadores e Gradientes */}
@@ -298,14 +299,6 @@ export function MethodologySection({
                             <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
                               <path d="M 0 1.5 L 7 5 L 0 8.5 z" fill="rgba(255,255,255,0.4)" />
                             </marker>
-                            <linearGradient id="metaGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                              <stop offset="0%" stopColor="#0064e0" stopOpacity="0.8" />
-                              <stop offset="100%" stopColor="#0064e0" stopOpacity="0" />
-                            </linearGradient>
-                            <linearGradient id="googleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                              <stop offset="0%" stopColor="#FBBC05" stopOpacity="0.8" />
-                              <stop offset="100%" stopColor="#FBBC05" stopOpacity="0" />
-                            </linearGradient>
                           </defs>
 
                           {/* ---------------- LINHAS DE CONEXÃO ---------------- */}
@@ -330,15 +323,6 @@ export function MethodologySection({
                           {/* Curvas Tráfego Pago -> Meta Ads e Google Ads */}
                           <path d="M 600,300 C 635,300 645,250 680,250" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
                           <path d="M 600,300 C 635,300 645,350 680,350" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
-
-                          {/* Ramificações de Continuidade para a Direita (Gradientes Coloridos) */}
-                          <path d="M 790,250 C 820,250 830,230 860,230" stroke="url(#metaGradient)" strokeWidth="2" />
-                          <path d="M 790,250 C 820,250 830,250 860,250" stroke="url(#metaGradient)" strokeWidth="2" />
-                          <path d="M 790,250 C 820,250 830,270 860,270" stroke="url(#metaGradient)" strokeWidth="2" />
-
-                          <path d="M 790,350 C 820,350 830,330 860,330" stroke="url(#googleGradient)" strokeWidth="2" />
-                          <path d="M 790,350 C 820,350 830,350 860,350" stroke="url(#googleGradient)" strokeWidth="2" />
-                          <path d="M 790,350 C 820,350 830,370 860,370" stroke="url(#googleGradient)" strokeWidth="2" />
 
                           {/* ---------------- ELEMENTOS HTML INTERNOS (ForeignObjects) ---------------- */}
                           
@@ -435,6 +419,269 @@ export function MethodologySection({
                                 <path fill="#FBBC05" d="M8.5 20L0 5.5l8-1.5 8.5 16z"/>
                               </svg>
                               <span className="font-sans text-[10px] md:text-xs font-semibold text-white/95">Google Ads</span>
+                            </div>
+                          </foreignObject>
+
+                        </svg>
+                      </div>
+
+                    </div>
+                  </motion.div>
+                ) : (
+                  /* Slide 3: Mapa Mental Vendas (Pilar V) */
+                  <motion.div
+                    key="slide-v-pillar"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left"
+                  >
+                    {/* Cabeçalho do Slide 3 */}
+                    <div className="w-full flex justify-between items-center mb-8 md:mb-12 px-4">
+                      <div className="flex flex-col">
+                        <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-amber-500 uppercase">Metodologia GVD</span>
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-white uppercase tracking-wider mt-1 select-none">
+                          Vendas
+                        </h2>
+                      </div>
+                      <span className="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-b from-amber-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_4px_12px_rgba(245,158,11,0.2)] select-none">
+                        GVD
+                      </span>
+                    </div>
+
+                    {/* Vendas Content Box */}
+                    <div className="w-full h-full flex items-center justify-center relative overflow-hidden">
+                      
+                      {/* Versão Mobile (Vertical Simplificada) */}
+                      <div className="flex md:hidden flex-col w-full h-[60vh] overflow-y-auto space-y-6 px-2 pb-16 no-scrollbar">
+                        {/* Bloco Raiz "Vendas" */}
+                        <div className="w-full bg-gradient-to-r from-amber-600 to-yellow-500 rounded-xl p-4 text-center border border-amber-400/40 shadow-md">
+                          <span className="font-montserrat text-xs sm:text-sm font-bold text-white uppercase tracking-wide">Vendas</span>
+                        </div>
+
+                        {/* Coluna 1: Estruturação do CRM */}
+                        <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-5 space-y-4">
+                          <h3 className="text-xs font-bold text-white uppercase tracking-wider border-b border-white/10 pb-2">Estruturação do CRM</h3>
+                          <div className="relative rounded-lg overflow-hidden border border-white/10 aspect-video bg-black/40">
+                            <img src={crmFunil} alt="CRM Preview" className="w-full h-full object-cover" />
+                          </div>
+                          <div className="text-center">
+                            <a 
+                              href="https://sales.dottech.ai/dashboard/pipeline/funil?id=71479906-111c-462c-af1d-69e76009057b"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-xs text-blue-400 hover:text-blue-300 font-bold underline transition-colors duration-200"
+                            >
+                              CRM na Prática
+                            </a>
+                          </div>
+                        </div>
+
+                        {/* Coluna 2: Playbook de Vendas */}
+                        <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-5 space-y-3">
+                          <h3 className="text-xs font-bold text-white uppercase tracking-wider border-b border-white/10 pb-2">Playbook de Vendas</h3>
+                          <ul className="space-y-2 text-xs text-zinc-300 list-disc list-inside">
+                            <li>MÉTODOS DE VENDAS</li>
+                            <li>SCRIPTS DE VENDAS</li>
+                            <li>FLUXO DE CADÊNCIA</li>
+                            <li>GATILHOS MENTAIS</li>
+                            <li>NÍVEIS DE CONSCIÊNCIA</li>
+                          </ul>
+                        </div>
+
+                        {/* Coluna 3: Rotinas */}
+                        <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-5 space-y-3">
+                          <h3 className="text-xs font-bold text-white uppercase tracking-wider border-b border-white/10 pb-2">Rotinas</h3>
+                          <ul className="space-y-2 text-xs text-zinc-300 list-disc list-inside">
+                            <li>DAILY</li>
+                            <li>WEEKLE</li>
+                            <li>MONTHLY</li>
+                            <li>COACHING TÉCNICO</li>
+                            <li>ONE A ONE</li>
+                            <li>ROLE PLAY</li>
+                          </ul>
+                        </div>
+
+                        {/* Coluna 4: Rituais */}
+                        <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-5 space-y-3">
+                          <h3 className="text-xs font-bold text-white uppercase tracking-wider border-b border-white/10 pb-2">Rituais</h3>
+                          <ul className="space-y-2 text-xs text-zinc-300 list-disc list-inside">
+                            <li>BOLA DE OURO</li>
+                            <li>NOVA RÉGUA</li>
+                            <li>BANDEIRAS</li>
+                            <li>SINO</li>
+                            <li>GRITO DE GUERRA</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      {/* Versão Desktop Unificada por Coordenadas Internas ao SVG (ForeignObject) */}
+                      <div className="hidden md:block w-full max-w-[98vw] h-[86vh]">
+                        <svg className="w-full h-full" viewBox="0 0 1000 400" fill="none">
+                          
+                          {/* Definições de Marcadores e Gradientes */}
+                          <defs>
+                            <marker id="arrow-v" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                              <path d="M 0 1.5 L 7 5 L 0 8.5 z" fill="rgba(255,255,255,0.4)" />
+                            </marker>
+                          </defs>
+
+                          {/* Linhas Conectivas com Curvas Suaves (Saída de VENDAS para as 4 Colunas) */}
+                          <path d="M 500,80 L 500,95 Q 500,110 485,110 L 147.5,110 Q 132.5,110 132.5,125 L 132.5,130" stroke="rgba(255,255,255,0.15)" strokeWidth="2" fill="none" />
+                          <path d="M 500,80 L 500,95 Q 500,110 485,110 L 392.5,110 Q 377.5,110 377.5,125 L 377.5,130" stroke="rgba(255,255,255,0.15)" strokeWidth="2" fill="none" />
+                          <path d="M 500,80 L 500,95 Q 500,110 515,110 L 607.5,110 Q 622.5,110 622.5,125 L 622.5,130" stroke="rgba(255,255,255,0.15)" strokeWidth="2" fill="none" />
+                          <path d="M 500,80 L 500,95 Q 500,110 515,110 L 852.5,110 Q 867.5,110 867.5,125 L 867.5,130" stroke="rgba(255,255,255,0.15)" strokeWidth="2" fill="none" />
+
+                          {/* Bloco Raiz "VENDAS" no topo centralizado */}
+                          <foreignObject x="380" y="30" width="240" height="50">
+                            <div className="w-full h-full flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-600 to-yellow-500 shadow-[0_0_25px_rgba(245,158,11,0.3)] border border-amber-400/40 text-center">
+                              <span className="font-montserrat text-base font-extrabold text-white leading-tight uppercase tracking-wider">
+                                VENDAS
+                              </span>
+                            </div>
+                          </foreignObject>
+
+                          {/* Coluna 1: Estruturação do CRM */}
+                          {/* Título */}
+                          <foreignObject x="25" y="130" width="215" height="50">
+                            <div className="w-full h-full flex items-center justify-center rounded-lg bg-black border border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.05)] text-center px-2 hover:border-amber-400 transition-colors duration-300">
+                              <span className="font-display text-[10px] md:text-xs font-bold text-white tracking-widest uppercase leading-tight">
+                                Estruturação<br/>do CRM
+                              </span>
+                            </div>
+                          </foreignObject>
+                          {/* Conteúdo */}
+                          <foreignObject x="25" y="190" width="215" height="195">
+                            <div className="w-full h-full flex flex-col justify-between items-center rounded-xl bg-white/[0.03] border border-white/[0.06] p-3 text-center shadow-lg backdrop-blur-sm">
+                              <div className="w-full flex-grow relative rounded-lg overflow-hidden border border-white/10 bg-black/40 aspect-[16/10]">
+                                <img src={crmFunil} alt="CRM Preview" className="w-full h-full object-cover" />
+                              </div>
+                              <div className="mt-2 pt-2 border-t border-white/[0.05] w-full">
+                                <a 
+                                  href="https://sales.dottech.ai/dashboard/pipeline/funil?id=71479906-111c-462c-af1d-69e76009057b"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="font-sans text-xs text-blue-400 hover:text-blue-300 font-extrabold underline transition-colors duration-200 uppercase tracking-wider hover:scale-105 inline-block"
+                                >
+                                  CRM na Prática
+                                </a>
+                              </div>
+                            </div>
+                          </foreignObject>
+
+                          {/* Coluna 2: Playbook de Vendas */}
+                          {/* Título */}
+                          <foreignObject x="270" y="130" width="215" height="50">
+                            <div className="w-full h-full flex items-center justify-center rounded-lg bg-black border border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.05)] text-center px-2 hover:border-amber-400 transition-colors duration-300">
+                              <span className="font-display text-[10px] md:text-xs font-bold text-white tracking-widest uppercase leading-tight">
+                                Playbook<br/>de Vendas
+                              </span>
+                            </div>
+                          </foreignObject>
+                          {/* Conteúdo */}
+                          <foreignObject x="270" y="190" width="215" height="195">
+                            <div className="w-full h-full flex flex-col justify-start rounded-xl bg-white/[0.92] border border-white p-4 shadow-xl text-left">
+                              <ul className="space-y-2 text-[10px] md:text-[11px] font-bold text-zinc-800 leading-tight">
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-amber-500 font-black">•</span>
+                                  <span>MÉTODOS DE VENDAS</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-amber-500 font-black">•</span>
+                                  <span>SCRIPTS DE VENDAS</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-amber-500 font-black">•</span>
+                                  <span>FLUXO DE CADÊNCIA</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-amber-500 font-black">•</span>
+                                  <span>GATILHOS MENTAIS</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-amber-500 font-black">•</span>
+                                  <span>NÍVEIS DE CONSCIÊNCIA</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </foreignObject>
+
+                          {/* Coluna 3: Rotinas */}
+                          {/* Título */}
+                          <foreignObject x="515" y="130" width="215" height="50">
+                            <div className="w-full h-full flex items-center justify-center rounded-lg bg-black border border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.05)] text-center px-2 hover:border-amber-400 transition-colors duration-300">
+                              <span className="font-display text-[10px] md:text-xs font-bold text-white tracking-widest uppercase leading-tight">
+                                Rotinas
+                              </span>
+                            </div>
+                          </foreignObject>
+                          {/* Conteúdo */}
+                          <foreignObject x="515" y="190" width="215" height="195">
+                            <div className="w-full h-full flex flex-col justify-start rounded-xl bg-white/[0.92] border border-white p-4 shadow-xl text-left">
+                              <ul className="space-y-2 text-[10px] md:text-[11px] font-bold text-zinc-800 leading-tight">
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-amber-500 font-black">•</span>
+                                  <span>DAILY</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-amber-500 font-black">•</span>
+                                  <span>WEEKLE</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-amber-500 font-black">•</span>
+                                  <span>MONTHLY</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-amber-500 font-black">•</span>
+                                  <span>COACHING TÉCNICO</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-amber-500 font-black">•</span>
+                                  <span>ONE A ONE</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-amber-500 font-black">•</span>
+                                  <span>ROLE PLAY</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </foreignObject>
+
+                          {/* Coluna 4: Rituais */}
+                          {/* Título */}
+                          <foreignObject x="760" y="130" width="215" height="50">
+                            <div className="w-full h-full flex items-center justify-center rounded-lg bg-black border border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.05)] text-center px-2 hover:border-amber-400 transition-colors duration-300">
+                              <span className="font-display text-[10px] md:text-xs font-bold text-white tracking-widest uppercase leading-tight">
+                                Rituais
+                              </span>
+                            </div>
+                          </foreignObject>
+                          {/* Conteúdo */}
+                          <foreignObject x="760" y="190" width="215" height="195">
+                            <div className="w-full h-full flex flex-col justify-start rounded-xl bg-white/[0.92] border border-white p-4 shadow-xl text-left">
+                              <ul className="space-y-2 text-[10px] md:text-[11px] font-bold text-zinc-800 leading-tight">
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-amber-500 font-black">•</span>
+                                  <span>BOLA DE OURO</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-amber-500 font-black">•</span>
+                                  <span>NOVA RÉGUA</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-amber-500 font-black">•</span>
+                                  <span>BANDEIRAS</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-amber-500 font-black">•</span>
+                                  <span>SINO</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-amber-500 font-black">•</span>
+                                  <span>GRITO DE GUERRA</span>
+                                </li>
+                              </ul>
                             </div>
                           </foreignObject>
 
