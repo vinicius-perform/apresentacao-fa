@@ -16,7 +16,6 @@ import { DotSalesSection } from "@/components/presentation/sections/DotSalesSect
 import { MachineSection } from "@/components/presentation/sections/MachineSection";
 import { ImpactSection } from "@/components/presentation/sections/ImpactSection";
 import { FutureBusinessSection } from "@/components/presentation/sections/FutureBusinessSection";
-import { EcosystemSection } from "@/components/presentation/sections/EcosystemSection";
 import { ClosingSection } from "@/components/presentation/sections/ClosingSection";
 import { InviteSection } from "@/components/presentation/sections/InviteSection";
 
@@ -60,7 +59,6 @@ function Keynote() {
       <MachineSection />
       <ImpactSection />
       <FutureBusinessSection />
-      <EcosystemSection />
       <ClosingSection />
       <InviteSection />
     </main>
