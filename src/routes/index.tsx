@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/presentation/sections/HeroSection";
 import { WhatIsSection } from "@/components/presentation/sections/WhatIsSection";
 import { FutureSection } from "@/components/presentation/sections/FutureSection";
 import { NovaSedeSection } from "@/components/presentation/sections/NovaSedeSection";
+import { FuturoFaSection } from "@/components/presentation/sections/FuturoFaSection";
 import { ExpansionSection } from "@/components/presentation/sections/ExpansionSection";
 
 
@@ -52,6 +53,7 @@ function Keynote() {
       <WhatIsSection />
       <FutureSection />
       <NovaSedeSection />
+      <FuturoFaSection />
       <ExpansionSection />
 
 

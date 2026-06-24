@@ -101,6 +101,20 @@ export const presentationContent = {
 
 
 
+  futuroFa: {
+    kicker: "O futuro da FA",
+    headline: "O que vem a seguir.",
+    description:
+      "Um carrossel com as imagens do novo projeto. Substitua os placeholders pelas fotos finais quando estiverem prontas.",
+    slides: [
+      { label: "Imagem 01", title: "Em breve", caption: "Substitua este placeholder pela primeira imagem do novo projeto." },
+      { label: "Imagem 02", title: "Em breve", caption: "Substitua este placeholder pela segunda imagem do novo projeto." },
+      { label: "Imagem 03", title: "Em breve", caption: "Substitua este placeholder pela terceira imagem do novo projeto." },
+      { label: "Imagem 04", title: "Em breve", caption: "Substitua este placeholder pela quarta imagem do novo projeto." },
+      { label: "Imagem 05", title: "Em breve", caption: "Substitua este placeholder pela quinta imagem do novo projeto." },
+    ] as Array<{ label?: string; title?: string; caption?: string; image?: string }>,
+  },
+
   expansion: {
     kicker: "02 — Expansão",
     growth: {
