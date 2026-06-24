@@ -6,6 +6,7 @@ import { ProgressRail } from "@/components/presentation/ProgressRail";
 import { TopBar } from "@/components/presentation/TopBar";
 import { HeroSection } from "@/components/presentation/sections/HeroSection";
 import { WhatIsSection } from "@/components/presentation/sections/WhatIsSection";
+import { CultureSection } from "@/components/presentation/sections/CultureSection";
 import { FutureSection } from "@/components/presentation/sections/FutureSection";
 import { NovaSedeSection } from "@/components/presentation/sections/NovaSedeSection";
 import { AndarSuperiorSection } from "@/components/presentation/sections/AndarSuperiorSection";
@@ -57,6 +58,7 @@ function Keynote() {
 
       <HeroSection />
       <WhatIsSection />
+      <CultureSection />
       <FutureSection />
       <NovaSedeSection />
       <AndarSuperiorSection />

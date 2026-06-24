@@ -43,6 +43,34 @@ export const presentationContent = {
     ],
   },
 
+  culture: {
+    title: "Cultura = Identidade",
+    pillars: [
+      {
+        title: "Missão",
+        sub: "Por que eu faço o que faço?",
+        items: [
+          "Transformação de vidas",
+          "Prosperidade financeira"
+        ]
+      },
+      {
+        title: "Visão",
+        sub: "Para onde vamos?",
+        items: [
+          "A maior assessoria de Marketing e Vendas para Médicos e Clínicas de Estética da América Latina."
+        ]
+      },
+      {
+        title: "Valores",
+        sub: "Como vemos?",
+        items: [
+          "Valores da FA"
+        ]
+      }
+    ]
+  },
+
 
   future: {
     headline: "Mas isso é apenas o começo.",
