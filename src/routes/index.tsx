@@ -5,7 +5,9 @@ import { TopBar } from "@/components/presentation/TopBar";
 import { HeroSection } from "@/components/presentation/sections/HeroSection";
 import { WhatIsSection } from "@/components/presentation/sections/WhatIsSection";
 import { FutureSection } from "@/components/presentation/sections/FutureSection";
+import { NovaSedeSection } from "@/components/presentation/sections/NovaSedeSection";
 import { ExpansionSection } from "@/components/presentation/sections/ExpansionSection";
+
 import { WhySection } from "@/components/presentation/sections/WhySection";
 import { GrowthSection } from "@/components/presentation/sections/GrowthSection";
 import { PivotSection } from "@/components/presentation/sections/PivotSection";
@@ -48,7 +50,9 @@ function Keynote() {
       <HeroSection />
       <WhatIsSection />
       <FutureSection />
+      <NovaSedeSection />
       <ExpansionSection />
+
       <WhySection />
       <GrowthSection />
       <PivotSection />
