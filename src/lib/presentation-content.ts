@@ -49,15 +49,7 @@ export const presentationContent = {
         desc: "Tomar decisões baseadas em indicadores reais, não em achismos.",
       },
     ],
-    timeline: [
-      { year: "2017", label: "Fundação" },
-      { year: "2019", label: "Primeiros 10 colaboradores" },
-      { year: "2021", label: "Estruturação dos processos" },
-      { year: "2023", label: "Squad de tecnologia" },
-      { year: "2025", label: "Novo prédio" },
-      { year: "2026", label: "Ecossistema FA" },
-    ],
-    mediaCaption: "Bastidores · Equipe · Cultura",
+    mediaCaption: "Método proprietário FA",
   },
 
   future: {
@@ -68,13 +60,23 @@ export const presentationContent = {
 
   expansion: {
     kicker: "02 — Expansão",
-    stats: [
-      { from: 0, to: 60, label: "colaboradores", suffix: "" },
-      { from: 60, to: 150, label: "colaboradores", suffix: "" },
-      { from: 0, to: 1, label: "prédio", suffix: "" },
-      { from: 1, to: 1, label: "quarteirão inteiro", suffix: "" },
-    ],
-    closing: "Por quê?",
+    growth: {
+      from: 60,
+      to: 150,
+      label: "colaboradores",
+    },
+    title: "EXPANSÃO\nDA EMPRESA",
+    support:
+      "Uma estrutura construída para suportar os próximos anos de crescimento.",
+  },
+
+  why: {
+    word: "Por quê?",
+  },
+
+  growth: {
+    word: "CRESCIMENTO",
+    caption: "O que nos trouxe até aqui.",
   },
 
   pivot: {
