@@ -5,7 +5,7 @@
 
 import fachadaAsset from "@/assets/fachada-aberta.png.asset.json";
 import corredorAsset from "@/assets/corredor-principal.png.asset.json";
-import copaAsset from "@/assets/copa-convivencia.png.asset.json";
+import areaConvivenciaAsset from "@/assets/area-convivencia.png.asset.json";
 
 
 export const presentationContent = {
