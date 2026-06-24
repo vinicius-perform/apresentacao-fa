@@ -4,6 +4,8 @@
  */
 
 import fachadaAsset from "@/assets/fachada-aberta.png.asset.json";
+import corredorAsset from "@/assets/corredor-principal.png.asset.json";
+import copaAsset from "@/assets/copa-convivencia.png.asset.json";
 
 
 export const presentationContent = {
@@ -56,9 +58,9 @@ export const presentationContent = {
     kicker: "Nova Sede FA",
     scenes: [
       { headline: "Uma nova estrutura para uma nova fase.", label: "Fachada principal", image: fachadaAsset.url },
-      { headline: "Projetado para suportar crescimento.", label: "Corredor principal", image: "/images/sede/corredor.jpg" },
+      { headline: "Projetado para suportar crescimento.", label: "Corredor principal", image: corredorAsset.url },
       { headline: "Mais pessoas. Mais oportunidades. Mais resultados.", label: "Setor comercial", image: "/images/sede/comercial.jpg" },
-      { headline: "Empresas crescem com processos. Pessoas crescem com cultura.", label: "Área de convivência", image: "/images/sede/convivencia.jpg" },
+      { headline: "Empresas crescem com processos. Pessoas crescem com cultura.", label: "Área de convivência", image: copaAsset.url },
       { headline: "Estamos construindo um ecossistema empresarial.", label: "Conjunto da estrutura", image: "/images/sede/conjunto.jpg" },
     ],
     mosaic: [
