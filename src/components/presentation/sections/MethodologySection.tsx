@@ -91,7 +91,7 @@ export function MethodologySection({
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 15 }}
               transition={{ type: "spring", duration: 0.5 }}
-              className="relative w-[90vw] h-[90vh] max-w-[1400px] max-h-[800px] bg-[#050505] border border-white/[0.08] rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.9),_0_0_50px_rgba(245,158,11,0.07)] flex flex-col justify-center items-center p-8 md:p-16 select-none"
+              className="relative w-[96vw] h-[96vh] max-w-[1700px] max-h-[950px] bg-[#050505] border border-white/[0.08] rounded-2xl overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.95),_0_0_60px_rgba(245,158,11,0.08)] flex flex-col justify-center items-center p-8 md:p-16 select-none"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Botão de Fechar */}
@@ -123,7 +123,7 @@ export function MethodologySection({
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.15 }}
-                  className="font-display text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.35em] text-fg-dim uppercase"
+                  className="font-display text-xs sm:text-sm md:text-base font-bold tracking-[0.4em] text-fg-dim uppercase"
                 >
                   Metodologia única e validada
                 </motion.span>
@@ -133,7 +133,7 @@ export function MethodologySection({
                   initial={{ scale: 0.9, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.25, type: "spring" }}
-                  className="font-montserrat text-7xl sm:text-9xl md:text-[13rem] lg:text-[15rem] xl:text-[17rem] font-black tracking-tight leading-none bg-gradient-to-b from-amber-400 via-yellow-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_12px_48px_rgba(245,158,11,0.3)] my-auto select-none"
+                  className="font-montserrat text-8xl sm:text-[11rem] md:text-[15rem] lg:text-[18rem] xl:text-[22rem] font-black tracking-tight leading-none bg-gradient-to-b from-amber-400 via-yellow-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_16px_64px_rgba(245,158,11,0.35)] my-auto select-none"
                 >
                   GVD
                 </motion.h1>
@@ -143,7 +143,7 @@ export function MethodologySection({
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.35 }}
-                  className="flex flex-row justify-around sm:justify-between w-full max-w-3xl px-2 sm:px-6 text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.25em] text-white/70"
+                  className="flex flex-row justify-around sm:justify-between w-full max-w-4xl px-2 sm:px-6 text-xs sm:text-sm md:text-base font-bold tracking-[0.28em] text-white/70"
                 >
                   <span>GERAÇÃO DE DEMANDA</span>
                   <span className="hidden sm:inline text-white/20">|</span>
