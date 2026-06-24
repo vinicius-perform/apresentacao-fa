@@ -5,7 +5,10 @@
 
 import fachadaAsset from "@/assets/fachada-aberta.png.asset.json";
 import corredorAsset from "@/assets/corredor-principal.png.asset.json";
+import comercialAsset from "@/assets/comercial.png.asset.json";
 import areaConvivenciaAsset from "@/assets/area-convivencia.png.asset.json";
+import conjuntoAsset from "@/assets/conjunto-estrutura.jpg.asset.json";
+
 
 
 export const presentationContent = {
@@ -59,9 +62,9 @@ export const presentationContent = {
     scenes: [
       { headline: "Uma nova estrutura para uma nova fase.", label: "Fachada principal", image: fachadaAsset.url },
       { headline: "Projetado para suportar crescimento.", label: "Corredor principal", image: corredorAsset.url },
-      { headline: "Mais pessoas. Mais oportunidades. Mais resultados.", label: "Setor comercial", image: "/images/sede/comercial.jpg" },
+      { headline: "Mais pessoas. Mais oportunidades. Mais resultados.", label: "Setor comercial", image: comercialAsset.url },
       { headline: "Empresas crescem com processos. Pessoas crescem com cultura.", label: "Área de convivência", image: areaConvivenciaAsset.url },
-      { headline: "Estamos construindo um ecossistema empresarial.", label: "Conjunto da estrutura", image: "/images/sede/conjunto.jpg" },
+      { headline: "Estamos construindo um ecossistema empresarial.", label: "Conjunto da estrutura", image: conjuntoAsset.url },
     ],
     mosaic: [
       { label: "Detalhe arquitetônico", image: "/images/sede/mosaico-1.jpg" },
