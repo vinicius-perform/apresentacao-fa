@@ -50,7 +50,9 @@ function Keynote() {
       <HeroSection />
       <WhatIsSection />
       <FutureSection />
+      <NovaSedeSection />
       <ExpansionSection />
+
       <WhySection />
       <GrowthSection />
       <PivotSection />
