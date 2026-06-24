@@ -5,7 +5,10 @@
 
 import fachadaAsset from "@/assets/fachada-aberta.png.asset.json";
 import corredorAsset from "@/assets/corredor-principal.png.asset.json";
+import comercialAsset from "@/assets/comercial.png.asset.json";
 import areaConvivenciaAsset from "@/assets/area-convivencia.png.asset.json";
+import conjuntoAsset from "@/assets/conjunto-estrutura.jpg.asset.json";
+
 
 
 export const presentationContent = {
