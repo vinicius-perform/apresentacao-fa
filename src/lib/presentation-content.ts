@@ -58,6 +58,25 @@ export const presentationContent = {
     videoPlaceholder: "/videos/nova-sede.mp4",
   },
 
+  novaSede: {
+    kicker: "Nova Sede FA",
+    scenes: [
+      { headline: "Uma nova estrutura para uma nova fase.", label: "Fachada principal", image: "/images/sede/fachada.jpg" },
+      { headline: "Projetado para suportar crescimento.", label: "Corredor principal", image: "/images/sede/corredor.jpg" },
+      { headline: "Mais pessoas. Mais oportunidades. Mais resultados.", label: "Setor comercial", image: "/images/sede/comercial.jpg" },
+      { headline: "Empresas crescem com processos. Pessoas crescem com cultura.", label: "Área de convivência", image: "/images/sede/convivencia.jpg" },
+      { headline: "Estamos construindo um ecossistema empresarial.", label: "Conjunto da estrutura", image: "/images/sede/conjunto.jpg" },
+    ],
+    mosaic: [
+      { label: "Detalhe arquitetônico", image: "/images/sede/mosaico-1.jpg" },
+      { label: "Sala de reunião", image: "/images/sede/mosaico-2.jpg" },
+      { label: "Auditório", image: "/images/sede/mosaico-3.jpg" },
+      { label: "Recepção", image: "/images/sede/mosaico-4.jpg" },
+      { label: "Bastidores", image: "/images/sede/mosaico-5.jpg" },
+      { label: "Vista aérea", image: "/images/sede/mosaico-6.jpg" },
+    ],
+  },
+
   expansion: {
     kicker: "02 — Expansão",
     growth: {
