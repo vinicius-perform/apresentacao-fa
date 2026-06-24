@@ -13,7 +13,7 @@ export const presentationContent = {
 
   opening: {
     headline: "Tudo começou com uma pergunta.",
-    sub: "Como construir uma empresa com segurança e previsibilidade?",
+    sub: "Como estruturar um comercial com segurança e previsibilidade?",
     scrollHint: "Role para começar",
   },
 
