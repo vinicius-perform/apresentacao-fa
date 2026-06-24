@@ -31,8 +31,12 @@ function Scene({
   return (
     <section ref={ref} className="relative h-screen w-full overflow-hidden">
       <motion.div style={{ scale, y }} className="absolute inset-0">
-        {/* swap MediaPlaceholder for <img src={image} /> when assets land */}
-        <MediaPlaceholder label={label} className="h-full w-full rounded-none" aspect="" />
+        <img
+          src={image}
+          alt={label}
+          className="h-full w-full object-cover"
+          loading={index === 0 ? "eager" : "lazy"}
+        />
       </motion.div>
 
       <div className="absolute inset-0 bg-gradient-to-b from-bg/70 via-bg/20 to-bg/90" />
