@@ -19,6 +19,8 @@ export const presentationContent = {
   whatIs: {
     kicker: "01 — Metodologia",
     headline: "O que é a Fazendo Acontecer?",
+    description:
+      "A Fazendo Acontecer é uma empresa especializada em acelerar o crescimento de negócios através de uma metodologia própria que integra geração de demanda, vendas e dados. Mais do que executar estratégias, ajudamos empresários a construir operações capazes de crescer com previsibilidade, escala e controle.",
     methodName: "GVD",
     methodFull: "Geração de Demanda · Vendas · Dados",
     pillars: [
