@@ -39,7 +39,7 @@ function Scene({
         />
       </motion.div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-bg/70 via-bg/20 to-bg/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-bg/40 via-bg/10 to-bg/60" />
 
       <motion.div
         style={{ opacity }}
