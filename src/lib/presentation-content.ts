@@ -17,10 +17,38 @@ export const presentationContent = {
   },
 
   whatIs: {
-    kicker: "01 — Origem",
+    kicker: "01 — Metodologia",
     headline: "O que é a Fazendo Acontecer?",
-    body:
-      "A FA nasceu para ajudar empresas a crescer através de marketing, processos, tecnologia, dados e gestão. Um ecossistema que une estratégia e execução, lado a lado com quem empreende.",
+    intro: {
+      line1: "A Fazendo Acontecer não nasceu para ser apenas uma agência, consultoria ou empresa de tecnologia.",
+      line2: "Criamos uma metodologia própria chamada GVD, baseada nos três pilares que sustentam o crescimento de qualquer empresa:",
+    },
+    methodName: "GVD",
+    methodFull: "Geração de Demanda · Vendas · Dados",
+    methodDescription: [
+      "Porque nenhuma empresa cresce sem oportunidades.",
+      "Nenhuma empresa escala sem um processo comercial eficiente.",
+      "E nenhuma empresa evolui sem enxergar seus números com clareza.",
+    ],
+    methodClosing:
+      "É a união desses três pilares que nos permite ajudar empresários a crescer de forma previsível, sustentável e escalável.",
+    pillars: [
+      {
+        letter: "G",
+        title: "Geração de Demanda",
+        desc: "Atrair oportunidades qualificadas para abastecer constantemente o comercial.",
+      },
+      {
+        letter: "V",
+        title: "Vendas",
+        desc: "Transformar interesse em faturamento através de processos, acompanhamento e execução.",
+      },
+      {
+        letter: "D",
+        title: "Dados",
+        desc: "Tomar decisões baseadas em indicadores reais, não em achismos.",
+      },
+    ],
     timeline: [
       { year: "2017", label: "Fundação" },
       { year: "2019", label: "Primeiros 10 colaboradores" },
