@@ -240,7 +240,7 @@ export const presentationContent = {
     kicker: "A engrenagem do sucesso",
     headline: "O responsável por esse crescimento previsível foi a metodologia GVD",
     buttonText: "Apresentação da Metodologia",
-    buttonUrl: "https://dotsales.com.br", // Substitua por sua URL externa quando necessário
+    buttonUrl: "https://www.canva.com/design/DAHCt6shKTg/dpgZSGjxAhLV9Qfq1qTTpA/edit",
   },
 } as const;
 
