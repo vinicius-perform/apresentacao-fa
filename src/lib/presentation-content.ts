@@ -3,6 +3,9 @@
  * Edite os textos aqui — toda a experiência consome este arquivo.
  */
 
+import fachadaAsset from "@/assets/fachada-aberta.png.asset.json";
+
+
 export const presentationContent = {
   brand: {
     fa: "FA",
