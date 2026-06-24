@@ -11,7 +11,7 @@ import { NovaSedeSection } from "@/components/presentation/sections/NovaSedeSect
 import { AndarSuperiorSection } from "@/components/presentation/sections/AndarSuperiorSection";
 import { ExpansionSection } from "@/components/presentation/sections/ExpansionSection";
 import { PivotSection } from "@/components/presentation/sections/PivotSection";
-import { SecretSection } from "@/components/presentation/sections/SecretSection";
+import { AllocatorsSection } from "@/components/presentation/sections/AllocatorsSection";
 import { MethodologySection } from "@/components/presentation/sections/MethodologySection";
 
 export const Route = createFileRoute("/")({
@@ -62,7 +62,7 @@ function Keynote() {
       <AndarSuperiorSection />
       <ExpansionSection />
       <PivotSection />
-      <SecretSection />
+      <AllocatorsSection />
       <MethodologySection containerRef={methodologyRef} scrollYProgress={scrollYProgress} />
     </motion.main>
   );
