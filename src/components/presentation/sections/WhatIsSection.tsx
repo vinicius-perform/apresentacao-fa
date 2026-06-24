@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 export function WhatIsSection() {
   const c = presentationContent.whatIs;
   return (
-    <Section id="metodologia-gvd">
+    <Section id="metodologia-gvd" className="min-h-fit pb-8 md:pb-12">
       <div className="relative z-10 w-full max-w-7xl mx-auto">
         <div className="space-y-16 md:space-y-20">
           <div className="max-w-3xl">

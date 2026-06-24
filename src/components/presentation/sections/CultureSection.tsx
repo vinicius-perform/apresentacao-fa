@@ -6,7 +6,7 @@ export function CultureSection() {
   const c = presentationContent.culture;
 
   return (
-    <Section id="cultura-identidade" className="relative overflow-hidden">
+    <Section id="cultura-identidade" className="relative overflow-hidden min-h-fit pt-2 pb-24 md:pt-4 md:pb-32">
       {/* Luz de fundo decorativa dourada/âmbar sutil */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[500px] md:h-[500px] rounded-full bg-amber-500/5 blur-[120px] pointer-events-none z-0" />
       <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
