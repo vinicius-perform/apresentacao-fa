@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 export function WhatIsSection() {
   const c = presentationContent.whatIs;
   return (
-    <Section>
+    <Section id="metodologia-gvd">
       <div className="relative z-10 w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
           {/* Left column: narrative + timeline */}
