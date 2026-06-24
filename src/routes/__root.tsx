@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#000000" },
-      { title: "FA × DotSales — Keynote" },
+      { title: "FA Apresentação" },
       {
         name: "description",
         content:
@@ -86,6 +86,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "FA Apresentação" },
+      { name: "twitter:title", content: "FA Apresentação" },
+      { name: "description", content: "A premium, fullscreen web application that tells the story of FA's growth and introduces DotSales." },
+      { property: "og:description", content: "A premium, fullscreen web application that tells the story of FA's growth and introduces DotSales." },
+      { name: "twitter:description", content: "A premium, fullscreen web application that tells the story of FA's growth and introduces DotSales." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1532ea37-4d43-4ed1-935d-6960f0b8c3a8/id-preview-8728f07d--129462f0-6fbe-4ad1-8b5e-9898e8bf8a7e.lovable.app-1782266096600.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1532ea37-4d43-4ed1-935d-6960f0b8c3a8/id-preview-8728f07d--129462f0-6fbe-4ad1-8b5e-9898e8bf8a7e.lovable.app-1782266096600.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
