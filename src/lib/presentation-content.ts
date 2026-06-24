@@ -55,7 +55,7 @@ export const presentationContent = {
   novaSede: {
     kicker: "Nova Sede FA",
     scenes: [
-      { headline: "Uma nova estrutura para uma nova fase.", label: "Fachada principal", image: "/images/sede/fachada.jpg" },
+      { headline: "Uma nova estrutura para uma nova fase.", label: "Fachada principal", image: fachadaAsset.url },
       { headline: "Projetado para suportar crescimento.", label: "Corredor principal", image: "/images/sede/corredor.jpg" },
       { headline: "Mais pessoas. Mais oportunidades. Mais resultados.", label: "Setor comercial", image: "/images/sede/comercial.jpg" },
       { headline: "Empresas crescem com processos. Pessoas crescem com cultura.", label: "Área de convivência", image: "/images/sede/convivencia.jpg" },
