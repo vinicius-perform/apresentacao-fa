@@ -109,8 +109,8 @@ export const presentationContent = {
   expansion: {
     kicker: "02 — Expansão",
     growth: {
-      from: 60,
-      to: 150,
+      from: 65,
+      to: 120,
       label: "colaboradores",
     },
     title: "EXPANSÃO\nDA EMPRESA",

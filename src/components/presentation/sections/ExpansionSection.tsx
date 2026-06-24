@@ -52,13 +52,7 @@ export function ExpansionSection() {
                   {c.growth.label}
                 </span>
               </div>
-              
-              {/* Operation capacity details */}
-              <div className="flex items-center gap-3 text-xs md:text-sm uppercase tracking-[0.35em] text-fg-dim mt-8 justify-center w-full">
-                <span className="h-px w-12 bg-line" />
-                <span>+150% de capacidade operacional</span>
-                <span className="h-px w-12 bg-line" />
-              </div>
+
             </div>
           </Reveal>
         </div>
