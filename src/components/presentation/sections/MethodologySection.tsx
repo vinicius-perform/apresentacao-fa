@@ -338,34 +338,35 @@ export function MethodologySection({
   <div className="w-full flex-grow flex items-center justify-center relative pb-16">
     {/* Versão Mobile (Vertical Simplificada) */}
     <div className="flex md:hidden flex-col w-full h-[60vh] overflow-y-auto space-y-6 px-2 pb-16 no-scrollbar">
-      <div className="w-full bg-zinc-950/90 border border-amber-500/40 rounded-2xl py-3.5 text-center shadow-lg shadow-amber-500/5">
-        <span className="font-montserrat text-xs sm:text-sm font-bold text-white uppercase tracking-[0.2em]">Vendas</span>
+      <div className="w-full bg-[#0a0a0a]/90 border border-amber-500/30 rounded-2xl py-3.5 text-center shadow-lg shadow-amber-500/10">
+        <span className="font-montserrat text-xs sm:text-sm font-bold text-amber-500 uppercase tracking-[0.2em]">Vendas</span>
       </div>
 
       {/* Coluna 1: Estruturação do CRM */}
-      <div className="bg-gradient-to-b from-neutral-900/90 to-zinc-950/95 border border-white/[0.06] border-t-white/20 rounded-2xl p-5 shadow-xl backdrop-blur-md flex flex-col items-center">
-        <div className="w-full bg-gradient-to-r from-amber-500/10 via-amber-500/20 to-amber-500/10 border border-amber-500/30 rounded-xl py-2.5 px-4 text-center mb-4 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
-          <h3 className="text-xs font-bold bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent uppercase tracking-widest">Estruturação do CRM</h3>
+      <div className="bg-gradient-to-b from-neutral-900/80 to-zinc-950/90 border border-white/[0.06] border-t-white/10 rounded-2xl p-5 shadow-xl backdrop-blur-md flex flex-col items-center">
+        <div className="w-full bg-[#0a0a0a]/95 border border-amber-500/20 rounded-xl py-2.5 px-4 text-center mb-4 shadow-md">
+          <h3 className="text-xs font-bold text-amber-500 uppercase tracking-widest">Estruturação do CRM</h3>
         </div>
-        <div className="w-full rounded-lg overflow-hidden border border-white/[0.08] bg-black/40 aspect-[16/10] mb-3">
-          <img src={crmFunil} alt="DotSales Pipeline" className="w-full h-full object-cover" />
+        <div className="w-full rounded-xl overflow-hidden border border-white/[0.08] bg-black/40 aspect-[16/10] mb-4 shadow-inner">
+          <img src={crmFunil} alt="DotSales Pipeline" className="w-full h-full object-cover opacity-90" />
         </div>
         <a 
           href="https://sales.dottech.ai/dashboard/pipeline/funil?id=71479906-111c-462c-af1d-69e76009057b"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs font-bold text-blue-400 hover:text-blue-300 underline tracking-wide uppercase mt-1 cursor-pointer"
+          className="w-full flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 text-xs font-black text-blue-400 hover:text-blue-300 tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-md shadow-blue-500/5 hover:shadow-blue-500/15"
         >
           CRM na Prática
+          <ArrowUpRight className="w-4 h-4" />
         </a>
       </div>
 
       {/* Coluna 2: Playbook de Vendas */}
-      <div className="bg-gradient-to-b from-white to-zinc-200 rounded-2xl p-5 shadow-xl">
-        <div className="bg-zinc-950 border border-amber-500/40 rounded-xl py-2.5 px-4 text-center mb-4 shadow-md">
-          <h3 className="text-xs font-bold text-white uppercase tracking-widest">Playbook de Vendas</h3>
+      <div className="bg-gradient-to-b from-neutral-900/80 to-zinc-950/90 border border-white/[0.06] border-t-white/10 rounded-2xl p-5 shadow-xl backdrop-blur-md">
+        <div className="w-full bg-[#0a0a0a]/95 border border-amber-500/20 rounded-xl py-2.5 px-4 text-center mb-4 shadow-md">
+          <h3 className="text-xs font-bold text-amber-500 uppercase tracking-widest">Playbook de Vendas</h3>
         </div>
-        <div className="grid grid-cols-1 gap-1.5 text-xs text-zinc-800">
+        <div className="grid grid-cols-1 gap-2.5 text-xs text-zinc-300">
           {[
             "MÉTODOS DE VENDAS",
             "SCRIPTS DE VENDAS",
@@ -373,20 +374,19 @@ export function MethodologySection({
             "GATILHOS MENTAIS",
             "NÍVEIS DE CONSCIÊNCIA"
           ].map(item => (
-            <div key={item} className="flex items-center gap-2.5 py-2 px-3.5 rounded-xl bg-black/[0.03] border border-black/[0.05] border-l-2 border-l-neutral-900">
-              <span className="w-1.5 h-1.5 rounded-full bg-neutral-900" />
-              <span className="font-sans text-[10px] tracking-wide font-extrabold uppercase">{item}</span>
+            <div key={item} className="flex items-center gap-2.5 py-2.5 px-3.5 rounded-xl bg-white/[0.02] border border-white/[0.04] border-l-2 border-l-amber-500/80 hover:bg-white/[0.04] hover:border-l-amber-400 transition-all duration-300">
+              <span className="font-sans text-[10px] tracking-widest text-zinc-200 font-extrabold uppercase">{item}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* Coluna 3: Rotinas */}
-      <div className="bg-gradient-to-b from-white to-zinc-200 rounded-2xl p-5 shadow-xl">
-        <div className="bg-zinc-950 border border-amber-500/40 rounded-xl py-2.5 px-4 text-center mb-4 shadow-md">
-          <h3 className="text-xs font-bold text-white uppercase tracking-widest">Rotinas</h3>
+      <div className="bg-gradient-to-b from-neutral-900/80 to-zinc-950/90 border border-white/[0.06] border-t-white/10 rounded-2xl p-5 shadow-xl backdrop-blur-md">
+        <div className="w-full bg-[#0a0a0a]/95 border border-amber-500/20 rounded-xl py-2.5 px-4 text-center mb-4 shadow-md">
+          <h3 className="text-xs font-bold text-amber-500 uppercase tracking-widest">Rotinas</h3>
         </div>
-        <div className="grid grid-cols-1 gap-1.5 text-xs text-zinc-800">
+        <div className="grid grid-cols-1 gap-2.5 text-xs text-zinc-300">
           {[
             "DAILY",
             "WEEKLY",
@@ -395,30 +395,28 @@ export function MethodologySection({
             "ONE A ONE",
             "ROLE PLAY"
           ].map(item => (
-            <div key={item} className="flex items-center gap-2.5 py-2 px-3.5 rounded-xl bg-black/[0.03] border border-black/[0.05] border-l-2 border-l-neutral-900">
-              <span className="w-1.5 h-1.5 rounded-full bg-neutral-900" />
-              <span className="font-sans text-[10px] tracking-wide font-extrabold uppercase">{item}</span>
+            <div key={item} className="flex items-center gap-2.5 py-2.5 px-3.5 rounded-xl bg-white/[0.02] border border-white/[0.04] border-l-2 border-l-amber-500/80 hover:bg-white/[0.04] hover:border-l-amber-400 transition-all duration-300">
+              <span className="font-sans text-[10px] tracking-widest text-zinc-200 font-extrabold uppercase">{item}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* Coluna 4: Rituais */}
-      <div className="bg-gradient-to-b from-white to-zinc-200 rounded-2xl p-5 shadow-xl">
-        <div className="bg-zinc-950 border border-amber-500/40 rounded-xl py-2.5 px-4 text-center mb-4 shadow-md">
-          <h3 className="text-xs font-bold text-white uppercase tracking-widest">Rituais</h3>
+      <div className="bg-gradient-to-b from-neutral-900/80 to-zinc-950/90 border border-white/[0.06] border-t-white/10 rounded-2xl p-5 shadow-xl backdrop-blur-md">
+        <div className="w-full bg-[#0a0a0a]/95 border border-amber-500/20 rounded-xl py-2.5 px-4 text-center mb-4 shadow-md">
+          <h3 className="text-xs font-bold text-amber-500 uppercase tracking-widest">Rituais</h3>
         </div>
-        <div className="grid grid-cols-1 gap-1.5 text-xs text-zinc-800">
+        <div className="grid grid-cols-1 gap-2.5 text-xs text-zinc-300">
           {[
             "BOLA DE OURO",
             "NOVA RÉGUA",
             "BANDEIRAS",
             "SINO",
-            "GRITO DE GUERRA"
+            "GRITO DE GERRA"
           ].map(item => (
-            <div key={item} className="flex items-center gap-2.5 py-2 px-3.5 rounded-xl bg-black/[0.03] border border-black/[0.05] border-l-2 border-l-neutral-900">
-              <span className="w-1.5 h-1.5 rounded-full bg-neutral-900" />
-              <span className="font-sans text-[10px] tracking-wide font-extrabold uppercase">{item}</span>
+            <div key={item} className="flex items-center gap-2.5 py-2.5 px-3.5 rounded-xl bg-white/[0.02] border border-white/[0.04] border-l-2 border-l-amber-500/80 hover:bg-white/[0.04] hover:border-l-amber-400 transition-all duration-300">
+              <span className="font-sans text-[10px] tracking-widest text-zinc-200 font-extrabold uppercase">{item}</span>
             </div>
           ))}
         </div>
@@ -486,8 +484,8 @@ export function MethodologySection({
         {/* Coluna 1: Estruturação do CRM */}
         <foreignObject x="35" y="100" width="210" height="45">
           <div className="w-full h-full flex items-center justify-center p-1 select-none text-center">
-            <div className="w-[195px] h-[36px] flex items-center justify-center rounded-lg bg-zinc-950 border border-amber-500/40 shadow-md">
-              <span className="font-display text-[9px] md:text-[10px] font-black text-white tracking-wider uppercase leading-tight">
+            <div className="w-[195px] h-[36px] flex items-center justify-center rounded-lg bg-[#0a0a0a]/90 border border-amber-500/20 shadow-md shadow-amber-500/2 hover:border-amber-500/50 transition-colors duration-300">
+              <span className="font-display text-[9px] md:text-[10px] font-black text-amber-500 tracking-widest uppercase leading-tight">
                 ESTRUTURAÇÃO DO CRM
               </span>
             </div>
@@ -495,18 +493,19 @@ export function MethodologySection({
         </foreignObject>
         <foreignObject x="35" y="150" width="210" height="290">
           <div className="w-full h-full flex flex-col items-center justify-start p-2">
-            <div className="w-[195px] h-[270px] flex flex-col items-center justify-start rounded-2xl bg-gradient-to-b from-neutral-950/70 to-zinc-950/90 border border-white/[0.06] p-3 shadow-2xl relative overflow-hidden group hover:border-amber-500/20 transition-all duration-300">
-              <div className="w-full rounded-lg overflow-hidden border border-white/[0.08] bg-black/40 aspect-[16/10] mb-4">
-                <img src={crmFunil} alt="DotSales Pipeline" className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-all duration-500" />
+            <div className="w-[195px] h-[270px] flex flex-col items-center justify-between rounded-2xl bg-gradient-to-b from-neutral-900/80 to-zinc-950/90 border border-white/[0.06] border-t-white/10 p-3.5 shadow-2xl relative overflow-hidden group hover:border-amber-500/30 transition-all duration-300">
+              <div className="w-full rounded-xl overflow-hidden border border-white/[0.08] bg-black/40 aspect-[16/10] shadow-inner">
+                <img src={crmFunil} alt="DotSales Pipeline" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
               </div>
-              <div className="mt-auto mb-4 text-center">
+              <div className="w-full mt-2.5">
                 <a 
                   href="https://sales.dottech.ai/dashboard/pipeline/funil?id=71479906-111c-462c-af1d-69e76009057b"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-[11px] font-black text-blue-400 hover:text-blue-300 underline tracking-wide uppercase transition-colors"
+                  className="w-full flex items-center justify-center gap-1.5 py-2 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 text-[10px] font-black text-blue-400 hover:text-blue-300 tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-lg shadow-blue-500/5 hover:shadow-blue-500/15"
                 >
                   CRM na Prática
+                  <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </div>
             </div>
@@ -516,8 +515,8 @@ export function MethodologySection({
         {/* Coluna 2: Playbook de Vendas */}
         <foreignObject x="275" y="100" width="210" height="45">
           <div className="w-full h-full flex items-center justify-center p-1 select-none text-center">
-            <div className="w-[195px] h-[36px] flex items-center justify-center rounded-lg bg-zinc-950 border border-amber-500/40 shadow-md">
-              <span className="font-display text-[9px] md:text-[10px] font-black text-white tracking-wider uppercase leading-tight">
+            <div className="w-[195px] h-[36px] flex items-center justify-center rounded-lg bg-[#0a0a0a]/90 border border-amber-500/20 shadow-md shadow-amber-500/2 hover:border-amber-500/50 transition-colors duration-300">
+              <span className="font-display text-[9px] md:text-[10px] font-black text-amber-500 tracking-widest uppercase leading-tight">
                 PLAYBOOK DE VENDAS
               </span>
             </div>
@@ -525,8 +524,8 @@ export function MethodologySection({
         </foreignObject>
         <foreignObject x="275" y="150" width="210" height="290">
           <div className="w-full h-full flex flex-col items-center justify-start p-2 select-none">
-            <div className="w-[195px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-white to-zinc-100 p-4 shadow-2xl text-zinc-900 border border-zinc-200/80 hover:scale-[1.01] transition-transform duration-300">
-              <div className="flex flex-col gap-3 w-full">
+            <div className="w-[195px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-900/80 to-zinc-950/90 border border-white/[0.06] border-t-white/10 p-4 shadow-2xl relative overflow-hidden group hover:border-amber-500/30 transition-all duration-300">
+              <div className="flex flex-col gap-2.5 w-full">
                 {[
                   "MÉTODOS DE VENDAS",
                   "SCRIPTS DE VENDAS",
@@ -534,9 +533,8 @@ export function MethodologySection({
                   "GATILHOS MENTAIS",
                   "NÍVEIS DE CONSCIÊNCIA"
                 ].map(item => (
-                  <div key={item} className="flex items-start gap-2.5 py-1 px-1 text-left group/item">
-                    <span className="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5 flex-shrink-0" />
-                    <span className="font-sans text-[9px] md:text-[10px] tracking-wide text-neutral-800 font-extrabold uppercase leading-tight">{item}</span>
+                  <div key={item} className="flex items-center gap-2.5 py-1.5 px-2.5 rounded-xl bg-white/[0.02] border border-white/[0.04] border-l-2 border-l-amber-500/80 hover:bg-white/[0.04] hover:border-l-amber-400 transition-all duration-300 text-left">
+                    <span className="font-sans text-[8.5px] md:text-[9.5px] tracking-widest text-zinc-300 font-extrabold uppercase leading-tight">{item}</span>
                   </div>
                 ))}
               </div>
@@ -547,8 +545,8 @@ export function MethodologySection({
         {/* Coluna 3: Rotinas */}
         <foreignObject x="515" y="100" width="210" height="45">
           <div className="w-full h-full flex items-center justify-center p-1 select-none text-center">
-            <div className="w-[195px] h-[36px] flex items-center justify-center rounded-lg bg-zinc-950 border border-amber-500/40 shadow-md">
-              <span className="font-display text-[9px] md:text-[10px] font-black text-white tracking-wider uppercase leading-tight">
+            <div className="w-[195px] h-[36px] flex items-center justify-center rounded-lg bg-[#0a0a0a]/90 border border-amber-500/20 shadow-md shadow-amber-500/2 hover:border-amber-500/50 transition-colors duration-300">
+              <span className="font-display text-[9px] md:text-[10px] font-black text-amber-500 tracking-widest uppercase leading-tight">
                 ROTINAS
               </span>
             </div>
@@ -556,8 +554,8 @@ export function MethodologySection({
         </foreignObject>
         <foreignObject x="515" y="150" width="210" height="290">
           <div className="w-full h-full flex flex-col items-center justify-start p-2 select-none">
-            <div className="w-[195px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-white to-zinc-100 p-4 shadow-2xl text-zinc-900 border border-zinc-200/80 hover:scale-[1.01] transition-transform duration-300">
-              <div className="flex flex-col gap-2.5 w-full">
+            <div className="w-[195px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-900/80 to-zinc-950/90 border border-white/[0.06] border-t-white/10 p-4 shadow-2xl relative overflow-hidden group hover:border-amber-500/30 transition-all duration-300">
+              <div className="flex flex-col gap-2 w-full">
                 {[
                   "DAILY",
                   "WEEKLY",
@@ -566,9 +564,8 @@ export function MethodologySection({
                   "ONE A ONE",
                   "ROLE PLAY"
                 ].map(item => (
-                  <div key={item} className="flex items-start gap-2.5 py-0.5 px-1 text-left group/item">
-                    <span className="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5 flex-shrink-0" />
-                    <span className="font-sans text-[9px] md:text-[10px] tracking-wide text-neutral-800 font-extrabold uppercase leading-tight">{item}</span>
+                  <div key={item} className="flex items-center gap-2.5 py-1 px-2.5 rounded-xl bg-white/[0.02] border border-white/[0.04] border-l-2 border-l-amber-500/80 hover:bg-white/[0.04] hover:border-l-amber-400 transition-all duration-300 text-left">
+                    <span className="font-sans text-[8.5px] md:text-[9.5px] tracking-widest text-zinc-300 font-extrabold uppercase leading-tight">{item}</span>
                   </div>
                 ))}
               </div>
@@ -579,8 +576,8 @@ export function MethodologySection({
         {/* Coluna 4: Rituais */}
         <foreignObject x="755" y="100" width="210" height="45">
           <div className="w-full h-full flex items-center justify-center p-1 select-none text-center">
-            <div className="w-[195px] h-[36px] flex items-center justify-center rounded-lg bg-zinc-950 border border-amber-500/40 shadow-md">
-              <span className="font-display text-[9px] md:text-[10px] font-black text-white tracking-wider uppercase leading-tight">
+            <div className="w-[195px] h-[36px] flex items-center justify-center rounded-lg bg-[#0a0a0a]/90 border border-amber-500/20 shadow-md shadow-amber-500/2 hover:border-amber-500/50 transition-colors duration-300">
+              <span className="font-display text-[9px] md:text-[10px] font-black text-amber-500 tracking-widest uppercase leading-tight">
                 RITUAIS
               </span>
             </div>
@@ -588,8 +585,8 @@ export function MethodologySection({
         </foreignObject>
         <foreignObject x="755" y="150" width="210" height="290">
           <div className="w-full h-full flex flex-col items-center justify-start p-2 select-none">
-            <div className="w-[195px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-white to-zinc-100 p-4 shadow-2xl text-zinc-900 border border-zinc-200/80 hover:scale-[1.01] transition-transform duration-300">
-              <div className="flex flex-col gap-3 w-full">
+            <div className="w-[195px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-900/80 to-zinc-950/90 border border-white/[0.06] border-t-white/10 p-4 shadow-2xl relative overflow-hidden group hover:border-amber-500/30 transition-all duration-300">
+              <div className="flex flex-col gap-2.5 w-full">
                 {[
                   "BOLA DE OURO",
                   "NOVA RÉGUA",
@@ -597,9 +594,8 @@ export function MethodologySection({
                   "SINO",
                   "GRITO DE GUERRA"
                 ].map(item => (
-                  <div key={item} className="flex items-start gap-2.5 py-1 px-1 text-left group/item">
-                    <span className="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5 flex-shrink-0" />
-                    <span className="font-sans text-[9px] md:text-[10px] tracking-wide text-neutral-800 font-extrabold uppercase leading-tight">{item}</span>
+                  <div key={item} className="flex items-center gap-2.5 py-1.5 px-2.5 rounded-xl bg-white/[0.02] border border-white/[0.04] border-l-2 border-l-amber-500/80 hover:bg-white/[0.04] hover:border-l-amber-400 transition-all duration-300 text-left">
+                    <span className="font-sans text-[8.5px] md:text-[9.5px] tracking-widest text-zinc-300 font-extrabold uppercase leading-tight">{item}</span>
                   </div>
                 ))}
               </div>
