@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { Reveal, Section } from "../primitives";
-import { Percent } from "lucide-react";
+import { Percent, Sparkles } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 
 export function DiscountRevealSection() {
+  const [showDiscount, setShowDiscount] = useState(false);
+
   return (
     <Section 
       className="relative w-full min-h-screen py-20 md:py-28 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white border-t border-white/[0.03]"
@@ -51,33 +55,61 @@ export function DiscountRevealSection() {
           </h2>
         </Reveal>
 
-        {/* Revelação do Preço */}
-        <Reveal delay={0.4}>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mt-4 select-none">
-            {/* Valor Anterior Cortado */}
-            <div className="relative py-2 px-4">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-mono font-bold text-zinc-500">
-                R$ 19.954,00
-              </span>
-              <div className="absolute top-1/2 left-0 w-full h-[3px] bg-red-600/80 -rotate-6 shadow-[0_0_8px_rgba(220,38,38,0.5)]" />
-            </div>
+        {/* Botão de Revelar ou os Preços Revelados */}
+        <AnimatePresence mode="wait">
+          {!showDiscount ? (
+            <motion.div
+              key="reveal-button"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.4 }}
+              className="mt-6 select-none"
+            >
+              <button
+                onClick={() => setShowDiscount(true)}
+                className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-black font-sans text-xs sm:text-sm font-black uppercase tracking-[0.25em] py-5 px-10 rounded-full border border-amber-400/20 shadow-[0_15px_30px_rgba(245,158,11,0.15)] hover:shadow-[0_20px_40px_rgba(245,158,11,0.3)] transition-all duration-300 hover:scale-105 active:scale-95"
+              >
+                {/* Glow de fundo pulsando */}
+                <span className="absolute inset-0 rounded-full bg-amber-500/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-black" />
+                <span>Revelar Condição Especial</span>
+              </button>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="discount-prices"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mt-4 select-none w-full"
+            >
+              {/* Valor Anterior Cortado */}
+              <div className="relative py-2 px-4">
+                <span className="text-2xl sm:text-3xl md:text-4xl font-mono font-bold text-zinc-500 whitespace-nowrap">
+                  R$ 19.954,00
+                </span>
+                <div className="absolute top-1/2 left-0 w-full h-[3px] bg-red-600/80 -rotate-6 shadow-[0_0_8px_rgba(220,38,38,0.5)]" />
+              </div>
 
-            {/* Seta/Transição sutil */}
-            <div className="text-amber-500/40 text-xl md:text-2xl font-bold hidden md:block">➔</div>
-            <div className="text-amber-500/40 text-xl md:text-2xl font-bold md:hidden">▼</div>
+              {/* Seta/Transição sutil */}
+              <div className="text-amber-500/40 text-xl md:text-2xl font-bold hidden md:block">➔</div>
+              <div className="text-amber-500/40 text-xl md:text-2xl font-bold md:hidden">▼</div>
 
-            {/* Novo Valor com Desconto */}
-            <div className="bg-gradient-to-b from-neutral-900/80 to-zinc-950/95 border-2 border-amber-500/30 rounded-[2.5rem] py-6 px-10 md:py-8 md:px-12 shadow-[0_25px_60px_rgba(245,158,11,0.2)] relative overflow-hidden group">
-              <div className="absolute top-0 left-0 w-full h-[3.5px] bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-600" />
-              <span className="text-[10px] sm:text-xs font-mono text-amber-500/90 uppercase tracking-[0.3em] mb-1 block">
-                VALOR COM 50% DE DESCONTO
-              </span>
-              <span className="font-display text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 bg-clip-text text-transparent uppercase tracking-wider block">
-                R$ 9.977,00
-              </span>
-            </div>
-          </div>
-        </Reveal>
+              {/* Novo Valor com Desconto */}
+              <div className="bg-gradient-to-b from-neutral-900/80 to-zinc-950/95 border-2 border-amber-500/30 rounded-[2.5rem] py-6 px-10 md:py-8 md:px-12 shadow-[0_25px_60px_rgba(245,158,11,0.2)] relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-full h-[3.5px] bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-600" />
+                <span className="text-[10px] sm:text-xs font-mono text-amber-500/90 uppercase tracking-[0.3em] mb-1 block">
+                  VALOR COM 50% DE DESCONTO
+                </span>
+                <span className="font-display text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 bg-clip-text text-transparent uppercase tracking-wider block whitespace-nowrap">
+                  R$ 9.977,00
+                </span>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
       </div>
     </Section>
