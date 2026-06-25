@@ -678,14 +678,7 @@ export function MethodologySection({
                     {/* Very subtle architectural grid background */}
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
-                    {/* Header Top Left */}
-                    <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
-                      <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-500 uppercase mb-0.5">Cérebro Comercial</span>
-                      <h2 className="text-lg sm:text-xl font-bold text-white uppercase tracking-widest flex items-center">
-                        <span>dot</span>
-                        <span className="text-amber-500">.Sales</span>
-                      </h2>
-                    </div>
+
 
                     <div className="w-full max-w-6xl px-8 relative z-10 flex flex-col items-center justify-center min-h-[60vh] mt-12">
                       {/* Main Headline */}
@@ -735,12 +728,7 @@ export function MethodologySection({
         <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#050505]">
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
-                    <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
-                      <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-500 uppercase mb-0.5">Cérebro Comercial</span>
-                      <h2 className="text-lg sm:text-xl font-bold text-white uppercase tracking-widest flex items-center">
-                        <span>dot</span><span className="text-amber-500">.Sales</span>
-                      </h2>
-                    </div>
+
 
                     <div className="w-full max-w-6xl px-8 relative z-10 flex flex-col items-start justify-center min-h-[60vh] mt-12 text-left">
                       <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white mb-4 max-w-5xl">
@@ -812,12 +800,7 @@ export function MethodologySection({
         <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#050505]">
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
-                    <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
-                      <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-500 uppercase mb-0.5">Cérebro Comercial</span>
-                      <h2 className="text-lg sm:text-xl font-bold text-white uppercase tracking-widest flex items-center">
-                        <span>dot</span><span className="text-amber-500">.Sales</span>
-                      </h2>
-                    </div>
+
 
                     <div className="w-full max-w-6xl px-8 relative z-10 flex flex-col items-start justify-center min-h-[60vh] mt-12 text-left">
                       <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white mb-4 max-w-5xl">
@@ -883,12 +866,7 @@ export function MethodologySection({
         <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#050505]">
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
-                    <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
-                      <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-500 uppercase mb-0.5">Cérebro Comercial</span>
-                      <h2 className="text-lg sm:text-xl font-bold text-white uppercase tracking-widest flex items-center">
-                        <span>dot</span><span className="text-amber-500">.Sales</span>
-                      </h2>
-                    </div>
+
 
                     <div className="w-full max-w-6xl px-8 relative z-10 flex flex-col items-start justify-center min-h-[60vh] mt-12 text-left">
                       <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight leading-[1.1] text-white mb-4 max-w-5xl">
@@ -971,13 +949,7 @@ export function MethodologySection({
           {/* Subtle architectural grid background */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
-          {/* Header Top Left */}
-          <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
-            <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-500 uppercase mb-0.5">Cérebro Comercial</span>
-            <h2 className="text-lg sm:text-xl font-bold text-white uppercase tracking-widest flex items-center">
-              <span>dot</span><span className="text-amber-500">.Sales</span>
-            </h2>
-          </div>
+
 
           <div className="w-full max-w-5xl px-8 relative z-10 flex flex-col items-center justify-center min-h-[60vh] text-center">
             {/* Logo Gigante sutil */}
