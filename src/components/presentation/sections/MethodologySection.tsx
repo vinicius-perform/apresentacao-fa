@@ -319,7 +319,7 @@ export function MethodologySection({
                   </div></motion.section>
 
                 {/* Slide 3: Vendas */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-[90vw] mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
   <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
   <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
 
@@ -424,7 +424,7 @@ export function MethodologySection({
     </div>
 
     {/* Versão Desktop */}
-    <div className="hidden md:block w-full max-w-5xl mx-auto aspect-[10/4.5] h-auto mt-4">
+    <div className="hidden md:block w-full max-w-full mx-auto aspect-[10/4.5] h-auto mt-4">
       <svg className="w-full h-full" viewBox="0 0 1000 450" fill="none">
         <style>{`
           @keyframes flow-pulse-v {
