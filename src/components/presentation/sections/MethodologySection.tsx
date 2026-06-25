@@ -318,7 +318,7 @@ export function MethodologySection({
                     </div>
                   </div></motion.section>
 
-        {/* Slide 3: Vendas */}
+                {/* Slide 3: Vendas */}
         <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
   <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
   <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
@@ -342,12 +342,30 @@ export function MethodologySection({
         <span className="font-montserrat text-xs sm:text-sm font-bold text-white uppercase tracking-[0.2em]">Vendas</span>
       </div>
 
-      {/* Coluna 1: Playbook de Vendas */}
-      <div className="bg-gradient-to-b from-neutral-900/90 to-zinc-950/95 border border-white/[0.06] border-t-white/20 rounded-2xl p-5 shadow-xl backdrop-blur-md">
-        <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/20 to-amber-500/10 border border-amber-500/30 rounded-xl py-2.5 px-4 text-center mb-4 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
-          <h3 className="text-xs font-bold bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent uppercase tracking-widest">Playbook de Vendas</h3>
+      {/* Coluna 1: Estruturação do CRM */}
+      <div className="bg-gradient-to-b from-neutral-900/90 to-zinc-950/95 border border-white/[0.06] border-t-white/20 rounded-2xl p-5 shadow-xl backdrop-blur-md flex flex-col items-center">
+        <div className="w-full bg-gradient-to-r from-amber-500/10 via-amber-500/20 to-amber-500/10 border border-amber-500/30 rounded-xl py-2.5 px-4 text-center mb-4 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
+          <h3 className="text-xs font-bold bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent uppercase tracking-widest">Estruturação do CRM</h3>
         </div>
-        <div className="grid grid-cols-1 gap-1.5 text-xs">
+        <div className="w-full rounded-lg overflow-hidden border border-white/[0.08] bg-black/40 aspect-[16/10] mb-3">
+          <img src={crmFunil} alt="DotSales Pipeline" className="w-full h-full object-cover" />
+        </div>
+        <a 
+          href="https://sales.dottech.ai/dashboard/pipeline/funil?id=71479906-111c-462c-af1d-69e76009057b"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs font-bold text-blue-400 hover:text-blue-300 underline tracking-wide uppercase mt-1 cursor-pointer"
+        >
+          CRM na Prática
+        </a>
+      </div>
+
+      {/* Coluna 2: Playbook de Vendas */}
+      <div className="bg-gradient-to-b from-white to-zinc-200 rounded-2xl p-5 shadow-xl">
+        <div className="bg-zinc-950 border border-amber-500/40 rounded-xl py-2.5 px-4 text-center mb-4 shadow-md">
+          <h3 className="text-xs font-bold text-white uppercase tracking-widest">Playbook de Vendas</h3>
+        </div>
+        <div className="grid grid-cols-1 gap-1.5 text-xs text-zinc-800">
           {[
             "MÉTODOS DE VENDAS",
             "SCRIPTS DE VENDAS",
@@ -355,53 +373,52 @@ export function MethodologySection({
             "GATILHOS MENTAIS",
             "NÍVEIS DE CONSCIÊNCIA"
           ].map(item => (
-            <div key={item} className="flex items-center gap-2.5 py-2 px-3.5 rounded-xl bg-white/[0.02] border border-white/[0.03] border-l-2 border-l-amber-500/30 active:border-l-amber-500 transition-all">
-              <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
-              <span className="font-sans text-[10px] tracking-wide text-zinc-300 font-bold uppercase">{item}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Coluna 2: Estruturação de OKR */}
-      <div className="bg-gradient-to-b from-neutral-900/90 to-zinc-950/95 border border-white/[0.06] border-t-white/20 rounded-2xl p-5 shadow-xl backdrop-blur-md">
-        <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/20 to-amber-500/10 border border-amber-500/30 rounded-xl py-2.5 px-4 text-center mb-4 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
-          <h3 className="text-xs font-bold bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent uppercase tracking-widest text-balance leading-tight">Estruturação de OKRs</h3>
-        </div>
-        <div className="grid grid-cols-1 gap-1.5 text-xs">
-          {[
-            "META MENSAL / ANUAL COMERCIAL",
-            "DESDOBRAMENTO EM METAS SEMANAIS",
-            "ACOMPANHAMENTO DOS INDICADORES",
-            "ALINHAMENTO DE GAP DA META",
-            "REVISÃO DE RESULTADOS",
-            "AÇÕES DIÁRIAS (MICRO METAS)"
-          ].map(item => (
-            <div key={item} className="flex items-center gap-2.5 py-2 px-3.5 rounded-xl bg-white/[0.02] border border-white/[0.03] border-l-2 border-l-amber-500/30 active:border-l-amber-500 transition-all">
-              <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
-              <span className="font-sans text-[10px] tracking-wide text-zinc-300 font-bold uppercase">{item}</span>
+            <div key={item} className="flex items-center gap-2.5 py-2 px-3.5 rounded-xl bg-black/[0.03] border border-black/[0.05] border-l-2 border-l-neutral-900">
+              <span className="w-1.5 h-1.5 rounded-full bg-neutral-900" />
+              <span className="font-sans text-[10px] tracking-wide font-extrabold uppercase">{item}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* Coluna 3: Rotinas */}
-      <div className="bg-gradient-to-b from-neutral-900/90 to-zinc-950/95 border border-white/[0.06] border-t-white/20 rounded-2xl p-5 shadow-xl backdrop-blur-md">
-        <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/20 to-amber-500/10 border border-amber-500/30 rounded-xl py-2.5 px-4 text-center mb-4 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
-          <h3 className="text-xs font-bold bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent uppercase tracking-widest">Rotinas Comerciais</h3>
+      <div className="bg-gradient-to-b from-white to-zinc-200 rounded-2xl p-5 shadow-xl">
+        <div className="bg-zinc-950 border border-amber-500/40 rounded-xl py-2.5 px-4 text-center mb-4 shadow-md">
+          <h3 className="text-xs font-bold text-white uppercase tracking-widest">Rotinas</h3>
         </div>
-        <div className="grid grid-cols-1 gap-1.5 text-xs">
+        <div className="grid grid-cols-1 gap-1.5 text-xs text-zinc-800">
           {[
-            "DAILY (MICRO DIÁRIAS)",
-            "WEEKLY (SEMANAL)",
-            "MONTHLY (MENSAL)",
+            "DAILY",
+            "WEEKLY",
+            "MONTHLY",
             "COACHING TÉCNICO",
-            "ONE A ONE (FEEDBACK)",
-            "ROLE PLAY (SIMULAÇÕES)"
+            "ONE A ONE",
+            "ROLE PLAY"
           ].map(item => (
-            <div key={item} className="flex items-center gap-2.5 py-2 px-3.5 rounded-xl bg-white/[0.02] border border-white/[0.03] border-l-2 border-l-amber-500/30 active:border-l-amber-500 transition-all">
-              <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
-              <span className="font-sans text-[10px] tracking-wide text-zinc-300 font-bold uppercase">{item}</span>
+            <div key={item} className="flex items-center gap-2.5 py-2 px-3.5 rounded-xl bg-black/[0.03] border border-black/[0.05] border-l-2 border-l-neutral-900">
+              <span className="w-1.5 h-1.5 rounded-full bg-neutral-900" />
+              <span className="font-sans text-[10px] tracking-wide font-extrabold uppercase">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Coluna 4: Rituais */}
+      <div className="bg-gradient-to-b from-white to-zinc-200 rounded-2xl p-5 shadow-xl">
+        <div className="bg-zinc-950 border border-amber-500/40 rounded-xl py-2.5 px-4 text-center mb-4 shadow-md">
+          <h3 className="text-xs font-bold text-white uppercase tracking-widest">Rituais</h3>
+        </div>
+        <div className="grid grid-cols-1 gap-1.5 text-xs text-zinc-800">
+          {[
+            "BOLA DE OURO",
+            "NOVA RÉGUA",
+            "BANDEIRAS",
+            "SINO",
+            "GRITO DE GUERRA"
+          ].map(item => (
+            <div key={item} className="flex items-center gap-2.5 py-2 px-3.5 rounded-xl bg-black/[0.03] border border-black/[0.05] border-l-2 border-l-neutral-900">
+              <span className="w-1.5 h-1.5 rounded-full bg-neutral-900" />
+              <span className="font-sans text-[10px] tracking-wide font-extrabold uppercase">{item}</span>
             </div>
           ))}
         </div>
@@ -435,45 +452,81 @@ export function MethodologySection({
           </linearGradient>
         </defs>
 
-        {/* Coluna Esquerda (Playbook) */}
-        <path d="M 500,55 L 500,70 C 500,85 450,85 180,85 L 180,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
-        <path d="M 500,55 L 500,70 C 500,85 450,85 180,85 L 180,100" stroke="url(#amber-line-v)" strokeWidth="1.5" className="flowing-fiber-v" fill="none" />
-        <path d="M 180,92 L 180,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" markerEnd="url(#arrow-v)" />
+        {/* Coluna 1 (CRM) */}
+        <path d="M 500,50 L 500,70 C 500,85 450,85 140,85 L 140,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
+        <path d="M 500,50 L 500,70 C 500,85 450,85 140,85 L 140,100" stroke="url(#amber-line-v)" strokeWidth="1.5" className="flowing-fiber-v" fill="none" />
+        <path d="M 140,92 L 140,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" markerEnd="url(#arrow-v)" />
 
-        {/* Coluna Central (OKR) */}
-        <path d="M 500,55 L 500,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
-        <path d="M 500,55 L 500,100" stroke="url(#amber-line-v)" strokeWidth="1.5" className="flowing-fiber-v" fill="none" markerEnd="url(#arrow-v)" />
+        {/* Coluna 2 (Playbook) */}
+        <path d="M 500,50 L 500,70 C 500,85 450,85 380,85 L 380,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
+        <path d="M 500,50 L 500,70 C 500,85 450,85 380,85 L 380,100" stroke="url(#amber-line-v)" strokeWidth="1.5" className="flowing-fiber-v" fill="none" />
+        <path d="M 380,92 L 380,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" markerEnd="url(#arrow-v)" />
 
-        {/* Coluna Direita (Rotinas) */}
-        <path d="M 500,55 L 500,70 C 500,85 550,85 820,85 L 820,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
-        <path d="M 500,55 L 500,70 C 500,85 550,85 820,85 L 820,100" stroke="url(#amber-line-v)" strokeWidth="1.5" className="flowing-fiber-v" fill="none" />
-        <path d="M 820,92 L 820,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" markerEnd="url(#arrow-v)" />
+        {/* Coluna 3 (Rotinas) */}
+        <path d="M 500,50 L 500,70 C 500,85 550,85 620,85 L 620,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
+        <path d="M 500,50 L 500,70 C 500,85 550,85 620,85 L 620,100" stroke="url(#amber-line-v)" strokeWidth="1.5" className="flowing-fiber-v" fill="none" />
+        <path d="M 620,92 L 620,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" markerEnd="url(#arrow-v)" />
+
+        {/* Coluna 4 (Rituais) */}
+        <path d="M 500,50 L 500,70 C 500,85 550,85 860,85 L 860,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
+        <path d="M 500,50 L 500,70 C 500,85 550,85 860,85 L 860,100" stroke="url(#amber-line-v)" strokeWidth="1.5" className="flowing-fiber-v" fill="none" />
+        <path d="M 860,92 L 860,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" markerEnd="url(#arrow-v)" />
 
         {/* Bloco Raiz */}
-        <foreignObject x="400" y="5" width="200" height="55">
+        <foreignObject x="380" y="5" width="240" height="55">
           <div className="w-full h-full flex items-center justify-center p-2 select-none">
-            <div className="relative overflow-hidden w-[160px] h-[38px] flex items-center justify-center rounded-xl bg-zinc-950/95 border border-amber-500/50 shadow-[0_0_20px_rgba(245,158,11,0.3)] text-center">
-              <span className="font-montserrat text-[10px] sm:text-xs font-black tracking-[0.35em] bg-gradient-to-r from-amber-300 via-white to-yellow-400 bg-clip-text text-transparent">
+            <div className="relative overflow-hidden w-[200px] h-[40px] flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 shadow-[0_4px_15px_rgba(245,158,11,0.4)] text-center border border-amber-300/30">
+              <span className="font-montserrat text-sm font-black tracking-[0.25em] text-white">
                 VENDAS
               </span>
             </div>
           </div>
         </foreignObject>
 
-        {/* Coluna 1: Playbook de Vendas */}
-        <foreignObject x="50" y="100" width="260" height="54">
-          <div className="w-full h-full flex items-center justify-center p-1.5 select-none text-center">
-            <div className="w-[242px] h-[40px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
-              <span className="font-display text-[9px] md:text-[10px] font-black bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent tracking-widest uppercase leading-tight">
+        {/* Coluna 1: Estruturação do CRM */}
+        <foreignObject x="35" y="100" width="210" height="45">
+          <div className="w-full h-full flex items-center justify-center p-1 select-none text-center">
+            <div className="w-[195px] h-[36px] flex items-center justify-center rounded-lg bg-zinc-950 border border-amber-500/40 shadow-md">
+              <span className="font-display text-[9px] md:text-[10px] font-black text-white tracking-wider uppercase leading-tight">
+                ESTRUTURAÇÃO DO CRM
+              </span>
+            </div>
+          </div>
+        </foreignObject>
+        <foreignObject x="35" y="150" width="210" height="290">
+          <div className="w-full h-full flex flex-col items-center justify-start p-2">
+            <div className="w-[195px] h-[270px] flex flex-col items-center justify-start rounded-2xl bg-gradient-to-b from-neutral-950/70 to-zinc-950/90 border border-white/[0.06] p-3 shadow-2xl relative overflow-hidden group hover:border-amber-500/20 transition-all duration-300">
+              <div className="w-full rounded-lg overflow-hidden border border-white/[0.08] bg-black/40 aspect-[16/10] mb-4">
+                <img src={crmFunil} alt="DotSales Pipeline" className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-all duration-500" />
+              </div>
+              <div className="mt-auto mb-4 text-center">
+                <a 
+                  href="https://sales.dottech.ai/dashboard/pipeline/funil?id=71479906-111c-462c-af1d-69e76009057b"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[11px] font-black text-blue-400 hover:text-blue-300 underline tracking-wide uppercase transition-colors"
+                >
+                  CRM na Prática
+                </a>
+              </div>
+            </div>
+          </div>
+        </foreignObject>
+
+        {/* Coluna 2: Playbook de Vendas */}
+        <foreignObject x="275" y="100" width="210" height="45">
+          <div className="w-full h-full flex items-center justify-center p-1 select-none text-center">
+            <div className="w-[195px] h-[36px] flex items-center justify-center rounded-lg bg-zinc-950 border border-amber-500/40 shadow-md">
+              <span className="font-display text-[9px] md:text-[10px] font-black text-white tracking-wider uppercase leading-tight">
                 PLAYBOOK DE VENDAS
               </span>
             </div>
           </div>
         </foreignObject>
-        <foreignObject x="50" y="154" width="260" height="290">
-          <div className="w-full h-full flex items-center justify-center p-2 select-none">
-            <div className="w-[242px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-950/70 to-zinc-950/90 border border-white/[0.06] p-4 shadow-[0_15px_35px_rgba(0,0,0,0.6)]">
-              <div className="flex flex-col gap-2 w-full">
+        <foreignObject x="275" y="150" width="210" height="290">
+          <div className="w-full h-full flex flex-col items-center justify-start p-2 select-none">
+            <div className="w-[195px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-white to-zinc-100 p-4 shadow-2xl text-zinc-900 border border-zinc-200/80 hover:scale-[1.01] transition-transform duration-300">
+              <div className="flex flex-col gap-3 w-full">
                 {[
                   "MÉTODOS DE VENDAS",
                   "SCRIPTS DE VENDAS",
@@ -481,41 +534,9 @@ export function MethodologySection({
                   "GATILHOS MENTAIS",
                   "NÍVEIS DE CONSCIÊNCIA"
                 ].map(item => (
-                  <div key={item} className="flex items-start gap-2 py-1.5 px-3 rounded-lg bg-white/[0.01] border border-white/[0.02] border-l-2 border-l-amber-500/30 hover:border-l-amber-500 hover:bg-gradient-to-r hover:from-amber-500/10 hover:to-transparent hover:translate-x-1 transition-all duration-300 group/item">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)] mt-1.5 flex-shrink-0" />
-                    <span className="font-sans text-[10px] md:text-[11px] tracking-wide text-zinc-300 font-extrabold uppercase transition-colors duration-300 group-hover/item:text-white leading-normal">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </foreignObject>
-
-        {/* Coluna 2: Estruturação de OKR */}
-        <foreignObject x="370" y="100" width="260" height="54">
-          <div className="w-full h-full flex items-center justify-center p-1.5 select-none text-center">
-            <div className="w-[242px] h-[40px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
-              <span className="font-display text-[9px] md:text-[10px] font-black bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent tracking-widest uppercase leading-tight">
-                ESTRUTURAÇÃO DE OKR
-              </span>
-            </div>
-          </div>
-        </foreignObject>
-        <foreignObject x="370" y="154" width="260" height="290">
-          <div className="w-full h-full flex items-center justify-center p-2 select-none">
-            <div className="w-[242px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-950/70 to-zinc-950/90 border border-white/[0.06] p-4 shadow-[0_15px_35px_rgba(0,0,0,0.6)]">
-              <div className="flex flex-col gap-2 w-full">
-                {[
-                  "META MENSAL / ANUAL COMERCIAL",
-                  "DESDOBRAMENTO EM METAS SEMANAIS",
-                  "ACOMPANHAMENTO DOS INDICADORES",
-                  "ALINHAMENTO DE GAP DA META",
-                  "REVISÃO DE RESULTADOS",
-                  "AÇÕES DIÁRIAS (MICRO METAS)"
-                ].map(item => (
-                  <div key={item} className="flex items-start gap-2 py-1.5 px-3 rounded-lg bg-white/[0.01] border border-white/[0.02] border-l-2 border-l-amber-500/30 hover:border-l-amber-500 hover:bg-gradient-to-r hover:from-amber-500/10 hover:to-transparent hover:translate-x-1 transition-all duration-300 group/item">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)] mt-1.5 flex-shrink-0" />
-                    <span className="font-sans text-[10px] md:text-[11px] tracking-wide text-zinc-300 font-extrabold uppercase transition-colors duration-300 group-hover/item:text-white leading-normal">{item}</span>
+                  <div key={item} className="flex items-start gap-2.5 py-1 px-1 text-left group/item">
+                    <span className="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5 flex-shrink-0" />
+                    <span className="font-sans text-[9px] md:text-[10px] tracking-wide text-neutral-800 font-extrabold uppercase leading-tight">{item}</span>
                   </div>
                 ))}
               </div>
@@ -524,30 +545,61 @@ export function MethodologySection({
         </foreignObject>
 
         {/* Coluna 3: Rotinas */}
-        <foreignObject x="690" y="100" width="260" height="54">
-          <div className="w-full h-full flex items-center justify-center p-1.5 select-none text-center">
-            <div className="w-[242px] h-[40px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
-              <span className="font-display text-[9px] md:text-[10px] font-black bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent tracking-widest uppercase leading-tight">
+        <foreignObject x="515" y="100" width="210" height="45">
+          <div className="w-full h-full flex items-center justify-center p-1 select-none text-center">
+            <div className="w-[195px] h-[36px] flex items-center justify-center rounded-lg bg-zinc-950 border border-amber-500/40 shadow-md">
+              <span className="font-display text-[9px] md:text-[10px] font-black text-white tracking-wider uppercase leading-tight">
                 ROTINAS
               </span>
             </div>
           </div>
         </foreignObject>
-        <foreignObject x="690" y="154" width="260" height="290">
-          <div className="w-full h-full flex items-center justify-center p-2 select-none">
-            <div className="w-[242px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-950/70 to-zinc-950/90 border border-white/[0.06] p-4 shadow-[0_15px_35px_rgba(0,0,0,0.6)]">
-              <div className="flex flex-col gap-2 w-full">
+        <foreignObject x="515" y="150" width="210" height="290">
+          <div className="w-full h-full flex flex-col items-center justify-start p-2 select-none">
+            <div className="w-[195px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-white to-zinc-100 p-4 shadow-2xl text-zinc-900 border border-zinc-200/80 hover:scale-[1.01] transition-transform duration-300">
+              <div className="flex flex-col gap-2.5 w-full">
                 {[
-                  "DAILY (MICRO DIÁRIAS)",
-                  "WEEKLY (SEMANAL)",
-                  "MONTHLY (MENSAL)",
+                  "DAILY",
+                  "WEEKLY",
+                  "MONTHLY",
                   "COACHING TÉCNICO",
-                  "ONE A ONE (FEEDBACK)",
-                  "ROLE PLAY (SIMULAÇÕES)"
+                  "ONE A ONE",
+                  "ROLE PLAY"
                 ].map(item => (
-                  <div key={item} className="flex items-start gap-2 py-1.5 px-3 rounded-lg bg-white/[0.01] border border-white/[0.02] border-l-2 border-l-amber-500/30 hover:border-l-amber-500 hover:bg-gradient-to-r hover:from-amber-500/10 hover:to-transparent hover:translate-x-1 transition-all duration-300 group/item">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)] mt-1.5 flex-shrink-0" />
-                    <span className="font-sans text-[10px] md:text-[11px] tracking-wide text-zinc-300 font-extrabold uppercase transition-colors duration-300 group-hover/item:text-white leading-normal">{item}</span>
+                  <div key={item} className="flex items-start gap-2.5 py-0.5 px-1 text-left group/item">
+                    <span className="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5 flex-shrink-0" />
+                    <span className="font-sans text-[9px] md:text-[10px] tracking-wide text-neutral-800 font-extrabold uppercase leading-tight">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </foreignObject>
+
+        {/* Coluna 4: Rituais */}
+        <foreignObject x="755" y="100" width="210" height="45">
+          <div className="w-full h-full flex items-center justify-center p-1 select-none text-center">
+            <div className="w-[195px] h-[36px] flex items-center justify-center rounded-lg bg-zinc-950 border border-amber-500/40 shadow-md">
+              <span className="font-display text-[9px] md:text-[10px] font-black text-white tracking-wider uppercase leading-tight">
+                RITUAIS
+              </span>
+            </div>
+          </div>
+        </foreignObject>
+        <foreignObject x="755" y="150" width="210" height="290">
+          <div className="w-full h-full flex flex-col items-center justify-start p-2 select-none">
+            <div className="w-[195px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-white to-zinc-100 p-4 shadow-2xl text-zinc-900 border border-zinc-200/80 hover:scale-[1.01] transition-transform duration-300">
+              <div className="flex flex-col gap-3 w-full">
+                {[
+                  "BOLA DE OURO",
+                  "NOVA RÉGUA",
+                  "BANDEIRAS",
+                  "SINO",
+                  "GRITO DE GUERRA"
+                ].map(item => (
+                  <div key={item} className="flex items-start gap-2.5 py-1 px-1 text-left group/item">
+                    <span className="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5 flex-shrink-0" />
+                    <span className="font-sans text-[9px] md:text-[10px] tracking-wide text-neutral-800 font-extrabold uppercase leading-tight">{item}</span>
                   </div>
                 ))}
               </div>
