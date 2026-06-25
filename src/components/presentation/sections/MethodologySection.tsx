@@ -1,29 +1,28 @@
-import { useState, useEffect, RefObject } from "react";
-import { ArrowUpRight, X, ChevronLeft, ChevronRight, Phone, MessageSquare, Eye, XCircle, Inbox, Kanban, Bot, Zap, CheckCircle2 } from "lucide-react";
+import { useState, useEffect, RefObject, useRef } from "react";
+import { ArrowUpRight, Phone, MessageSquare, Eye, XCircle, Inbox, Kanban, Bot, Zap, CheckCircle2 } from "lucide-react";
 import { Reveal, Section } from "../primitives";
 import { presentationContent } from "@/lib/presentation-content";
-import { motion, AnimatePresence, useTransform, type MotionValue } from "motion/react";
+import { motion, useInView, AnimatePresence } from "motion/react";
 import crmFunil from "@/assets/crm-funil.png";
 
 export function MethodologySection({
   containerRef,
-  scrollYProgress,
 }: {
   containerRef: RefObject<HTMLDivElement | null>;
-  scrollYProgress: MotionValue<number>;
+  scrollYProgress?: any;
 }) {
   const c = presentationContent.methodologyGvd;
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeSlide, setActiveSlide] = useState(0); // 0: Introdução GVD, 1: Geração de Demanda, 2: DotSales CRM, 3: Vendas, 4: Rotinas, 5: Daily (5 Passos), 6: Rituais, 7: Dados, 8: DotSales Intro, 9: DotSales Stats, 10: DotSales Problem, 11: DotSales Features, 12: Depoimento, 13: Valor x Preço, 14: Investimento, 15: Desconto, 16: Transição, 17: Valor
 
-  const [timeLeft, setTimeLeft] = useState(300); // 5 minutos (300 segundos)
+  // Estados locais dos slides
   const [showTotalPrice, setShowTotalPrice] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(300); // 5 minutos (300 segundos)
+
+  // Referência para iniciar o timer de desconto quando entrar em tela
+  const discountRef = useRef<HTMLDivElement>(null);
+  const isDiscountInView = useInView(discountRef, { once: true, amount: 0.1 });
 
   useEffect(() => {
-    if (activeSlide !== 17) return;
-    
-    // Reinicia o timer ao entrar no slide de desconto
-    setTimeLeft(300);
+    if (!isDiscountInView) return;
     
     const interval = setInterval(() => {
       setTimeLeft(prev => {
@@ -36,7 +35,7 @@ export function MethodologySection({
     }, 1000);
     
     return () => clearInterval(interval);
-  }, [activeSlide]);
+  }, [isDiscountInView]);
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -44,174 +43,35 @@ export function MethodologySection({
     return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
   };
 
-
-  // Interpolações de cor de texto da seção baseadas no progresso compartilhado
-  const color = useTransform(scrollYProgress, [0.3, 0.95], ["#ffffff", "#000000"]);
-  
-  // Interpolações para elementos secundários e kicker
-  const colorMuted = useTransform(scrollYProgress, [0.3, 0.95], ["rgba(255, 255, 255, 0.6)", "rgba(0, 0, 0, 0.6)"]);
-  const bgLine = useTransform(scrollYProgress, [0.3, 0.95], ["rgba(255, 255, 255, 0.2)", "rgba(0, 0, 0, 0.2)"]);
-
-  // Interpolações do botão (inverte as cores junto com o fundo)
-  const btnBg = useTransform(scrollYProgress, [0.3, 0.95], ["#ffffff", "#000000"]);
-  const btnColor = useTransform(scrollYProgress, [0.3, 0.95], ["#000000", "#ffffff"]);
-
-  // Reinicia o slide ativo e estados relacionados quando o modal fecha/abre
-  useEffect(() => {
-    if (!isModalOpen) {
-      setActiveSlide(0);
-      setShowTotalPrice(false);
-    }
-  }, [isModalOpen]);
-
-  // Reinicia a exibição do preço ao mudar de slide
-  useEffect(() => {
-    if (activeSlide !== 16) {
-      setShowTotalPrice(false);
-    }
-  }, [activeSlide]);
-
-  // Listener para navegação com as teclas de seta e fechamento com ESC
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (!isModalOpen) return;
-      if (e.key === "ArrowRight" && activeSlide < 16) {
-        setActiveSlide(prev => prev + 1);
-      } else if (e.key === "ArrowLeft" && activeSlide > 0) {
-        setActiveSlide(prev => prev - 1);
-      } else if (e.key === "Escape") {
-        setIsModalOpen(false);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isModalOpen, activeSlide]);
-
   return (
     <div ref={containerRef} className="w-full">
+      {/* Seção Inicial: Headline da Metodologia */}
       <Section
-        style={{ color }}
-        className="py-32 md:py-48 flex flex-col justify-center items-center bg-transparent transition-colors duration-100"
+        className="py-32 md:py-48 flex flex-col justify-center items-center bg-[#050505] text-white transition-colors duration-100 border-b border-white/[0.03]"
       >
         <div className="relative z-10 w-full max-w-5xl mx-auto text-center px-4">
-          
           {/* Kicker da seção */}
           <Reveal delay={0.1}>
             <div className="flex items-center justify-center gap-3 text-[11px] md:text-xs uppercase tracking-[0.32em] mb-8 md:mb-12">
-              <motion.span className="h-px w-8" style={{ backgroundColor: bgLine }} />
-              <motion.span style={{ color: colorMuted }}>{c.kicker}</motion.span>
-              <motion.span className="h-px w-8" style={{ backgroundColor: bgLine }} />
+              <span className="h-px w-8 bg-white/20" />
+              <span className="text-white/60">{c.kicker}</span>
+              <span className="h-px w-8 bg-white/20" />
             </div>
           </Reveal>
 
           {/* Headline super elegante */}
           <Reveal delay={0.2}>
-            <motion.h2 
-              style={{ color }}
-              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] max-w-4xl mx-auto text-balance"
-            >
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] max-w-4xl mx-auto text-balance text-white">
               {c.headline}
-            </motion.h2>
-          </Reveal>
-
-          {/* Botão de chamada externa / Popup */}
-          <Reveal delay={0.4}>
-            <div className="mt-12 md:mt-20">
-              <motion.button
-                onClick={() => setIsModalOpen(true)}
-                style={{ backgroundColor: btnBg, color: btnColor }}
-                className="inline-flex items-center gap-3 font-sans text-sm md:text-base font-semibold px-8 py-4 md:px-10 md:py-5 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 group cursor-pointer border-0"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <span>{c.buttonText}</span>
-                <motion.span
-                  className="inline-flex items-center justify-center"
-                  animate={{ x: [0, 2, 0], y: [0, -2, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-                >
-                  <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </motion.span>
-              </motion.button>
-            </div>
+            </h2>
           </Reveal>
         </div>
       </Section>
 
-      {/* Modal / Popup Exclusivo da Metodologia GVD (Mini-Apresentação) */}
-      <AnimatePresence>
-        {isModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className={`fixed inset-0 z-50 flex flex-col justify-center items-center select-none overflow-hidden transition-colors duration-500 ${(activeSlide >= 8 && activeSlide <= 12) ? "bg-[#FAFAFA]" : "bg-[#050505]"}`}
-            onClick={() => setIsModalOpen(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.98, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.98, opacity: 0 }}
-              transition={{ type: "spring", duration: 0.4 }}
-              className="relative w-full h-full flex flex-col justify-center items-center p-6 sm:p-12 md:p-24"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Botão de Fechar */}
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className={`absolute top-6 right-6 p-3 rounded-full transition-all duration-300 cursor-pointer z-50 border-0 ${(activeSlide >= 8 && activeSlide <= 12) ? "text-black/40 hover:text-black bg-black/5 hover:bg-black/10" : "text-white/40 hover:text-white bg-white/5 hover:bg-white/10"}`}
-              >
-                <X className="w-6 h-6" />
-              </button>
-
-              {/* Botões de Navegação de Slide Laterais */}
-              {activeSlide > 0 && (
-                <button
-                  onClick={() => setActiveSlide(prev => prev - 1)}
-                  className={`absolute left-6 top-1/2 -translate-y-1/2 p-4 rounded-full transition-all duration-300 cursor-pointer border-0 z-50 ${(activeSlide >= 8 && activeSlide <= 12) ? "text-black/40 hover:text-black bg-black/5 hover:bg-black/10" : "text-white/40 hover:text-white bg-white/5 hover:bg-white/10"}`}
-                  title="Slide Anterior (Seta Esquerda)"
-                >
-                  <ChevronLeft className="w-8 h-8" />
-                </button>
-              )}
-
-              {activeSlide < 16 && (
-                <button
-                  onClick={() => setActiveSlide(prev => prev + 1)}
-                  className={`absolute right-6 top-1/2 -translate-y-1/2 p-4 rounded-full transition-all duration-300 cursor-pointer border-0 z-50 ${(activeSlide >= 8 && activeSlide <= 12) ? "text-black/40 hover:text-black bg-black/5 hover:bg-black/10" : "text-white/40 hover:text-white bg-white/5 hover:bg-white/10"}`}
-                  title="Próximo Slide (Seta Direita)"
-                >
-                  <ChevronRight className="w-8 h-8" />
-                </button>
-              )}
-
-              {/* Linhas / Círculos de Fundo Concêntricos (Comum a ambos os slides) */}
-              <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none">
-                <div className="absolute w-[250px] h-[250px] border border-white/[0.02] rounded-full" />
-                <div className="absolute w-[500px] h-[500px] border border-white/[0.02] rounded-full" />
-                <div className="absolute w-[750px] h-[750px] border border-white/[0.02] rounded-full" />
-                <div className="absolute w-[1000px] h-[1000px] border border-white/[0.015] rounded-full" />
-                <div className="absolute w-[1250px] h-[1250px] border border-white/[0.01] rounded-full" />
-                <div className="absolute w-[1500px] h-[1500px] border border-white/[0.005] rounded-full" />
-                <div className="absolute w-[1800px] h-[1800px] border border-white/[0.003] rounded-full" />
-                <div className="absolute w-[2100px] h-[2100px] border border-white/[0.002] rounded-full" />
-                <div className="absolute w-[2400px] h-[2400px] border border-white/[0.001] rounded-full" />
-                {/* Degradê radial escuro adicional */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(5,5,5,0.9)_85%)]" />
-              </div>
-
-              {/* RENDERIZAÇÃO DOS SLIDES COM TRANSIÇÃO */}
-              <AnimatePresence mode="wait">
-                {activeSlide === 0 ? (
-                  /* Slide 1: Introdução GVD Clássica */
-                  <motion.div
-                    key="slide-intro"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 20 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative z-10 flex flex-col items-center justify-between h-full w-full py-8 md:py-16 text-center"
-                  >
+      {/* Círculos de Fundo Comuns (Comum a todos os slides escuros) */}
+      <div className="relative w-full">
+        {/* Slide 0: Introdução GVD */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-between h-full w-full py-8 md:py-16 text-center" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     {/* Texto Superior */}
                     <span className="font-display text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-[0.45em] text-fg-dim uppercase">
                       Metodologia única e validada
@@ -230,17 +90,10 @@ export function MethodologySection({
                       <span className="hidden sm:inline text-white/20">|</span>
                       <span>DADOS</span>
                     </div>
-                  </motion.div>
-                ) : activeSlide === 1 ? (
-                  /* Slide 2: Mapa Mental Geração de Demanda (Pilar G) */
-                  <motion.div
-                    key="slide-g-pillar"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left"
-                  >
+                  </motion.section>
+
+        {/* Slide 1: Geração de Demanda */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     {/* Cabeçalho do Slide 2 */}
                     <div className="w-full flex justify-between items-center mb-8 md:mb-12 px-4">
                       <div className="flex flex-col">
@@ -463,17 +316,10 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.div>
-                ) : activeSlide === 2 ? (
-                  /* Slide 3: Apresentação da Ferramenta DotSales CRM */
-                  <motion.div
-                    key="slide-dotsales"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left"
-                  >
+                  </motion.section>
+
+        {/* Slide 2: DotSales CRM */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     {/* Cabeçalho do Slide 3 */}
                     <div className="w-full flex justify-between items-center mb-8 md:mb-10 px-4 flex-shrink-0">
                       <div className="flex flex-col">
@@ -556,17 +402,10 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.div>
-                ) : activeSlide === 3 ? (
-                  /* Slide 4: Mapa Mental Vendas (Pilar V) - 2 Colunas: Playbook, Rotinas */
-                  <motion.div
-                    key="slide-v-pillar"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left"
-                  >
+                  </motion.section>
+
+        {/* Slide 3: Vendas */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     {/* Ambient background glows for Premium design */}
                     <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
@@ -759,17 +598,10 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.div>
-                ) : activeSlide === 4 ? (
-                  /* Slide 5: Detalhe das Rotinas (Daily / Weekly) */
-                  <motion.div
-                    key="slide-rotinas-detail"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left"
-                  >
+                  </motion.section>
+
+        {/* Slide 4: Rotinas */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     {/* Ambient background glows for Premium design */}
                     <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
@@ -956,17 +788,10 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.div>
-                ) : activeSlide === 5 ? (
-                  /* Slide 6: Daily Diária 5 Passos */
-                  <motion.div
-                    key="slide-daily-5-steps"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left"
-                  >
+                  </motion.section>
+
+        {/* Slide 5: Daily Diária 5 Passos */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     {/* Ambient background glows for Premium design */}
                     <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
@@ -1096,17 +921,10 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.div>
-                ) : activeSlide === 6 ? (
-                  /* Slide 7: Rituais */
-                  <motion.div
-                    key="slide-rituais"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left"
-                  >
+                  </motion.section>
+
+        {/* Slide 6: Rituais */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     {/* Ambient background glows for Premium design */}
                     <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
@@ -1167,17 +985,10 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.div>
-                ) : activeSlide === 7 ? (
-                  /* Slide 8: Dados */
-                  <motion.div
-                    key="slide-dados"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left"
-                  >
+                  </motion.section>
+
+        {/* Slide 7: Dados */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     {/* Ambient background glows for Premium design */}
                     <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
@@ -1453,17 +1264,11 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.div>
-                                ) : activeSlide === 8 ? (
-                  /* Slide 8: DotSales Intro */
-                  <motion.div
-                    key="slide-dotsales-intro"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left overflow-y-auto no-scrollbar"
-                  >
+                  </motion.section>
+                                ) :
+
+        {/* Slide 8: DotSales Intro */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left overflow-y-auto no-scrollbar" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
 
@@ -1508,17 +1313,11 @@ export function MethodologySection({
                           </div>
                         </div>
                     </div>
-                  </motion.div>
-) : activeSlide === 9 ? (
-                  /* Slide 9: DotSales Stats (White/Minimalist) */
-                  <motion.div
-                    key="slide-dotsales-stats"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative z-10 flex flex-col justify-center items-center h-full w-full text-center overflow-hidden bg-[#FAFAFA]"
-                  >
+                  </motion.section>
+) :
+
+        {/* Slide 9: DotSales Stats (Fundo Branco) */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black relative z-10 flex flex-col justify-center items-center h-full w-full text-center overflow-hidden bg-[#FAFAFA]" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     {/* Very subtle architectural grid background */}
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
@@ -1572,17 +1371,11 @@ export function MethodologySection({
                         Fontes: Chat Commerce Report 2025 (OmniChat) · Opinion Box · Meta
                       </div>
                     </div>
-                  </motion.div>
-                ) : activeSlide === 10 ? (
-                  /* Slide 10: DotSales Problem (White/Minimalist) */
-                  <motion.div
-                    key="slide-dotsales-problem"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative z-10 flex flex-col justify-center items-center h-full w-full text-center overflow-hidden bg-[#FAFAFA]"
-                  >
+                  </motion.section>
+                ) :
+
+        {/* Slide 10: DotSales Problem (Fundo Branco) */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black relative z-10 flex flex-col justify-center items-center h-full w-full text-center overflow-hidden bg-[#FAFAFA]" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
                     <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
@@ -1655,17 +1448,11 @@ export function MethodologySection({
                         Fontes: HubSpot · InsideSales
                       </div>
                     </div>
-                  </motion.div>
-                ) : activeSlide === 11 ? (
-                  /* Slide 11: DotSales Features (White/Minimalist) */
-                  <motion.div
-                    key="slide-dotsales-features"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative z-10 flex flex-col justify-center items-center h-full w-full text-center overflow-hidden bg-[#FAFAFA]"
-                  >
+                  </motion.section>
+                ) :
+
+        {/* Slide 11: DotSales Features (Fundo Branco) */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black relative z-10 flex flex-col justify-center items-center h-full w-full text-center overflow-hidden bg-[#FAFAFA]" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
                     <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
@@ -1732,17 +1519,11 @@ export function MethodologySection({
                         </div>
                       </div>
                     </div>
-                  </motion.div>
-) : activeSlide === 12 ? (
-                  /* Slide 12: SLA & Chart (White/Minimalist) */
-                  <motion.div
-                    key="slide-dotsales-sla"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative z-10 flex flex-col justify-center items-center h-full w-full text-center overflow-hidden bg-[#FAFAFA]"
-                  >
+                  </motion.section>
+) :
+
+        {/* Slide 12: DotSales SLA (Fundo Branco) */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black relative z-10 flex flex-col justify-center items-center h-full w-full text-center overflow-hidden bg-[#FAFAFA]" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
                     <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
@@ -1820,17 +1601,11 @@ export function MethodologySection({
                         Fontes: HubSpot · InsideSales · Lead Response Management
                       </div>
                     </div>
-                  </motion.div>
-                ) : activeSlide === 13 ? (
-                  /* Slide 9: Depoimento */
-                  <motion.div
-                    key="slide-depoimento"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left"
-                  >
+                  </motion.section>
+                ) :
+
+        {/* Slide 13: Depoimentos */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     {/* Ambient background glows for Premium design */}
                     <div className="absolute top-[30%] left-[20%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[20%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
@@ -1904,17 +1679,11 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.div>
-                ) : activeSlide === 14 ? (
-                  /* Slide 10: Valor x Preço */
-                  <motion.div
-                    key="slide-valor-preco"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-center"
-                  >
+                  </motion.section>
+                ) :
+
+        {/* Slide 14: Valor x Preço */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-center" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     {/* Ambient background glows */}
                     <div className="absolute top-[25%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[95px] pointer-events-none" />
                     <div className="absolute bottom-[25%] right-[25%] w-[250px] h-[250px] rounded-full bg-emerald-500/5 blur-[95px] pointer-events-none" />
@@ -1987,17 +1756,11 @@ export function MethodologySection({
 
                       </div>
                     </div>
-                  </motion.div>
-                ) : activeSlide === 15 ? (
-                  /* Slide 11: Investimento */
-                  <motion.div
-                    key="slide-investimento"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative z-10 flex flex-col items-center justify-start h-full w-full py-4 text-left"
-                  >
+                  </motion.section>
+                ) :
+
+        {/* Slide 15: Investimento */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-4 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     {/* Ambient background glows */}
                     <div className="absolute top-[20%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[95px] pointer-events-none" />
                     <div className="absolute bottom-[20%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-500/5 blur-[95px] pointer-events-none" />
@@ -2093,17 +1856,11 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.div>
-                ) : activeSlide === 17 ? (
-                  /* Slide 12: Desconto (Sentimento de Ansiedade) */
-                  <motion.div
-                    key="slide-desconto-ansiedade"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-center overflow-hidden"
-                  >
+                  </motion.section>
+                ) :
+
+        {/* Slide 17: Desconto */}
+        <motion.section ref={discountRef} className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-center overflow-hidden" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     {/* Pulsating background glows (heartbeat feeling) */}
                     <motion.div
                       animate={{ 
@@ -2205,17 +1962,11 @@ export function MethodologySection({
                       </motion.div>
 
                     </div>
-                  </motion.div>
-                ) : activeSlide === 18 ? (
-                  /* Slide 13: Transição Protagonista */
-                  <motion.div
-                    key="slide-transicao-protagonista"
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.98 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative z-10 flex flex-col items-center justify-center h-full w-full py-8 text-center px-4 max-w-4xl mx-auto"
-                  >
+                  </motion.section>
+                ) :
+
+        {/* Slide 18: Transição Protagonista */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-center h-full w-full py-8 text-center px-4 max-w-4xl mx-auto" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     {/* Ambient background glows */}
                     <div className="absolute top-[30%] left-[30%] w-[300px] h-[300px] rounded-full bg-amber-500/5 blur-[100px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[30%] w-[300px] h-[300px] rounded-full bg-amber-600/5 blur-[100px] pointer-events-none" />
@@ -2247,17 +1998,10 @@ export function MethodologySection({
                         </span>
                       </motion.div>
                     </div>
-                  </motion.div>
-                ) : (
-                  /* Slide 14: Oferta Final (Valor Protagonista) */
-                  <motion.div
-                    key="slide-oferta-protagonista"
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.98 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative z-10 flex flex-col items-center justify-start h-full w-full py-4 text-center px-4 max-w-4xl mx-auto"
-                  >
+                  </motion.section>
+
+        {/* Slide Final: Valor Protagonista */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-4 text-center px-4 max-w-4xl mx-auto" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
                     {/* Ambient background glows */}
                     <div className="absolute top-[25%] left-[25%] w-[300px] h-[300px] rounded-full bg-emerald-500/5 blur-[100px] pointer-events-none" />
                     <div className="absolute bottom-[25%] right-[25%] w-[300px] h-[300px] rounded-full bg-amber-500/5 blur-[100px] pointer-events-none" />
@@ -2324,13 +2068,8 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                  </motion.section>
+      </div>
     </div>
   );
 }
