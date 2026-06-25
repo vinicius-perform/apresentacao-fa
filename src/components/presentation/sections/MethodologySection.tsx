@@ -607,6 +607,66 @@ export function MethodologySection({
   </div>
 </div></motion.section>
 
+        {/* Slide 8: DotSales Welcome Intro (Do Caos ao Controle) */}
+        <motion.section 
+          className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-start overflow-hidden bg-[#07050f] text-white" 
+          initial={{ opacity: 0, y: 40 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, margin: "-100px" }} 
+          transition={{ duration: 0.6 }}
+        >
+          {/* Círculos Artísticos e Translúcidos no Lado Direito */}
+          <div className="absolute top-0 right-0 w-[50%] h-full pointer-events-none overflow-hidden hidden md:block">
+            <div className="absolute top-[10%] right-[-20%] w-[500px] h-[500px] rounded-full bg-purple-900/10 blur-[100px]" />
+            <div className="absolute bottom-[10%] right-[-10%] w-[450px] h-[450px] rounded-full bg-indigo-900/15 blur-[120px]" />
+            <div className="absolute top-[30%] right-[5%] w-[350px] h-[350px] rounded-full bg-purple-600/5 blur-[80px]" />
+            {/* Formas geométricas mais nítidas para imitar o Keynote */}
+            <div className="absolute top-[5%] right-[-25%] w-[600px] h-[600px] rounded-full border border-purple-500/5 bg-purple-950/20 backdrop-blur-sm" />
+            <div className="absolute bottom-[-15%] right-[-15%] w-[500px] h-[500px] rounded-full border border-indigo-500/5 bg-indigo-950/20 backdrop-blur-sm" />
+          </div>
+
+          {/* Logo dot.Sales Top Left */}
+          <div className="absolute top-10 left-10 md:top-14 md:left-16 flex items-center z-20 select-none">
+            <span className="font-display text-lg md:text-xl font-bold tracking-tight text-white">
+              dot<span className="text-[#a855f7] font-extrabold">.Sales</span>
+            </span>
+          </div>
+
+          {/* Conteúdo Principal (Alinhado à esquerda) */}
+          <div className="w-full max-w-6xl mx-auto px-6 md:px-16 flex flex-col justify-center items-start space-y-8 z-10">
+            {/* Três pontos roxos/rosa */}
+            <div className="flex gap-1.5 pt-4">
+              <span className="w-2 h-2 rounded-full bg-[#d946ef]" />
+              <span className="w-2 h-2 rounded-full bg-[#d946ef]" />
+              <span className="w-2 h-2 rounded-full bg-[#d946ef]" />
+            </div>
+
+            {/* Título Principal */}
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] max-w-4xl text-left text-white">
+              Do caos das mensagens <br className="hidden md:inline" />
+              <span className="bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-400 bg-clip-text text-transparent">
+                ao controle das vendas
+              </span>
+            </h1>
+
+            {/* Subtítulo */}
+            <p className="font-sans text-zinc-400 text-base sm:text-lg md:text-xl max-w-2xl text-left leading-relaxed">
+              Transforme WhatsApp e Instagram em uma máquina de vendas previsível.
+            </p>
+
+            {/* Badge Kayo Cruz */}
+            <div className="pt-8">
+              <div className="bg-[#120d24]/60 border border-purple-500/20 rounded-2xl px-6 py-4 flex flex-col gap-1 shadow-[0_10px_30px_rgba(18,13,36,0.5)] backdrop-blur-md">
+                <span className="font-sans text-sm md:text-base font-bold text-white tracking-wide">
+                  Kayo Cruz
+                </span>
+                <span className="font-sans text-xs text-purple-300/80">
+                  Fundador da Dottech · Criador do dot.Sales
+                </span>
+              </div>
+            </div>
+          </div>
+        </motion.section>
 
 {/* Slide 9: DotSales Stats (Fundo Branco) */}
         <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#FAFAFA]">
