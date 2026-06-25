@@ -1,46 +1,100 @@
 import { Reveal, Section } from "../primitives";
-import { Video, Target, Laptop, GraduationCap, Compass } from "lucide-react";
+import { 
+  Compass, 
+  Database, 
+  Cpu, 
+  Users, 
+  Target, 
+  Share2, 
+  Palette, 
+  Video, 
+  Trophy, 
+  MessageSquare, 
+  LayoutDashboard, 
+  Calendar, 
+  TrendingUp 
+} from "lucide-react";
 
 export function ValueAnchoringSection() {
   const services = [
     {
-      title: "Produção de Conteúdo",
-      price: "R$ 3.990",
-      icon: Video,
+      title: "Estruturação Estratégica",
+      price: "R$ 2.500",
+      icon: Compass,
     },
     {
-      title: "Geração de Demanda",
-      price: "R$ 4.990",
+      title: "Treinamento de CRM",
+      price: "R$ 1.200",
+      icon: Database,
+    },
+    {
+      title: "Implantação do CRM + Integrações",
+      price: "R$ 2.900",
+      icon: Cpu,
+    },
+    {
+      title: "Treinamento do Time Comercial",
+      price: "R$ 1.800",
+      icon: Users,
+    },
+    {
+      title: "Gestão de Tráfego Pago",
+      price: "R$ 2.500",
       icon: Target,
     },
     {
-      title: "Implementação de CRM",
-      price: "R$ 4.990",
-      icon: Laptop,
+      title: "Social Media",
+      price: "R$ 1.990",
+      icon: Share2,
     },
     {
-      title: "Treinamento Comercial",
-      price: "R$ 2.990",
-      icon: GraduationCap,
+      title: "Designer de Criativos",
+      price: "R$ 1.200",
+      icon: Palette,
     },
     {
-      title: "Consultoria GVD",
-      price: "R$ 2.994",
-      icon: Compass,
+      title: "Editor de Vídeos para Anúncios",
+      price: "R$ 1.500",
+      icon: Video,
+    },
+    {
+      title: "Goals",
+      price: "R$ 990",
+      icon: Trophy,
+    },
+    {
+      title: "Acompanhamento WhatsApp",
+      price: "R$ 497",
+      icon: MessageSquare,
+    },
+    {
+      title: "Bônus 1 - Relatório em Dashboard",
+      price: "R$ 997",
+      icon: LayoutDashboard,
+    },
+    {
+      title: "Bônus 2 - Alinhamento Quinzenal",
+      price: "R$ 990",
+      icon: Calendar,
+    },
+    {
+      title: "Bônus 3 - Implantação de OKRs",
+      price: "R$ 890",
+      icon: TrendingUp,
     },
   ];
 
   return (
     <Section 
-      className="relative w-full min-h-screen py-20 md:py-28 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white border-t border-white/[0.03]"
+      className="relative w-full min-h-screen py-20 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white border-t border-white/[0.03]"
       id="ancoragem-valor"
     >
       {/* Ambient background glows */}
-      <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] rounded-full bg-amber-500/5 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[20%] right-[10%] w-[400px] h-[400px] rounded-full bg-yellow-600/3 blur-[120px] pointer-events-none" />
+      <div className="absolute top-[15%] left-[5%] w-[450px] h-[450px] rounded-full bg-amber-500/5 blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-[15%] right-[5%] w-[450px] h-[450px] rounded-full bg-yellow-600/3 blur-[130px] pointer-events-none" />
 
       {/* Architectural grid background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4.5rem_4.5rem] pointer-events-none" />
 
       {/* Decorações douradas nos cantos (Keynote Style) */}
       <div className="absolute top-0 left-0 w-64 h-64 pointer-events-none select-none opacity-40">
@@ -67,53 +121,50 @@ export function ValueAnchoringSection() {
         {/* Título Principal */}
         <Reveal>
           <span className="text-[10px] sm:text-xs font-bold tracking-[0.25em] text-amber-500 uppercase mb-3 select-none">
-            Investimento Individual dos Serviços
+            Entregáveis e Valor Agregado
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-600 bg-clip-text text-transparent uppercase tracking-wider mb-12 select-none leading-tight">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-600 bg-clip-text text-transparent uppercase tracking-wider mb-10 select-none leading-tight">
             Ancoragem de Valor
           </h2>
         </Reveal>
 
-        {/* Grid de Serviços */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-3 w-full max-w-5xl mb-12">
+        {/* Grid de Serviços - Layout de Cards Horizontais Premium */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-5xl mb-12">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <Reveal key={index} delay={index * 0.1}>
-                <div className="flex flex-col items-center justify-center bg-zinc-950/40 border border-white/[0.05] hover:border-amber-500/30 rounded-[2rem] p-6 backdrop-blur-md transition-all duration-500 hover:translate-y-[-6px] hover:shadow-[0_20px_40px_rgba(245,158,11,0.08)] group h-[220px] md:h-[240px]">
-                  {/* Ícone Monumental */}
-                  <div className="w-16 h-16 rounded-full bg-amber-500/5 border border-amber-500/10 flex items-center justify-center mb-5 group-hover:bg-amber-500/10 group-hover:border-amber-500/30 transition-all duration-500">
-                    <IconComponent className="w-7 h-7 text-amber-500/80 group-hover:text-amber-400 group-hover:scale-110 transition-all duration-500" />
+              <Reveal key={index} delay={index * 0.05}>
+                <div className="flex items-center bg-zinc-950/40 border border-white/[0.05] hover:border-amber-500/30 rounded-[1.5rem] p-4 md:p-5 backdrop-blur-md transition-all duration-300 hover:translate-y-[-2px] hover:shadow-[0_10px_20px_rgba(245,158,11,0.05)] group text-left">
+                  {/* Ícone Circular sutil à esquerda */}
+                  <div className="w-12 h-12 rounded-full bg-amber-500/5 border border-amber-500/10 flex items-center justify-center mr-4 group-hover:bg-amber-500/10 group-hover:border-amber-500/30 transition-all duration-300 flex-shrink-0">
+                    <IconComponent className="w-5 h-5 text-amber-500/80 group-hover:text-amber-400 group-hover:scale-105 transition-all duration-300" />
                   </div>
                   
-                  {/* Título */}
-                  <span className="text-[10px] md:text-xs font-black text-zinc-300 group-hover:text-white uppercase tracking-widest text-center select-none leading-tight min-h-[32px] flex items-center justify-center">
-                    {service.title}
-                  </span>
-                  
-                  {/* Linha Divisória */}
-                  <div className="w-6 h-[1.5px] bg-amber-500/20 my-3 group-hover:w-10 group-hover:bg-amber-500/40 transition-all duration-500" />
-                  
-                  {/* Preço */}
-                  <span className="text-sm md:text-base font-mono font-bold text-amber-500 select-none">
-                    {service.price}
-                  </span>
+                  {/* Títulos e Preços */}
+                  <div className="flex flex-col justify-center flex-grow">
+                    <span className="text-[11px] md:text-xs font-black text-zinc-300 group-hover:text-white uppercase tracking-widest leading-snug select-none">
+                      {service.title}
+                    </span>
+                    <span className="text-xs md:text-sm font-mono font-bold text-amber-500 mt-1 select-none">
+                      {service.price}
+                    </span>
+                  </div>
                 </div>
               </Reveal>
             );
           })}
         </div>
 
-        {/* Caixa de Totalização */}
-        <Reveal delay={0.6}>
+        {/* Caixa de Totalização Monumental */}
+        <Reveal delay={0.4}>
           <div className="flex flex-col items-center justify-center bg-gradient-to-b from-neutral-900/60 to-zinc-950/90 border-2 border-amber-500/20 rounded-[2.5rem] p-8 md:p-10 max-w-lg w-full mx-auto shadow-[0_25px_50px_rgba(245,158,11,0.12)] relative overflow-hidden group select-none">
-            <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-600" />
+            <div className="absolute top-0 left-0 w-full h-[3.5px] bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-600" />
             
             <span className="text-[10px] sm:text-xs font-mono text-amber-500/80 uppercase tracking-[0.3em] mb-2 block">
-              VALOR TOTAL DOS SERVIÇOS
+              VALOR TOTAL ACUMULADO
             </span>
             
-            <h3 className="font-display text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 bg-clip-text text-transparent uppercase tracking-wider">
+            <h3 className="font-display text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 bg-clip-text text-transparent uppercase tracking-wider font-mono">
               R$ 19.954,00
             </h3>
           </div>
