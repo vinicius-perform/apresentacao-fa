@@ -1,5 +1,6 @@
 import { Kicker, Reveal, Section } from "@/components/presentation/primitives";
 import { presentationContent } from "@/lib/presentation-content";
+import { LazyVideo } from "../LazyVideo";
 
 export function NovaSedeSection() {
   const { novaSede } = presentationContent;
@@ -27,12 +28,13 @@ export function NovaSedeSection() {
 
         <Reveal delay={0.3} className="w-full">
           <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black/40 group">
-            <video
+            <LazyVideo
               className="w-full h-full object-cover"
               controls
               muted
               loop
               playsInline
+              preload="metadata"
               poster="https://fazendoacontecer.site/wp-content/uploads/2026/06/fe62b053-4107-419d-877b-3fb76ff26be2.webp"
             >
               {/* Prioriza o vídeo da nova sede fornecido pelo usuário */}
@@ -40,7 +42,7 @@ export function NovaSedeSection() {
               <source src="/videos/nova-sede.mp4" type="video/mp4" />
               <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-office-space-with-people-working-40348-large.mp4" type="video/mp4" />
               Seu navegador não suporta a reprodução de vídeos.
-            </video>
+            </LazyVideo>
             
             {/* Efeito estético de borda/brilho */}
             <div className="absolute inset-0 pointer-events-none rounded-2xl border border-white/5 ring-1 ring-white/10" />

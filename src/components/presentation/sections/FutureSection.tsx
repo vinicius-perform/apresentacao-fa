@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Reveal, Section } from "../primitives";
 import { presentationContent } from "@/lib/presentation-content";
+import { LazyVideo } from "../LazyVideo";
 
 export function FutureSection() {
   const c = presentationContent.future;
@@ -8,16 +9,15 @@ export function FutureSection() {
     <Section fullBleed>
       <div className="relative w-full h-screen flex items-center justify-center">
         {/* Placeholder for fullscreen video. Drop your file at /public/videos/nova-sede.mp4 */}
-        <video
+        <LazyVideo
           className="absolute inset-0 h-full w-full object-cover opacity-40"
           autoPlay
           muted
           loop
           playsInline
-          poster=""
         >
           <source src={c.videoPlaceholder} type="video/webm" />
-        </video>
+        </LazyVideo>
         <div className="absolute inset-0 bg-gradient-to-b from-bg via-bg/40 to-bg" />
 
         <div className="relative z-10 text-center px-6 max-w-5xl">

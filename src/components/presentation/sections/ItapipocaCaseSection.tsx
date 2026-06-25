@@ -1,5 +1,6 @@
 import { Kicker, Reveal, Section } from "@/components/presentation/primitives";
 import { CheckCircle2, TrendingUp, DollarSign, Target } from "lucide-react";
+import { LazyVideo } from "../LazyVideo";
 
 export function ItapipocaCaseSection() {
   return (
@@ -70,16 +71,16 @@ export function ItapipocaCaseSection() {
         <div className="md:col-span-5 flex justify-center">
           <Reveal delay={0.3} className="w-full max-w-[340px]">
             <div className="relative aspect-[9/16] w-full rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black/40 group">
-              <video
+              <LazyVideo
                 className="w-full h-full object-cover"
                 controls
                 playsInline
                 loop
-                preload="metadata"
+                preload="auto"
               >
-                <source src="https://fazendoacontecer.site/wp-content/uploads/2026/06/0625.mp4" type="video/mp4" />
+                <source src="https://fazendoacontecer.site/wp-content/uploads/2026/06/lannay.webm#t=0.001" type="video/webm" />
                 Seu navegador não suporta a reprodução de vídeos.
-              </video>
+              </LazyVideo>
               <div className="absolute inset-0 pointer-events-none rounded-3xl border border-white/5 ring-1 ring-white/10" />
             </div>
           </Reveal>
