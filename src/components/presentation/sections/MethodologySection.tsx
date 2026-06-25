@@ -1,5 +1,5 @@
 import { useState, useEffect, RefObject, useRef } from "react";
-import { ArrowUpRight, Phone, MessageSquare, Eye, XCircle, Inbox, Kanban, Bot, Zap, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, Phone, MessageSquare, Eye, XCircle, Inbox, Kanban, Bot, Zap, CheckCircle2, ChevronDown, ChevronUp, Calendar, ArrowRight, Clock, UserCheck, Sparkles, HelpCircle } from "lucide-react";
 import { Reveal, Section } from "../primitives";
 import { presentationContent } from "@/lib/presentation-content";
 import { motion, useInView, AnimatePresence } from "motion/react";
@@ -16,6 +16,7 @@ export function MethodologySection({
   // Estados locais dos slides
   const [showTotalPrice, setShowTotalPrice] = useState(false);
   const [timeLeft, setTimeLeft] = useState(300); // 5 minutos (300 segundos)
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   // Referência para iniciar o timer de desconto quando entrar em tela
   const discountRef = useRef<HTMLDivElement>(null);
@@ -1548,7 +1549,7 @@ export function MethodologySection({
                                   ].map((row, idx) => (
                                     <tr key={idx} className={idx % 2 === 0 ? "bg-white/[0.02]" : "bg-transparent"}>
                                       <td className="p-2 border border-white/[0.05] font-bold">{row.k}</td>
-                                      <td className="p-2 border border-white/[0.05] font-mono text-right">{row.v}</td>
+                                      <td className="p-2 border border-white/[0.05] font-mono text-right whitespace-nowrap">{row.v}</td>
                                     </tr>
                                   ))}
                                 </tbody>
@@ -1603,8 +1604,8 @@ export function MethodologySection({
                         </div>
 
                         {/* Versão Desktop Unificada por Coordenadas Internas ao SVG (ForeignObject) */}
-                        <div className="hidden md:block w-full max-w-full mx-auto aspect-[10/4] h-auto mt-4">
-                          <svg className="w-full h-full" viewBox="0 0 1000 430" fill="none">
+                        <div className="hidden md:block w-full max-w-full mx-auto aspect-[10/5.8] h-auto mt-4">
+                          <svg className="w-full h-full" viewBox="0 0 1000 580" fill="none">
                             <style>{`
                               @keyframes flow-pulse-dados {
                                 to {
@@ -1628,16 +1629,16 @@ export function MethodologySection({
 
                             {/* Linhas Conectivas com Curvas Suaves - Neon Glow */}
                             {/* Linha Central (Funil de Vendas) */}
-                            <path d="M 500,55 L 500,105" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
-                            <path d="M 500,55 L 500,105" stroke="url(#amber-line-dados)" strokeWidth="1.5" className="flowing-fiber-dados" fill="none" />
+                            <path d="M 500,55 L 500,120" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
+                            <path d="M 500,55 L 500,120" stroke="url(#amber-line-dados)" strokeWidth="1.5" className="flowing-fiber-dados" fill="none" />
 
                             {/* Linha Esquerda (OKR's) */}
-                            <path d="M 500,55 L 500,75 Q 500,90 485,90 L 195,90 Q 180,90 180,98 L 180,106" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
-                            <path d="M 500,55 L 500,75 Q 500,90 485,90 L 195,90 Q 180,90 180,98 L 180,106" stroke="url(#amber-line-dados)" strokeWidth="1.5" className="flowing-fiber-dados" fill="none" />
+                            <path d="M 500,55 L 500,85 Q 500,105 480,105 L 195,105 Q 180,105 180,112 L 180,120" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
+                            <path d="M 500,55 L 500,85 Q 500,105 480,105 L 195,105 Q 180,105 180,112 L 180,120" stroke="url(#amber-line-dados)" strokeWidth="1.5" className="flowing-fiber-dados" fill="none" />
 
                             {/* Linha Direita (Métricas) */}
-                            <path d="M 500,55 L 500,75 Q 500,90 515,90 L 805,90 Q 820,90 820,98 L 820,106" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
-                            <path d="M 500,55 L 500,75 Q 500,90 515,90 L 805,90 Q 820,90 820,98 L 820,106" stroke="url(#amber-line-dados)" strokeWidth="1.5" className="flowing-fiber-dados" fill="none" />
+                            <path d="M 500,55 L 500,85 Q 500,105 520,105 L 805,105 Q 820,105 820,112 L 820,120" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
+                            <path d="M 500,55 L 500,85 Q 500,105 520,105 L 805,105 Q 820,105 820,112 L 820,120" stroke="url(#amber-line-dados)" strokeWidth="1.5" className="flowing-fiber-dados" fill="none" />
 
                             {/* Bloco Raiz "DADOS" no topo centralizado */}
                             <foreignObject x="380" y="5" width="240" height="65">
@@ -1653,9 +1654,9 @@ export function MethodologySection({
 
                             {/* Coluna 1: DEFINIÇÃO DE OKR's */}
                             {/* Título */}
-                            <foreignObject x="50" y="98" width="260" height="50">
+                            <foreignObject x="50" y="120" width="260" height="50">
                               <div className="w-full h-full flex items-center justify-center p-1.5 select-none text-center">
-                                <div className="w-[242px] h-[38px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)] hover:border-amber-500/60 hover:scale-[1.02] transition-all duration-300">
+                                <div className="w-[250px] h-[38px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)] hover:border-amber-500/60 hover:scale-[1.02] transition-all duration-300">
                                   <span className="font-display text-[10px] md:text-xs font-black bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent tracking-widest uppercase leading-tight">
                                     DEFINIÇÃO DE OKR'S
                                   </span>
@@ -1663,14 +1664,14 @@ export function MethodologySection({
                               </div>
                             </foreignObject>
                             {/* Conteúdo (Tabela de OKRs) */}
-                            <foreignObject x="50" y="142" width="260" height="280">
+                            <foreignObject x="50" y="165" width="260" height="400">
                               <div className="w-full h-full flex flex-col items-center justify-start p-2">
-                                <div className="w-[242px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-950/70 to-zinc-950/90 backdrop-blur-md border border-white/[0.06] border-t-white/15 p-3 shadow-[0_15px_35px_rgba(0,0,0,0.6)] hover:border-amber-500/30 hover:scale-[1.01] transition-all duration-300">
-                                  <table className="w-full text-left border-collapse text-[8.5px] text-zinc-300 rounded-lg overflow-hidden">
+                                <div className="w-[250px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-950/70 to-zinc-950/90 backdrop-blur-md border border-white/[0.06] border-t-white/15 p-4 shadow-[0_15px_35px_rgba(0,0,0,0.6)] hover:border-amber-500/30 hover:scale-[1.01] transition-all duration-300">
+                                  <table className="w-full text-left border-collapse text-[11px] text-zinc-300 rounded-lg overflow-hidden">
                                     <thead>
-                                      <tr className="bg-gradient-to-r from-purple-800 to-indigo-800 text-white font-extrabold uppercase tracking-wider text-[8px] text-center">
-                                        <th className="p-1.5 border border-white/[0.08]">OKRS</th>
-                                        <th className="p-1.5 border border-white/[0.08]">RESULTADO</th>
+                                      <tr className="bg-gradient-to-r from-purple-800 to-indigo-800 text-white font-extrabold uppercase tracking-wider text-[10px] text-center">
+                                        <th className="p-2.5 border border-white/[0.08]">OKRS</th>
+                                        <th className="p-2.5 border border-white/[0.08]">RESULTADO</th>
                                       </tr>
                                     </thead>
                                     <tbody>
@@ -1683,16 +1684,16 @@ export function MethodologySection({
                                         { k: "REAL S4 (24-30)", v: "R$ 211.826" }
                                       ].map((row, idx) => (
                                         <tr key={idx} className={idx % 2 === 0 ? "bg-white/[0.02] hover:bg-white/[0.04] transition-colors" : "bg-transparent hover:bg-white/[0.02] transition-colors"}>
-                                          <td className="p-1.5 border border-white/[0.05] font-bold uppercase tracking-wider">{row.k}</td>
-                                          <td className="p-1.5 border border-white/[0.05] font-mono font-extrabold text-right text-yellow-500/90">{row.v}</td>
+                                          <td className="p-2.5 border border-white/[0.05] font-bold uppercase tracking-wider">{row.k}</td>
+                                          <td className="p-2.5 border border-white/[0.05] font-mono font-extrabold text-right text-amber-400 whitespace-nowrap">{row.v}</td>
                                         </tr>
                                       ))}
                                     </tbody>
                                   </table>
                                   
-                                  <div className="mt-3 text-center border-t border-white/[0.06] pt-2">
-                                    <a href="https://docs.google.com/spreadsheets/d/1ZrmUsdAaq4Oee_0rjEvXvugrPA1tPVOL/edit?gid=233443817#gid=233443817" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[9px] font-extrabold text-amber-500 hover:text-amber-400 transition-colors uppercase tracking-widest">
-                                      Okr Modelo <ArrowUpRight className="w-3 h-3" />
+                                  <div className="mt-4 text-center border-t border-white/[0.06] pt-3">
+                                    <a href="https://docs.google.com/spreadsheets/d/1ZrmUsdAaq4Oee_0rjEvXvugrPA1tPVOL/edit?gid=233443817#gid=233443817" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[11px] font-extrabold text-amber-500 hover:text-amber-400 transition-colors uppercase tracking-widest">
+                                      Okr Modelo <ArrowUpRight className="w-3.5 h-3.5" />
                                     </a>
                                   </div>
                                 </div>
@@ -1701,9 +1702,9 @@ export function MethodologySection({
 
                             {/* Coluna 2: FUNIL DE VENDAS */}
                             {/* Título */}
-                            <foreignObject x="370" y="98" width="260" height="50">
+                            <foreignObject x="370" y="120" width="260" height="50">
                               <div className="w-full h-full flex items-center justify-center p-1.5 select-none text-center">
-                                <div className="w-[242px] h-[38px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)] hover:border-amber-500/60 hover:scale-[1.02] transition-all duration-300">
+                                <div className="w-[250px] h-[38px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)] hover:border-amber-500/60 hover:scale-[1.02] transition-all duration-300">
                                   <span className="font-display text-[10px] md:text-xs font-black bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent tracking-widest uppercase leading-tight">
                                     FUNIL DE VENDAS
                                   </span>
@@ -1711,18 +1712,18 @@ export function MethodologySection({
                               </div>
                             </foreignObject>
                             {/* Conteúdo (Screenshot do Funil) */}
-                            <foreignObject x="370" y="142" width="260" height="280">
+                            <foreignObject x="370" y="165" width="260" height="400">
                               <div className="w-full h-full flex flex-col items-center justify-start p-2">
-                                <div className="w-[242px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-950/70 to-zinc-950/90 backdrop-blur-md border border-white/[0.06] border-t-white/15 p-3 shadow-[0_15px_35px_rgba(0,0,0,0.6)] hover:border-amber-500/30 hover:scale-[1.01] transition-all duration-300">
+                                <div className="w-[250px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-950/70 to-zinc-950/90 backdrop-blur-md border border-white/[0.06] border-t-white/15 p-4 shadow-[0_15px_35px_rgba(0,0,0,0.6)] hover:border-amber-500/30 hover:scale-[1.01] transition-all duration-300">
                                   
                                   {/* Funnel image mockup */}
-                                  <div className="rounded-xl overflow-hidden border border-white/[0.08] bg-white p-1 relative aspect-[4/3] group/img">
+                                  <div className="rounded-xl overflow-hidden border border-white/[0.08] bg-white p-2 relative aspect-[4/3] group/img">
                                     <img src="https://fazendoacontecer.site/wp-content/uploads/2026/06/Captura-de-tela-2026-06-25-024122.png" alt="Funil de Vendas" className="w-full h-full object-contain rounded-lg opacity-90 group-hover/img:opacity-100 group-hover/img:scale-102 transition-all duration-500" />
                                   </div>
                                   
-                                  <div className="mt-3 text-center border-t border-white/[0.06] pt-2">
-                                    <a href="https://goals.dottech.ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[9px] font-extrabold text-amber-500 hover:text-amber-400 transition-colors uppercase tracking-widest">
-                                      Goals <ArrowUpRight className="w-3 h-3" />
+                                  <div className="mt-4 text-center border-t border-white/[0.06] pt-3">
+                                    <a href="https://goals.dottech.ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[11px] font-extrabold text-amber-500 hover:text-amber-400 transition-colors uppercase tracking-widest">
+                                      Goals <ArrowUpRight className="w-3.5 h-3.5" />
                                     </a>
                                   </div>
                                 </div>
@@ -1731,9 +1732,9 @@ export function MethodologySection({
 
                             {/* Coluna 3: MÉTRICAS */}
                             {/* Título */}
-                            <foreignObject x="690" y="98" width="260" height="50">
+                            <foreignObject x="690" y="120" width="260" height="50">
                               <div className="w-full h-full flex items-center justify-center p-1.5 select-none text-center">
-                                <div className="w-[242px] h-[38px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)] hover:border-amber-500/60 hover:scale-[1.02] transition-all duration-300">
+                                <div className="w-[250px] h-[38px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)] hover:border-amber-500/60 hover:scale-[1.02] transition-all duration-300">
                                   <span className="font-display text-[10px] md:text-xs font-black bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent tracking-widest uppercase leading-tight">
                                     MÉTRICAS
                                   </span>
@@ -1741,10 +1742,10 @@ export function MethodologySection({
                               </div>
                             </foreignObject>
                             {/* Conteúdo (Lista de Métricas) */}
-                            <foreignObject x="690" y="142" width="260" height="280">
+                            <foreignObject x="690" y="165" width="260" height="400">
                               <div className="w-full h-full flex flex-col items-center justify-start p-2">
-                                <div className="w-[242px] h-[225px] overflow-y-auto no-scrollbar flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-950/70 to-zinc-950/90 backdrop-blur-md border border-white/[0.06] border-t-white/15 p-3 shadow-[0_15px_35px_rgba(0,0,0,0.6)] hover:border-amber-500/30 hover:scale-[1.01] transition-all duration-300">
-                                  <div className="flex flex-col gap-1 w-full">
+                                <div className="w-[250px] h-[330px] overflow-y-auto no-scrollbar flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-950/70 to-zinc-950/90 backdrop-blur-md border border-white/[0.06] border-t-white/15 p-4 shadow-[0_15px_35px_rgba(0,0,0,0.6)] hover:border-amber-500/30 hover:scale-[1.01] transition-all duration-300">
+                                  <div className="flex flex-col gap-2.5 w-full">
                                     {[
                                       "OKR",
                                       "CAC",
@@ -1756,9 +1757,9 @@ export function MethodologySection({
                                       "PROJEÇÃO DE RESULTADO",
                                       "DEFINIÇÃO DE METAS"
                                     ].map((item, idx) => (
-                                      <div key={item} className="flex items-center gap-2 py-1 px-2.5 rounded-lg bg-white/[0.01] border border-white/[0.02] border-l-2 border-l-amber-500/30 hover:border-l-amber-500 hover:bg-gradient-to-r hover:from-amber-500/10 hover:to-transparent hover:translate-x-1 transition-all duration-300 group/item">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_6px_rgba(245,158,11,0.8)] flex-shrink-0" />
-                                        <span className="font-sans text-[8.5px] tracking-wide text-zinc-300 font-extrabold uppercase leading-none group-hover/item:text-white transition-colors duration-300">{item}</span>
+                                      <div key={item} className="flex items-center gap-2.5 py-2 px-3 rounded-lg bg-white/[0.01] border border-white/[0.02] border-l-2 border-l-amber-500/30 hover:border-l-amber-500 hover:bg-gradient-to-r hover:from-amber-500/10 hover:to-transparent hover:translate-x-1 transition-all duration-300 group/item">
+                                        <span className="w-2 h-2 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_6px_rgba(245,158,11,0.8)] flex-shrink-0" />
+                                        <span className="font-sans text-[11px] tracking-wide text-zinc-300 font-extrabold uppercase leading-none group-hover/item:text-white transition-colors duration-300">{item}</span>
                                       </div>
                                     ))}
                                   </div>
@@ -1773,6 +1774,227 @@ export function MethodologySection({
 
                     </div>
                   </div></motion.section>
+
+        {/* Slide 15: Perguntas e Respostas (Preenchido e Expandido) */}
+        <motion.section 
+          className="relative w-full min-h-screen py-20 md:py-28 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* Ambient background glows */}
+          <div className="absolute top-[20%] left-[20%] w-[300px] h-[300px] rounded-full bg-amber-500/5 blur-[100px] pointer-events-none" />
+          <div className="absolute bottom-[20%] right-[20%] w-[300px] h-[300px] rounded-full bg-yellow-600/5 blur-[100px] pointer-events-none" />
+
+          {/* Architectural grid background */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+
+          <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 items-center justify-center text-center">
+            {/* Ícone com Glow de Neon */}
+            <div className="relative mb-6 select-none group">
+              <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-xl opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative w-20 h-20 rounded-full bg-zinc-950 border border-amber-500/40 flex items-center justify-center shadow-[0_0_30px_rgba(245,158,11,0.2)] hover:border-amber-400 hover:shadow-[0_0_40px_rgba(245,158,11,0.4)] transition-all duration-500">
+                <MessageSquare className="w-9 h-9 text-amber-500 group-hover:scale-110 transition-transform duration-500" />
+              </div>
+            </div>
+
+            {/* Kicker */}
+            <span className="text-[10px] sm:text-xs font-bold tracking-[0.25em] text-amber-500 uppercase mb-2.5 select-none">
+              Interação & Alinhamento
+            </span>
+
+            {/* Título Principal */}
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-wider mb-4 select-none max-w-4xl leading-tight">
+              Hora das Perguntas <br className="xs:hidden" /> e Respostas
+            </h1>
+
+            {/* Subtítulo */}
+            <p className="font-sans text-zinc-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-12">
+              Iremos tirar uns minutos para responder suas dúvidas e conversar sobre os próximos passos da sua operação.
+            </p>
+
+            {/* Caixas de Tópicos Sugeridos (Grandes e Premium) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-5xl mt-2 mb-16">
+              {[
+                {
+                  title: "Geração de Demanda",
+                  icon: Phone,
+                  desc: "Fontes de tráfego pago (Meta/Google Ads), captação de novos leads, criativos de alta conversão e validação de ofertas comerciais."
+                },
+                {
+                  title: "Processo de Vendas",
+                  icon: Kanban,
+                  desc: "Playbook comercial, cadência de abordagens de leads, scripts práticos de mensagens, contorno de objeções e rotinas diárias/semanais."
+                },
+                {
+                  title: "Métricas & Dados",
+                  icon: Eye,
+                  desc: "OKRs mensais e semanais, cálculo do CAC/LTV comercial, definição de ROAS ideal, taxa de conversão do funil e projeções de faturamento."
+                },
+                {
+                  title: "CRM & dot.Sales",
+                  icon: Bot,
+                  desc: "Automação de inbox unificada, agentes qualificadores de IA 24/7 para leads frios, medição de SLA de tempo de resposta e dashboards em tempo real."
+                }
+              ].map((topic, index) => {
+                const IconComponent = topic.icon;
+                return (
+                  <div 
+                    key={index} 
+                    className="flex flex-col items-start text-left bg-gradient-to-b from-neutral-900/60 to-zinc-950/90 border border-white/[0.06] border-t-white/10 hover:border-amber-500/30 rounded-2xl p-6 backdrop-blur-md transition-all duration-300 hover:translate-y-[-4px] hover:shadow-[0_15px_30px_rgba(0,0,0,0.5)] group/card"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-4 group-hover/card:bg-amber-500/20 transition-all duration-300">
+                      <IconComponent className="w-5 h-5 text-amber-500" />
+                    </div>
+                    <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-2.5">
+                      {topic.title}
+                    </h3>
+                    <p className="text-zinc-400 text-xs leading-relaxed">
+                      {topic.desc}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Nova Seção de FAQ e Próximos Passos (Grid Expandido) */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 w-full max-w-5xl text-left border-t border-white/[0.05] pt-16 mb-6">
+              {/* Coluna 1: FAQ Interativo (lg:col-span-7) */}
+              <div className="lg:col-span-7 flex flex-col gap-6">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <div className="p-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20">
+                    <HelpCircle className="w-4 h-4 text-amber-500" />
+                  </div>
+                  <h3 className="font-display text-base md:text-lg font-black text-white uppercase tracking-widest">
+                    Dúvidas Frequentes
+                  </h3>
+                </div>
+                
+                <div className="flex flex-col gap-3">
+                  {[
+                    {
+                      q: "Como funciona a implantação inicial e qual o prazo?",
+                      a: "Nossa equipe realiza todo o onboarding técnico em até 15 dias úteis. Isso inclui a integração de canais de atendimento, setup das IAs qualificadoras no dot.Sales, ativação de campanhas de tráfego e treinamento do seu time comercial."
+                    },
+                    {
+                      q: "Preciso substituir minhas ferramentas atuais?",
+                      a: "Não é necessário. O dot.Sales funciona em harmonia com os principais CRMs do mercado (como RD Station, ActiveCampaign e HubSpot). Caso prefira consolidar seus custos, o dot.Sales possui recursos nativos para gerenciar todo o seu funil de vendas."
+                    },
+                    {
+                      q: "Como é garantido o SLA de resposta inferior a 5 minutos?",
+                      a: "Através dos nossos agentes virtuais inteligentes integrados ao dot.Sales. Eles respondem instantaneamente (em segundos) a qualquer lead vindo de tráfego pago, qualificando o contato antes de transferi-lo para um vendedor humano no inbox unificado."
+                    },
+                    {
+                      q: "A metodologia de tráfego pago inclui o orçamento de anúncios?",
+                      a: "O valor dos anúncios (Budget de Ads) é pago diretamente às plataformas (Meta/Google) e é definido de acordo com seus objetivos. Nós cuidamos de toda a estratégia, criação de criativos, otimização diária e relatórios de ROAS."
+                    }
+                  ].map((faq, idx) => {
+                    const isOpen = activeFaq === idx;
+                    return (
+                      <div 
+                        key={idx}
+                        className="bg-zinc-950/40 border border-white/[0.04] rounded-xl overflow-hidden transition-all duration-300 hover:border-white/[0.08]"
+                      >
+                        <button
+                          onClick={() => setActiveFaq(isOpen ? null : idx)}
+                          className="w-full flex items-center justify-between p-4 text-left font-sans text-xs sm:text-sm font-bold text-zinc-200 hover:text-white hover:bg-white/[0.01] transition-colors"
+                        >
+                          <span className="pr-4">{faq.q}</span>
+                          <ChevronDown className={`w-4 h-4 text-amber-500 flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+                        </button>
+                        
+                        <AnimatePresence initial={false}>
+                          {isOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.25, ease: "easeInOut" }}
+                            >
+                              <div className="p-4 pt-0 border-t border-white/[0.02] text-xs leading-relaxed text-zinc-400 font-sans">
+                                {faq.a}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Coluna 2: Linha do Tempo de Próximos Passos (lg:col-span-5) */}
+              <div className="lg:col-span-5 flex flex-col gap-6">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <div className="p-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20">
+                    <Sparkles className="w-4 h-4 text-amber-500" />
+                  </div>
+                  <h3 className="font-display text-base md:text-lg font-black text-white uppercase tracking-widest">
+                    Próximos Passos & SLA
+                  </h3>
+                </div>
+
+                <div className="relative border-l border-white/[0.08] ml-3 pl-6 flex flex-col gap-8 py-2">
+                  {[
+                    {
+                      step: "01",
+                      title: "Diagnóstico Comercial",
+                      time: "Sessão de 1h - 2h",
+                      desc: "Mapeamos seus gargalos de vendas, funil atual, taxa de conversão e custo de aquisição (CAC)."
+                    },
+                    {
+                      step: "02",
+                      title: "Desenho da Solução",
+                      time: "Em até 48 horas",
+                      desc: "Desenvolvemos sua proposta sob medida com metas claras de OKRs e escopo detalhado de implantação."
+                    },
+                    {
+                      step: "03",
+                      title: "Setup & Onboarding",
+                      time: "Prazo de 10 a 15 dias",
+                      desc: "Integramos suas contas, criamos as automações dot.Sales e preparamos as primeiras campanhas."
+                    },
+                    {
+                      step: "04",
+                      title: "Escala & Acompanhamento",
+                      time: "Rotina Mensal",
+                      desc: "Analisamos dados de tráfego, acompanhamos o cumprimento de metas e otimizamos o funil continuamente."
+                    }
+                  ].map((item, idx) => (
+                    <div key={idx} className="relative group">
+                      {/* Badge Circular do Passo */}
+                      <div className="absolute -left-[35px] top-0.5 w-[18px] h-[18px] rounded-full bg-zinc-950 border-2 border-amber-500 flex items-center justify-center shadow-[0_0_8px_rgba(245,158,11,0.5)] group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-[8px] font-mono font-bold text-amber-500">{item.step}</span>
+                      </div>
+                      
+                      <div className="flex flex-col gap-1.5">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                          <h4 className="font-sans text-xs font-bold text-white uppercase tracking-wider">
+                            {item.title}
+                          </h4>
+                          <span className="self-start sm:self-auto text-[9px] font-mono text-amber-500/90 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">
+                            {item.time}
+                          </span>
+                        </div>
+                        <p className="text-zinc-400 text-[11px] leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Frase de Rodapé com Glow */}
+            <div className="mt-12 pt-6 border-t border-white/[0.05] w-full max-w-5xl text-center">
+              <p className="font-serif italic text-xs sm:text-sm text-amber-500/80 drop-shadow-[0_2px_10px_rgba(245,158,11,0.15)] select-none">
+                "Nenhuma dúvida é pequena demais quando o objetivo é crescer de forma previsível."
+              </p>
+            </div>
+          </div>
+        </motion.section>
 
 
         
