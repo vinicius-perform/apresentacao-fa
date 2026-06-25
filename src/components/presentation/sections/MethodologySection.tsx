@@ -959,6 +959,345 @@ export function MethodologySection({
                     </div>
                   </div></motion.section>
 
+        {/* Slide 12.5: DotSales CTA (Fundo Branco) */}
+        <motion.section 
+          className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black" 
+          initial={{ opacity: 0, y: 40 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, margin: "-100px" }} 
+          transition={{ duration: 0.6 }}
+        >
+          {/* Subtle architectural grid background */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+
+          {/* Header Top Left */}
+          <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
+            <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-600 uppercase mb-0.5">Cérebro Comercial</span>
+            <h2 className="text-lg sm:text-xl font-bold text-neutral-900 uppercase tracking-widest flex items-center">
+              <span>dot</span><span className="text-amber-500">.Sales</span>
+            </h2>
+          </div>
+
+          <div className="w-full max-w-5xl px-8 relative z-10 flex flex-col items-center justify-center min-h-[60vh] text-center">
+            {/* Logo Gigante sutil */}
+            <div className="mb-8 select-none">
+              <span className="font-display text-4xl sm:text-5xl md:text-6xl font-black text-neutral-900 tracking-tight">
+                dot<span className="text-amber-500">.Sales</span>
+              </span>
+            </div>
+
+            {/* Main Headline */}
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-neutral-900 mb-8 max-w-4xl text-balance">
+              Quer ver a ferramenta que gerencia tudo isso na prática?
+            </h1>
+
+            {/* Subtitle */}
+            <p className="font-sans text-neutral-500 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed text-balance">
+              Acesse a plataforma e descubra como ter controle total do seu time comercial em tempo real.
+            </p>
+
+            {/* CTA Button */}
+            <a 
+              href="https://sales.dottech.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-black rounded-full transition-all duration-300 uppercase tracking-widest text-sm shadow-[0_4px_20px_rgba(245,158,11,0.25)] hover:shadow-[0_4px_30px_rgba(245,158,11,0.4)] hover:scale-105 cursor-pointer border-0"
+            >
+              <span>Conhecer o dot.Sales</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
+        </motion.section>
+
+        {/* Repetição da Tela de Vendas antes da Daily Diária */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-[90vw] mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
+  <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
+  <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
+
+  <div className="w-full flex justify-between items-center mb-4 px-4 flex-shrink-0">
+    <div className="flex flex-col">
+      <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-amber-500 uppercase">Metodologia GVD</span>
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-white uppercase tracking-wider mt-1 select-none">
+        Vendas
+      </h2>
+    </div>
+    <span className="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-b from-amber-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_4px_12px_rgba(245,158,11,0.2)] select-none">
+      GVD
+    </span>
+  </div>
+
+  <div className="w-full flex-grow flex items-center justify-center relative pb-16">
+    {/* Versão Mobile (Vertical Simplificada) */}
+    <div className="flex md:hidden flex-col w-full h-[60vh] overflow-y-auto space-y-6 px-2 pb-16 no-scrollbar">
+      <div className="w-full bg-[#0a0a0a]/90 border border-amber-500/30 rounded-2xl py-3.5 text-center shadow-lg shadow-amber-500/10">
+        <span className="font-montserrat text-xs sm:text-sm font-bold text-amber-500 uppercase tracking-[0.2em]">Vendas</span>
+      </div>
+
+      {/* Coluna 1: Estruturação do CRM */}
+      <div className="bg-gradient-to-b from-neutral-900/80 to-zinc-950/90 border border-white/[0.06] border-t-white/10 rounded-2xl p-5 shadow-xl backdrop-blur-md flex flex-col items-center">
+        <div className="w-full bg-[#0a0a0a]/95 border border-amber-500/20 rounded-xl py-2.5 px-4 text-center mb-4 shadow-md">
+          <h3 className="text-xs font-bold text-amber-500 uppercase tracking-widest">Estruturação do CRM</h3>
+        </div>
+        <div className="w-full rounded-xl overflow-hidden border border-white/[0.08] bg-black/40 aspect-[16/10] mb-4 shadow-inner">
+          <img src={crmFunil} alt="DotSales Pipeline" className="w-full h-full object-cover opacity-90" />
+        </div>
+        <a 
+          href="https://sales.dottech.ai/dashboard/pipeline/funil?id=71479906-111c-462c-af1d-69e76009057b"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 text-xs font-black text-blue-400 hover:text-blue-300 tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-md shadow-blue-500/5 hover:shadow-blue-500/15"
+        >
+          CRM na Prática
+          <ArrowUpRight className="w-4 h-4" />
+        </a>
+      </div>
+
+      {/* Coluna 2: Playbook de Vendas */}
+      <div className="bg-gradient-to-b from-neutral-900/80 to-zinc-950/90 border border-white/[0.06] border-t-white/10 rounded-2xl p-5 shadow-xl backdrop-blur-md">
+        <div className="w-full bg-[#0a0a0a]/95 border border-amber-500/20 rounded-xl py-2.5 px-4 text-center mb-4 shadow-md">
+          <h3 className="text-xs font-bold text-amber-500 uppercase tracking-widest">Playbook de Vendas</h3>
+        </div>
+        <div className="grid grid-cols-1 gap-2.5 text-xs text-zinc-300">
+          {[
+            "MÉTODOS DE VENDAS",
+            "SCRIPTS DE VENDAS",
+            "FLUXO DE CADÊNCIA",
+            "GATILHOS MENTAIS",
+            "NÍVEIS DE CONSCIÊNCIA"
+          ].map(item => (
+            <div key={item} className="flex items-center gap-2.5 py-2.5 px-3.5 rounded-xl bg-white/[0.02] border border-white/[0.04] border-l-2 border-l-amber-500/80 hover:bg-white/[0.04] hover:border-l-amber-400 transition-all duration-300">
+              <span className="font-sans text-[10px] tracking-widest text-zinc-200 font-extrabold uppercase">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Coluna 3: Rotinas */}
+      <div className="bg-gradient-to-b from-neutral-900/80 to-zinc-950/90 border border-white/[0.06] border-t-white/10 rounded-2xl p-5 shadow-xl backdrop-blur-md">
+        <div className="w-full bg-[#0a0a0a]/95 border border-amber-500/20 rounded-xl py-2.5 px-4 text-center mb-4 shadow-md">
+          <h3 className="text-xs font-bold text-amber-500 uppercase tracking-widest">Rotinas</h3>
+        </div>
+        <div className="grid grid-cols-1 gap-2.5 text-xs text-zinc-300">
+          {[
+            "DAILY",
+            "WEEKLY",
+            "MONTHLY",
+            "COACHING TÉCNICO",
+            "ONE A ONE",
+            "ROLE PLAY"
+          ].map(item => (
+            <div key={item} className="flex items-center gap-2.5 py-2.5 px-3.5 rounded-xl bg-white/[0.02] border border-white/[0.04] border-l-2 border-l-amber-500/80 hover:bg-white/[0.04] hover:border-l-amber-400 transition-all duration-300">
+              <span className="font-sans text-[10px] tracking-widest text-zinc-200 font-extrabold uppercase">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Coluna 4: Rituais */}
+      <div className="bg-gradient-to-b from-neutral-900/80 to-zinc-950/90 border border-white/[0.06] border-t-white/10 rounded-2xl p-5 shadow-xl backdrop-blur-md">
+        <div className="w-full bg-[#0a0a0a]/95 border border-amber-500/20 rounded-xl py-2.5 px-4 text-center mb-4 shadow-md">
+          <h3 className="text-xs font-bold text-amber-500 uppercase tracking-widest">Rituais</h3>
+        </div>
+        <div className="grid grid-cols-1 gap-2.5 text-xs text-zinc-300">
+          {[
+            "BOLA DE OURO",
+            "NOVA RÉGUA",
+            "BANDEIRAS",
+            "SINO",
+            "GRITO DE GERRA"
+          ].map(item => (
+            <div key={item} className="flex items-center gap-2.5 py-2.5 px-3.5 rounded-xl bg-white/[0.02] border border-white/[0.04] border-l-2 border-l-amber-500/80 hover:bg-white/[0.04] hover:border-l-amber-400 transition-all duration-300">
+              <span className="font-sans text-[10px] tracking-widest text-zinc-200 font-extrabold uppercase">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Versão Desktop */}
+    <div className="hidden md:block w-full max-w-full mx-auto aspect-[10/4.5] h-auto mt-4">
+      <svg className="w-full h-full" viewBox="0 0 1000 450" fill="none">
+        <style>{`
+          @keyframes flow-pulse-v {
+            to {
+              stroke-dashoffset: -20;
+            }
+          }
+          .flowing-fiber-v {
+            stroke-dasharray: 6 10;
+            animation: flow-pulse-v 1.2s linear infinite;
+            filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.8));
+          }
+        `}</style>
+        
+        <defs>
+          <marker id="arrow-v" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 7 5 L 0 8.5 z" fill="rgba(255,255,255,0.4)" />
+          </marker>
+          <linearGradient id="amber-line-v" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.9" />
+            <stop offset="50%" stopColor="#d97706" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#b45309" stopOpacity="0.3" />
+          </linearGradient>
+        </defs>
+
+        {/* Coluna 1 (CRM) */}
+        <path d="M 500,50 L 500,70 C 500,85 450,85 140,85 L 140,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
+        <path d="M 500,50 L 500,70 C 500,85 450,85 140,85 L 140,100" stroke="url(#amber-line-v)" strokeWidth="1.5" className="flowing-fiber-v" fill="none" />
+        <path d="M 140,92 L 140,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" markerEnd="url(#arrow-v)" />
+
+        {/* Coluna 2 (Playbook) */}
+        <path d="M 500,50 L 500,70 C 500,85 450,85 380,85 L 380,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
+        <path d="M 500,50 L 500,70 C 500,85 450,85 380,85 L 380,100" stroke="url(#amber-line-v)" strokeWidth="1.5" className="flowing-fiber-v" fill="none" />
+        <path d="M 380,92 L 380,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" markerEnd="url(#arrow-v)" />
+
+        {/* Coluna 3 (Rotinas) */}
+        <path d="M 500,50 L 500,70 C 500,85 550,85 620,85 L 620,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
+        <path d="M 500,50 L 500,70 C 500,85 550,85 620,85 L 620,100" stroke="url(#amber-line-v)" strokeWidth="1.5" className="flowing-fiber-v" fill="none" />
+        <path d="M 620,92 L 620,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" markerEnd="url(#arrow-v)" />
+
+        {/* Coluna 4 (Rituais) */}
+        <path d="M 500,50 L 500,70 C 500,85 550,85 860,85 L 860,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
+        <path d="M 500,50 L 500,70 C 500,85 550,85 860,85 L 860,100" stroke="url(#amber-line-v)" strokeWidth="1.5" className="flowing-fiber-v" fill="none" />
+        <path d="M 860,92 L 860,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" markerEnd="url(#arrow-v)" />
+
+        {/* Bloco Raiz */}
+        <foreignObject x="380" y="5" width="240" height="55">
+          <div className="w-full h-full flex items-center justify-center p-2 select-none">
+            <div className="relative overflow-hidden w-[200px] h-[40px] flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 shadow-[0_4px_15px_rgba(245,158,11,0.4)] text-center border border-amber-300/30">
+              <span className="font-montserrat text-sm font-black tracking-[0.25em] text-white">
+                VENDAS
+              </span>
+            </div>
+          </div>
+        </foreignObject>
+
+        {/* Coluna 1: Estruturação do CRM */}
+        <foreignObject x="35" y="100" width="210" height="45">
+          <div className="w-full h-full flex items-center justify-center p-1 select-none text-center">
+            <div className="w-[195px] h-[36px] flex items-center justify-center rounded-lg bg-[#0a0a0a]/90 border border-amber-500/20 shadow-md shadow-amber-500/2 hover:border-amber-500/50 transition-colors duration-300">
+              <span className="font-display text-[9px] md:text-[10px] font-black text-amber-500 tracking-widest uppercase leading-tight">
+                ESTRUTURAÇÃO DO CRM
+              </span>
+            </div>
+          </div>
+        </foreignObject>
+        <foreignObject x="35" y="150" width="210" height="290">
+          <div className="w-full h-full flex flex-col items-center justify-start p-2">
+            <div className="w-[195px] h-[270px] flex flex-col items-center justify-between rounded-2xl bg-gradient-to-b from-neutral-900/80 to-zinc-950/90 border border-white/[0.06] border-t-white/10 p-3.5 shadow-2xl relative overflow-hidden group hover:border-amber-500/30 transition-all duration-300">
+              <div className="w-full rounded-xl overflow-hidden border border-white/[0.08] bg-black/40 aspect-[16/10] shadow-inner">
+                <img src={crmFunil} alt="DotSales Pipeline" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+              </div>
+              <div className="w-full mt-2.5">
+                <a 
+                  href="https://sales.dottech.ai/dashboard/pipeline/funil?id=71479906-111c-462c-af1d-69e76009057b"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-1.5 py-2 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 text-[10px] font-black text-blue-400 hover:text-blue-300 tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-lg shadow-blue-500/5 hover:shadow-blue-500/15"
+                >
+                  CRM na Prática
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </foreignObject>
+
+        {/* Coluna 2: Playbook de Vendas */}
+        <foreignObject x="275" y="100" width="210" height="45">
+          <div className="w-full h-full flex items-center justify-center p-1 select-none text-center">
+            <div className="w-[195px] h-[36px] flex items-center justify-center rounded-lg bg-[#0a0a0a]/90 border border-amber-500/20 shadow-md shadow-amber-500/2 hover:border-amber-500/50 transition-colors duration-300">
+              <span className="font-display text-[9px] md:text-[10px] font-black text-amber-500 tracking-widest uppercase leading-tight">
+                PLAYBOOK DE VENDAS
+              </span>
+            </div>
+          </div>
+        </foreignObject>
+        <foreignObject x="275" y="150" width="210" height="290">
+          <div className="w-full h-full flex flex-col items-center justify-start p-2 select-none">
+            <div className="w-[195px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-900/80 to-zinc-950/90 border border-white/[0.06] border-t-white/10 p-4 shadow-2xl relative overflow-hidden group hover:border-amber-500/30 transition-all duration-300">
+              <div className="flex flex-col gap-2.5 w-full">
+                {[
+                  "MÉTODOS DE VENDAS",
+                  "SCRIPTS DE VENDAS",
+                  "FLUXO DE CADÊNCIA",
+                  "GATILHOS MENTAIS",
+                  "NÍVEIS DE CONSCIÊNCIA"
+                ].map(item => (
+                  <div key={item} className="flex items-center gap-2.5 py-1.5 px-2.5 rounded-xl bg-white/[0.02] border border-white/[0.04] border-l-2 border-l-amber-500/80 hover:bg-white/[0.04] hover:border-l-amber-400 transition-all duration-300 text-left">
+                    <span className="font-sans text-[8.5px] md:text-[9.5px] tracking-widest text-zinc-300 font-extrabold uppercase leading-tight">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </foreignObject>
+
+        {/* Coluna 3: Rotinas */}
+        <foreignObject x="515" y="100" width="210" height="45">
+          <div className="w-full h-full flex items-center justify-center p-1 select-none text-center">
+            <div className="w-[195px] h-[36px] flex items-center justify-center rounded-lg bg-[#0a0a0a]/90 border border-amber-500/20 shadow-md shadow-amber-500/2 hover:border-amber-500/50 transition-colors duration-300">
+              <span className="font-display text-[9px] md:text-[10px] font-black text-amber-500 tracking-widest uppercase leading-tight">
+                ROTINAS
+              </span>
+            </div>
+          </div>
+        </foreignObject>
+        <foreignObject x="515" y="150" width="210" height="290">
+          <div className="w-full h-full flex flex-col items-center justify-start p-2 select-none">
+            <div className="w-[195px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-900/80 to-zinc-950/90 border border-white/[0.06] border-t-white/10 p-4 shadow-2xl relative overflow-hidden group hover:border-amber-500/30 transition-all duration-300">
+              <div className="flex flex-col gap-2 w-full">
+                {[
+                  "DAILY",
+                  "WEEKLY",
+                  "MONTHLY",
+                  "COACHING TÉCNICO",
+                  "ONE A ONE",
+                  "ROLE PLAY"
+                ].map(item => (
+                  <div key={item} className="flex items-center gap-2.5 py-1 px-2.5 rounded-xl bg-white/[0.02] border border-white/[0.04] border-l-2 border-l-amber-500/80 hover:bg-white/[0.04] hover:border-l-amber-400 transition-all duration-300 text-left">
+                    <span className="font-sans text-[8.5px] md:text-[9.5px] tracking-widest text-zinc-300 font-extrabold uppercase leading-tight">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </foreignObject>
+
+        {/* Coluna 4: Rituais */}
+        <foreignObject x="755" y="100" width="210" height="45">
+          <div className="w-full h-full flex items-center justify-center p-1 select-none text-center">
+            <div className="w-[195px] h-[36px] flex items-center justify-center rounded-lg bg-[#0a0a0a]/90 border border-amber-500/20 shadow-md shadow-amber-500/2 hover:border-amber-500/50 transition-colors duration-300">
+              <span className="font-display text-[9px] md:text-[10px] font-black text-amber-500 tracking-widest uppercase leading-tight">
+                RITUAIS
+              </span>
+            </div>
+          </div>
+        </foreignObject>
+        <foreignObject x="755" y="150" width="210" height="290">
+          <div className="w-full h-full flex flex-col items-center justify-start p-2 select-none">
+            <div className="w-[195px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-900/80 to-zinc-950/90 border border-white/[0.06] border-t-white/10 p-4 shadow-2xl relative overflow-hidden group hover:border-amber-500/30 transition-all duration-300">
+              <div className="flex flex-col gap-2.5 w-full">
+                {[
+                  "BOLA DE OURO",
+                  "NOVA RÉGUA",
+                  "BANDEIRAS",
+                  "SINO",
+                  "GRITO DE GUERRA"
+                ].map(item => (
+                  <div key={item} className="flex items-center gap-2.5 py-1.5 px-2.5 rounded-xl bg-white/[0.02] border border-white/[0.04] border-l-2 border-l-amber-500/80 hover:bg-white/[0.04] hover:border-l-amber-400 transition-all duration-300 text-left">
+                    <span className="font-sans text-[8.5px] md:text-[9.5px] tracking-widest text-zinc-300 font-extrabold uppercase leading-tight">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </foreignObject>
+      </svg>
+    </div>
+  </div>
+</div></motion.section>
+
         {/* Slide 5: Daily Diária 5 Passos */}
         <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
                     {/* Ambient background glows for Premium design */}
@@ -1157,7 +1496,7 @@ export function MethodologySection({
                   </div></motion.section>
 
         {/* Slide 7: Dados */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-[90vw] mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
                     {/* Ambient background glows for Premium design */}
                     <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
@@ -1264,7 +1603,7 @@ export function MethodologySection({
                         </div>
 
                         {/* Versão Desktop Unificada por Coordenadas Internas ao SVG (ForeignObject) */}
-                        <div className="hidden md:block w-full max-w-5xl mx-auto aspect-[10/4] h-auto mt-4">
+                        <div className="hidden md:block w-full max-w-full mx-auto aspect-[10/4] h-auto mt-4">
                           <svg className="w-full h-full" viewBox="0 0 1000 430" fill="none">
                             <style>{`
                               @keyframes flow-pulse-dados {
