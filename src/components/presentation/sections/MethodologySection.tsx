@@ -1,5 +1,5 @@
 import { useState, useEffect, RefObject, useRef } from "react";
-import { ArrowUpRight, Phone, MessageSquare, Eye, XCircle, Inbox, Kanban, Bot, Zap, CheckCircle2, ChevronDown, ChevronUp, Calendar, ArrowRight, Clock, UserCheck, Sparkles, HelpCircle } from "lucide-react";
+import { ArrowUpRight, Phone, MessageSquare, Eye, XCircle, Inbox, Kanban, Bot, Zap, CheckCircle2, ChevronDown, ChevronUp, Calendar, ArrowRight, ArrowDown, Clock, UserCheck, Sparkles, HelpCircle, Video, Target, GraduationCap, Laptop, Compass, DollarSign, TrendingUp } from "lucide-react";
 import { Reveal, Section } from "../primitives";
 import { presentationContent } from "@/lib/presentation-content";
 import { motion, useInView, AnimatePresence } from "motion/react";
@@ -610,28 +610,28 @@ export function MethodologySection({
 
         {/* Slide 8: DotSales Welcome Intro (Do Caos ao Controle) */}
         <motion.section 
-          className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-start overflow-hidden bg-[#FAFAFA] text-black" 
+          className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-start overflow-hidden bg-[#050505] text-white" 
           initial={{ opacity: 0, y: 40 }} 
           whileInView={{ opacity: 1, y: 0 }} 
           viewport={{ once: true, margin: "-100px" }} 
           transition={{ duration: 0.6 }}
         >
           {/* Architectural grid background */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
           {/* Círculos Artísticos e Translúcidos no Lado Direito */}
           <div className="absolute top-0 right-0 w-[50%] h-full pointer-events-none overflow-hidden hidden md:block">
-            <div className="absolute top-[10%] right-[-20%] w-[500px] h-[500px] rounded-full bg-amber-200/20 blur-[100px]" />
-            <div className="absolute bottom-[10%] right-[-10%] w-[450px] h-[450px] rounded-full bg-yellow-200/20 blur-[120px]" />
-            <div className="absolute top-[30%] right-[5%] w-[350px] h-[350px] rounded-full bg-amber-300/10 blur-[80px]" />
+            <div className="absolute top-[10%] right-[-20%] w-[500px] h-[500px] rounded-full bg-amber-500/5 blur-[100px]" />
+            <div className="absolute bottom-[10%] right-[-10%] w-[450px] h-[450px] rounded-full bg-yellow-600/3 blur-[120px]" />
+            <div className="absolute top-[30%] right-[5%] w-[350px] h-[350px] rounded-full bg-amber-500/3 blur-[80px]" />
             {/* Formas geométricas mais nítidas para imitar o Keynote */}
-            <div className="absolute top-[5%] right-[-25%] w-[600px] h-[600px] rounded-full border border-amber-500/10 bg-amber-100/5 backdrop-blur-sm" />
-            <div className="absolute bottom-[-15%] right-[-15%] w-[500px] h-[500px] rounded-full border border-yellow-500/10 bg-yellow-100/5 backdrop-blur-sm" />
+            <div className="absolute top-[5%] right-[-25%] w-[600px] h-[600px] rounded-full border border-amber-500/5 bg-amber-500/[0.01] backdrop-blur-sm" />
+            <div className="absolute bottom-[-15%] right-[-15%] w-[500px] h-[500px] rounded-full border border-yellow-500/5 bg-yellow-500/[0.01] backdrop-blur-sm" />
           </div>
 
           {/* Logo dot.Sales Top Left */}
           <div className="absolute top-10 left-10 md:top-14 md:left-16 flex items-center z-20 select-none">
-            <span className="font-display text-lg md:text-xl font-bold tracking-tight text-neutral-900">
+            <span className="font-display text-lg md:text-xl font-bold tracking-tight text-white">
               dot<span className="text-amber-500 font-extrabold">.Sales</span>
             </span>
           </div>
@@ -646,7 +646,7 @@ export function MethodologySection({
             </div>
 
             {/* Título Principal */}
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] max-w-4xl text-left text-neutral-900">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] max-w-4xl text-left text-white">
               Do caos das mensagens <br className="hidden md:inline" />
               <span className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent">
                 ao controle das vendas
@@ -654,17 +654,17 @@ export function MethodologySection({
             </h1>
 
             {/* Subtítulo */}
-            <p className="font-sans text-neutral-500 text-base sm:text-lg md:text-xl max-w-2xl text-left leading-relaxed">
+            <p className="font-sans text-zinc-400 text-base sm:text-lg md:text-xl max-w-2xl text-left leading-relaxed">
               Transforme WhatsApp e Instagram em uma máquina de vendas previsível.
             </p>
 
             {/* Badge Kayo Cruz */}
             <div className="pt-8">
-              <div className="bg-white/80 border border-amber-500/20 rounded-2xl px-6 py-4 flex flex-col gap-1 shadow-[0_10px_30px_rgba(0,0,0,0.03)] backdrop-blur-md">
-                <span className="font-sans text-sm md:text-base font-bold text-neutral-900 tracking-wide">
+              <div className="bg-[#0a0a0a]/90 border border-white/[0.06] border-t-white/10 rounded-2xl px-6 py-4 flex flex-col gap-1 shadow-[0_15px_35px_rgba(0,0,0,0.4)] backdrop-blur-md">
+                <span className="font-sans text-sm md:text-base font-bold text-white tracking-wide">
                   Kayo Cruz
                 </span>
-                <span className="font-sans text-xs text-amber-600/90">
+                <span className="font-sans text-xs text-amber-500/90">
                   Fundador da Dottech · Criador do dot.Sales
                 </span>
               </div>
@@ -673,15 +673,15 @@ export function MethodologySection({
         </motion.section>
 
 
-{/* Slide 9: DotSales Stats (Fundo Branco) */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#FAFAFA]">
+{/* Slide 9: DotSales Stats (Fundo Escuro) */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#050505]">
                     {/* Very subtle architectural grid background */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
                     {/* Header Top Left */}
                     <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
-                      <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-600 uppercase mb-0.5">Cérebro Comercial</span>
-                      <h2 className="text-lg sm:text-xl font-bold text-neutral-900 uppercase tracking-widest flex items-center">
+                      <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-500 uppercase mb-0.5">Cérebro Comercial</span>
+                      <h2 className="text-lg sm:text-xl font-bold text-white uppercase tracking-widest flex items-center">
                         <span>dot</span>
                         <span className="text-amber-500">.Sales</span>
                       </h2>
@@ -689,61 +689,61 @@ export function MethodologySection({
 
                     <div className="w-full max-w-6xl px-8 relative z-10 flex flex-col items-center justify-center min-h-[60vh] mt-12">
                       {/* Main Headline */}
-                      <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] text-neutral-900 mb-6 max-w-4xl text-balance">
+                      <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] text-white mb-6 max-w-4xl text-balance">
                         O balcão da sua loja mudou de lugar
                       </h1>
 
                       {/* Professional Subtitle */}
-                      <p className="font-sans text-neutral-500 text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-16 leading-relaxed text-balance">
+                      <p className="font-sans text-zinc-400 text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-16 leading-relaxed text-balance">
                         O cliente não entra pela porta. Ele manda mensagem. É aí que a venda é ganha — ou perdida.
                       </p>
 
                       {/* Stats Cards */}
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-4">
                         {/* Card 1 */}
-                        <div className="flex flex-col items-center justify-center text-center bg-white border border-neutral-200 rounded-2xl p-8 sm:p-10 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div className="flex flex-col items-center justify-center text-center bg-[#0a0a0a]/90 border border-white/[0.06] border-t-white/10 rounded-2xl p-8 sm:p-10 shadow-[0_15px_35px_rgba(0,0,0,0.4)] backdrop-blur-md">
                           <span className="text-6xl sm:text-7xl font-display font-black text-amber-500 mb-4 tracking-tighter drop-shadow-sm">95%</span>
-                          <span className="text-neutral-600 font-sans text-sm sm:text-base leading-relaxed">
+                          <span className="text-zinc-300 font-sans text-sm sm:text-base leading-relaxed">
                             das interações entre marcas e consumidores no Brasil acontecem no WhatsApp
                           </span>
                         </div>
                         {/* Card 2 */}
-                        <div className="flex flex-col items-center justify-center text-center bg-white border border-neutral-200 rounded-2xl p-8 sm:p-10 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div className="flex flex-col items-center justify-center text-center bg-[#0a0a0a]/90 border border-white/[0.06] border-t-white/10 rounded-2xl p-8 sm:p-10 shadow-[0_15px_35px_rgba(0,0,0,0.4)] backdrop-blur-md">
                           <span className="text-6xl sm:text-7xl font-display font-black text-amber-500 mb-4 tracking-tighter drop-shadow-sm">98%</span>
-                          <span className="text-neutral-600 font-sans text-sm sm:text-base leading-relaxed">
+                          <span className="text-zinc-300 font-sans text-sm sm:text-base leading-relaxed">
                             de taxa de leitura das mensagens — contra ~20% do e-mail
                           </span>
                         </div>
                         {/* Card 3 */}
-                        <div className="flex flex-col items-center justify-center text-center bg-white border border-neutral-200 rounded-2xl p-8 sm:p-10 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div className="flex flex-col items-center justify-center text-center bg-[#0a0a0a]/90 border border-white/[0.06] border-t-white/10 rounded-2xl p-8 sm:p-10 shadow-[0_15px_35px_rgba(0,0,0,0.4)] backdrop-blur-md">
                           <span className="text-6xl sm:text-7xl font-display font-black text-amber-500 mb-4 tracking-tighter drop-shadow-sm">6x</span>
-                          <span className="text-neutral-600 font-sans text-sm sm:text-base leading-relaxed">
+                          <span className="text-zinc-300 font-sans text-sm sm:text-base leading-relaxed">
                             mais conversão que o e-commerce tradicional
                           </span>
                         </div>
                       </div>
 
                       {/* Footer text */}
-                      <div className="mt-16 text-neutral-400 text-xs sm:text-sm font-sans tracking-wide">
+                      <div className="mt-16 text-zinc-500 text-xs sm:text-sm font-sans tracking-wide">
                         Fontes: Chat Commerce Report 2025 (OmniChat) · Opinion Box · Meta
                       </div>
                     </div>
                   </div></motion.section>
                 ) :
 
-        {/* Slide 10: DotSales Problem (Fundo Branco) */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#FAFAFA]">
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+        {/* Slide 10: DotSales Problem (Fundo Escuro) */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#050505]">
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
                     <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
-                      <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-600 uppercase mb-0.5">Cérebro Comercial</span>
-                      <h2 className="text-lg sm:text-xl font-bold text-neutral-900 uppercase tracking-widest flex items-center">
+                      <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-500 uppercase mb-0.5">Cérebro Comercial</span>
+                      <h2 className="text-lg sm:text-xl font-bold text-white uppercase tracking-widest flex items-center">
                         <span>dot</span><span className="text-amber-500">.Sales</span>
                       </h2>
                     </div>
 
                     <div className="w-full max-w-6xl px-8 relative z-10 flex flex-col items-start justify-center min-h-[60vh] mt-12 text-left">
-                      <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-neutral-900 mb-4 max-w-5xl">
+                      <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white mb-4 max-w-5xl">
                         O problema não é gerar contato. <br/>É o que vem depois.
                       </h1>
                       
@@ -755,26 +755,26 @@ export function MethodologySection({
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
                         {/* Left Card: Red/Amber Tint */}
-                        <div className="flex flex-col bg-red-50/50 border border-red-200 rounded-3xl p-8 sm:p-10 shadow-sm">
+                        <div className="flex flex-col bg-red-950/10 border border-red-900/30 rounded-3xl p-8 sm:p-10 shadow-[0_15px_35px_rgba(0,0,0,0.4)] backdrop-blur-md">
                           <h3 className="text-xl sm:text-2xl font-bold text-red-500 mb-8 font-display">Como a maioria opera hoje</h3>
                           <ul className="flex flex-col gap-6">
-                            <li className="flex items-center gap-4 text-neutral-700 font-medium text-sm sm:text-base">
+                            <li className="flex items-center gap-4 text-zinc-200 font-medium text-sm sm:text-base">
                               <XCircle className="w-6 h-6 text-red-500 flex-shrink-0" />
                               Lead cai numa caixa geral — ninguém é o dono
                             </li>
-                            <li className="flex items-center gap-4 text-neutral-700 font-medium text-sm sm:text-base">
+                            <li className="flex items-center gap-4 text-zinc-200 font-medium text-sm sm:text-base">
                               <XCircle className="w-6 h-6 text-red-500 flex-shrink-0" />
                               Vários vendedores no mesmo número, conversas perdidas
                             </li>
-                            <li className="flex items-center gap-4 text-neutral-700 font-medium text-sm sm:text-base">
+                            <li className="flex items-center gap-4 text-zinc-200 font-medium text-sm sm:text-base">
                               <XCircle className="w-6 h-6 text-red-500 flex-shrink-0" />
                               Resposta sai horas depois
                             </li>
-                            <li className="flex items-center gap-4 text-neutral-700 font-medium text-sm sm:text-base">
+                            <li className="flex items-center gap-4 text-zinc-200 font-medium text-sm sm:text-base">
                               <XCircle className="w-6 h-6 text-red-500 flex-shrink-0" />
                               Não dá pra saber quem vende, quanto e por quê
                             </li>
-                            <li className="flex items-center gap-4 text-neutral-700 font-medium text-sm sm:text-base">
+                            <li className="flex items-center gap-4 text-zinc-200 font-medium text-sm sm:text-base">
                               <XCircle className="w-6 h-6 text-red-500 flex-shrink-0" />
                               Cliente some e ninguém faz follow-up
                             </li>
@@ -782,7 +782,7 @@ export function MethodologySection({
                         </div>
 
                         {/* Right Card: Dark Corporate */}
-                        <div className="flex flex-col bg-zinc-950 border border-amber-500/30 rounded-3xl p-8 sm:p-10 shadow-xl relative overflow-hidden">
+                        <div className="flex flex-col bg-[#0a0a0a]/90 border border-white/[0.06] border-t-white/10 rounded-3xl p-8 sm:p-10 shadow-[0_15px_35px_rgba(0,0,0,0.4)] backdrop-blur-md relative overflow-hidden">
                           <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-amber-400 to-amber-600" />
                           <h3 className="text-xl sm:text-2xl font-bold text-amber-500 mb-8 font-display ml-2">O custo invisível disso</h3>
                           
@@ -801,26 +801,26 @@ export function MethodologySection({
                         </div>
                       </div>
 
-                      <div className="mt-8 text-neutral-400 text-xs sm:text-sm font-sans tracking-wide">
+                      <div className="mt-8 text-zinc-500 text-xs sm:text-sm font-sans tracking-wide">
                         Fontes: HubSpot · InsideSales
                       </div>
                     </div>
                   </div></motion.section>
                 ) :
 
-        {/* Slide 11: DotSales Features (Fundo Branco) */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#FAFAFA]">
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+        {/* Slide 11: DotSales Features (Fundo Escuro) */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#050505]">
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
                     <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
-                      <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-600 uppercase mb-0.5">Cérebro Comercial</span>
-                      <h2 className="text-lg sm:text-xl font-bold text-neutral-900 uppercase tracking-widest flex items-center">
+                      <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-500 uppercase mb-0.5">Cérebro Comercial</span>
+                      <h2 className="text-lg sm:text-xl font-bold text-white uppercase tracking-widest flex items-center">
                         <span>dot</span><span className="text-amber-500">.Sales</span>
                       </h2>
                     </div>
 
                     <div className="w-full max-w-6xl px-8 relative z-10 flex flex-col items-start justify-center min-h-[60vh] mt-12 text-left">
-                      <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-neutral-900 mb-4 max-w-5xl">
+                      <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white mb-4 max-w-5xl">
                         Tudo entre o primeiro "oi" e o fechamento, num só lugar
                       </h1>
                       
@@ -832,46 +832,46 @@ export function MethodologySection({
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                         {/* Caixa única */}
-                        <div className="flex items-start gap-6 bg-white border border-neutral-200 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300 group">
-                          <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                            <Inbox className="w-8 h-8 text-amber-600" />
+                        <div className="flex items-start gap-6 bg-[#0a0a0a]/90 border border-white/[0.06] border-t-white/10 rounded-3xl p-8 shadow-[0_15px_35px_rgba(0,0,0,0.4)] backdrop-blur-md transition-all duration-300 group">
+                          <div className="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                            <Inbox className="w-8 h-8 text-amber-500" />
                           </div>
                           <div className="flex flex-col pt-1">
-                            <h3 className="text-xl font-bold text-neutral-900 mb-2">Caixa única</h3>
-                            <p className="text-neutral-500 text-sm sm:text-base leading-relaxed">WhatsApp, Instagram e Facebook numa só inbox do time.</p>
+                            <h3 className="text-xl font-bold text-white mb-2">Caixa única</h3>
+                            <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">WhatsApp, Instagram e Facebook numa só inbox do time.</p>
                           </div>
                         </div>
                         
                         {/* Funil visual */}
-                        <div className="flex items-start gap-6 bg-white border border-neutral-200 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300 group">
-                          <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                            <Kanban className="w-8 h-8 text-amber-600" />
+                        <div className="flex items-start gap-6 bg-[#0a0a0a]/90 border border-white/[0.06] border-t-white/10 rounded-3xl p-8 shadow-[0_15px_35px_rgba(0,0,0,0.4)] backdrop-blur-md transition-all duration-300 group">
+                          <div className="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                            <Kanban className="w-8 h-8 text-amber-500" />
                           </div>
                           <div className="flex flex-col pt-1">
-                            <h3 className="text-xl font-bold text-neutral-900 mb-2">Funil visual</h3>
-                            <p className="text-neutral-500 text-sm sm:text-base leading-relaxed">Arrasta-e-solta entre etapas. Você vê onde cada lead está.</p>
+                            <h3 className="text-xl font-bold text-white mb-2">Funil visual</h3>
+                            <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">Arrasta-e-solta entre etapas. Você vê onde cada lead está.</p>
                           </div>
                         </div>
 
-                        {/* Agente de IA */}
-                        <div className="flex items-start gap-6 bg-white border border-neutral-200 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300 group">
-                          <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                            <Bot className="w-8 h-8 text-amber-600" />
+                         {/* Agente de IA */}
+                        <div className="flex items-start gap-6 bg-[#0a0a0a]/90 border border-white/[0.06] border-t-white/10 rounded-3xl p-8 shadow-[0_15px_35px_rgba(0,0,0,0.4)] backdrop-blur-md transition-all duration-300 group">
+                          <div className="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                            <Bot className="w-8 h-8 text-amber-500" />
                           </div>
                           <div className="flex flex-col pt-1">
-                            <h3 className="text-xl font-bold text-neutral-900 mb-2">Agente de IA</h3>
-                            <p className="text-neutral-500 text-sm sm:text-base leading-relaxed">Responde 24/7, qualifica e move o lead sozinho.</p>
+                            <h3 className="text-xl font-bold text-white mb-2">Agente de IA</h3>
+                            <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">Responde 24/7, qualifica e move o lead sozinho.</p>
                           </div>
                         </div>
 
                         {/* Automações */}
-                        <div className="flex items-start gap-6 bg-white border border-neutral-200 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300 group">
-                          <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                            <Zap className="w-8 h-8 text-amber-600" />
+                        <div className="flex items-start gap-6 bg-[#0a0a0a]/90 border border-white/[0.06] border-t-white/10 rounded-3xl p-8 shadow-[0_15px_35px_rgba(0,0,0,0.4)] backdrop-blur-md transition-all duration-300 group">
+                          <div className="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                            <Zap className="w-8 h-8 text-amber-500" />
                           </div>
                           <div className="flex flex-col pt-1">
-                            <h3 className="text-xl font-bold text-neutral-900 mb-2">Automações</h3>
-                            <p className="text-neutral-500 text-sm sm:text-base leading-relaxed">Follow-up e mensagens disparados sem ninguém tocar.</p>
+                            <h3 className="text-xl font-bold text-white mb-2">Automações</h3>
+                            <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">Follow-up e mensagens disparados sem ninguém tocar.</p>
                           </div>
                         </div>
                       </div>
@@ -879,19 +879,19 @@ export function MethodologySection({
                   </div></motion.section>
 ) :
 
-        {/* Slide 12: DotSales SLA (Fundo Branco) */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#FAFAFA]">
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+        {/* Slide 12: DotSales SLA (Fundo Escuro) */}
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#050505]">
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
                     <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
-                      <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-600 uppercase mb-0.5">Cérebro Comercial</span>
-                      <h2 className="text-lg sm:text-xl font-bold text-neutral-900 uppercase tracking-widest flex items-center">
+                      <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-500 uppercase mb-0.5">Cérebro Comercial</span>
+                      <h2 className="text-lg sm:text-xl font-bold text-white uppercase tracking-widest flex items-center">
                         <span>dot</span><span className="text-amber-500">.Sales</span>
                       </h2>
                     </div>
 
                     <div className="w-full max-w-6xl px-8 relative z-10 flex flex-col items-start justify-center min-h-[60vh] mt-12 text-left">
-                      <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight leading-[1.1] text-neutral-900 mb-4 max-w-5xl">
+                      <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight leading-[1.1] text-white mb-4 max-w-5xl">
                         O que separa quem cresce: medir e cobrar tempo de resposta
                       </h1>
                       
@@ -903,33 +903,33 @@ export function MethodologySection({
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
                         {/* Left Card: SLA */}
-                        <div className="flex flex-col bg-white border border-neutral-200 rounded-3xl p-8 sm:p-10 shadow-sm">
-                          <h3 className="text-xl sm:text-2xl font-bold text-amber-600 mb-4 font-display">SLA: sua promessa de resposta, medida</h3>
-                          <p className="text-neutral-500 text-sm sm:text-base leading-relaxed mb-8">
+                        <div className="flex flex-col bg-[#0a0a0a]/90 border border-white/[0.06] border-t-white/10 rounded-3xl p-8 sm:p-10 shadow-[0_15px_35px_rgba(0,0,0,0.4)] backdrop-blur-md">
+                          <h3 className="text-xl sm:text-2xl font-bold text-amber-500 mb-4 font-display">SLA: sua promessa de resposta, medida</h3>
+                          <p className="text-zinc-400 text-sm sm:text-base leading-relaxed mb-8">
                             É o tempo máximo que sua operação aceita levar para responder um lead. Sem ferramenta, é só discurso. Com dot.Sales, vira número.
                           </p>
                           <ul className="flex flex-col gap-6">
-                            <li className="flex items-center gap-4 text-neutral-800 font-bold text-sm sm:text-base">
-                              <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0" />
+                            <li className="flex items-center gap-4 text-zinc-200 font-bold text-sm sm:text-base">
+                              <CheckCircle2 className="w-6 h-6 text-emerald-500 flex-shrink-0" />
                               Define a meta (ex.: responder em 5 min)
                             </li>
-                            <li className="flex items-center gap-4 text-neutral-800 font-bold text-sm sm:text-base">
-                              <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0" />
+                            <li className="flex items-center gap-4 text-zinc-200 font-bold text-sm sm:text-base">
+                              <CheckCircle2 className="w-6 h-6 text-emerald-500 flex-shrink-0" />
                               O sistema mede cada atendimento
                             </li>
-                            <li className="flex items-center gap-4 text-neutral-800 font-bold text-sm sm:text-base">
-                              <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0" />
+                            <li className="flex items-center gap-4 text-zinc-200 font-bold text-sm sm:text-base">
+                              <CheckCircle2 className="w-6 h-6 text-emerald-500 flex-shrink-0" />
                               Alerta antes de estourar o prazo
                             </li>
-                            <li className="flex items-center gap-4 text-neutral-800 font-bold text-sm sm:text-base">
-                              <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0" />
+                            <li className="flex items-center gap-4 text-zinc-200 font-bold text-sm sm:text-base">
+                              <CheckCircle2 className="w-6 h-6 text-emerald-500 flex-shrink-0" />
                               Dashboard mostra conversão, ticket e ranking
                             </li>
                           </ul>
                         </div>
 
                         {/* Right Card: Chart */}
-                        <div className="flex flex-col bg-zinc-950 border border-amber-500/30 rounded-3xl p-8 sm:p-10 shadow-xl relative overflow-hidden">
+                        <div className="flex flex-col bg-[#0a0a0a]/90 border border-white/[0.06] border-t-white/10 rounded-3xl p-8 sm:p-10 shadow-[0_15px_35px_rgba(0,0,0,0.4)] backdrop-blur-md relative overflow-hidden">
                           <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-amber-400 to-amber-600" />
                           <h3 className="text-xl sm:text-2xl font-bold text-amber-500 mb-2 font-display ml-2">Por que isso é dinheiro</h3>
                           <p className="text-zinc-400 text-xs sm:text-sm mb-10 ml-2">Chance relativa de converter por tempo de resposta</p>
@@ -942,7 +942,7 @@ export function MethodologySection({
                             </div>
                             <div className="flex flex-col items-center gap-2 group">
                               <span className="text-white font-bold text-lg group-hover:text-amber-400 transition-colors">25</span>
-                              <div className="w-16 sm:w-20 bg-amber-500/50 h-8 rounded-t-sm" />
+                              <div className="w-16 sm:w-20 bg-amber-500/60 h-8 rounded-t-sm" />
                               <span className="text-zinc-400 text-xs sm:text-sm mt-2">10 min</span>
                             </div>
                             <div className="flex flex-col items-center gap-2 group">
@@ -954,27 +954,27 @@ export function MethodologySection({
                         </div>
                       </div>
 
-                      <div className="mt-8 text-neutral-400 text-xs sm:text-sm font-sans tracking-wide">
+                      <div className="mt-8 text-zinc-500 text-xs sm:text-sm font-sans tracking-wide">
                         Fontes: HubSpot · InsideSales · Lead Response Management
                       </div>
                     </div>
                   </div></motion.section>
 
-        {/* Slide 12.5: DotSales CTA (Fundo Branco) */}
+        {/* Slide 12.5: DotSales CTA (Fundo Escuro) */}
         <motion.section 
-          className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black" 
+          className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" 
           initial={{ opacity: 0, y: 40 }} 
           whileInView={{ opacity: 1, y: 0 }} 
           viewport={{ once: true, margin: "-100px" }} 
           transition={{ duration: 0.6 }}
         >
           {/* Subtle architectural grid background */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
           {/* Header Top Left */}
           <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
-            <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-600 uppercase mb-0.5">Cérebro Comercial</span>
-            <h2 className="text-lg sm:text-xl font-bold text-neutral-900 uppercase tracking-widest flex items-center">
+            <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-500 uppercase mb-0.5">Cérebro Comercial</span>
+            <h2 className="text-lg sm:text-xl font-bold text-white uppercase tracking-widest flex items-center">
               <span>dot</span><span className="text-amber-500">.Sales</span>
             </h2>
           </div>
@@ -982,18 +982,18 @@ export function MethodologySection({
           <div className="w-full max-w-5xl px-8 relative z-10 flex flex-col items-center justify-center min-h-[60vh] text-center">
             {/* Logo Gigante sutil */}
             <div className="mb-8 select-none">
-              <span className="font-display text-4xl sm:text-5xl md:text-6xl font-black text-neutral-900 tracking-tight">
+              <span className="font-display text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight">
                 dot<span className="text-amber-500">.Sales</span>
               </span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-neutral-900 mb-8 max-w-4xl text-balance">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white mb-8 max-w-4xl text-balance">
               Quer ver a ferramenta que gerencia tudo isso na prática?
             </h1>
 
             {/* Subtitle */}
-            <p className="font-sans text-neutral-500 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed text-balance">
+            <p className="font-sans text-zinc-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed text-balance">
               Acesse a plataforma e descubra como ter controle total do seu time comercial em tempo real.
             </p>
 
@@ -1858,146 +1858,229 @@ export function MethodologySection({
               })}
             </div>
 
-            {/* Nova Seção de FAQ e Próximos Passos (Grid Expandido) */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 w-full max-w-5xl text-left border-t border-white/[0.05] pt-16 mb-6">
-              {/* Coluna 1: FAQ Interativo (lg:col-span-7) */}
-              <div className="lg:col-span-7 flex flex-col gap-6">
-                <div className="flex items-center gap-2.5 mb-2">
-                  <div className="p-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20">
-                    <HelpCircle className="w-4 h-4 text-amber-500" />
-                  </div>
-                  <h3 className="font-display text-base md:text-lg font-black text-white uppercase tracking-widest">
-                    Dúvidas Frequentes
-                  </h3>
-                </div>
-                
-                <div className="flex flex-col gap-3">
-                  {[
-                    {
-                      q: "Como funciona a implantação inicial e qual o prazo?",
-                      a: "Nossa equipe realiza todo o onboarding técnico em até 15 dias úteis. Isso inclui a integração de canais de atendimento, setup das IAs qualificadoras no dot.Sales, ativação de campanhas de tráfego e treinamento do seu time comercial."
-                    },
-                    {
-                      q: "Preciso substituir minhas ferramentas atuais?",
-                      a: "Não é necessário. O dot.Sales funciona em harmonia com os principais CRMs do mercado (como RD Station, ActiveCampaign e HubSpot). Caso prefira consolidar seus custos, o dot.Sales possui recursos nativos para gerenciar todo o seu funil de vendas."
-                    },
-                    {
-                      q: "Como é garantido o SLA de resposta inferior a 5 minutos?",
-                      a: "Através dos nossos agentes virtuais inteligentes integrados ao dot.Sales. Eles respondem instantaneamente (em segundos) a qualquer lead vindo de tráfego pago, qualificando o contato antes de transferi-lo para um vendedor humano no inbox unificado."
-                    },
-                    {
-                      q: "A metodologia de tráfego pago inclui o orçamento de anúncios?",
-                      a: "O valor dos anúncios (Budget de Ads) é pago diretamente às plataformas (Meta/Google) e é definido de acordo com seus objetivos. Nós cuidamos de toda a estratégia, criação de criativos, otimização diária e relatórios de ROAS."
-                    }
-                  ].map((faq, idx) => {
-                    const isOpen = activeFaq === idx;
-                    return (
-                      <div 
-                        key={idx}
-                        className="bg-zinc-950/40 border border-white/[0.04] rounded-xl overflow-hidden transition-all duration-300 hover:border-white/[0.08]"
-                      >
-                        <button
-                          onClick={() => setActiveFaq(isOpen ? null : idx)}
-                          className="w-full flex items-center justify-between p-4 text-left font-sans text-xs sm:text-sm font-bold text-zinc-200 hover:text-white hover:bg-white/[0.01] transition-colors"
-                        >
-                          <span className="pr-4">{faq.q}</span>
-                          <ChevronDown className={`w-4 h-4 text-amber-500 flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
-                        </button>
-                        
-                        <AnimatePresence initial={false}>
-                          {isOpen && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: "auto", opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.25, ease: "easeInOut" }}
-                            >
-                              <div className="p-4 pt-0 border-t border-white/[0.02] text-xs leading-relaxed text-zinc-400 font-sans">
-                                {faq.a}
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Coluna 2: Linha do Tempo de Próximos Passos (lg:col-span-5) */}
-              <div className="lg:col-span-5 flex flex-col gap-6">
-                <div className="flex items-center gap-2.5 mb-2">
-                  <div className="p-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20">
-                    <Sparkles className="w-4 h-4 text-amber-500" />
-                  </div>
-                  <h3 className="font-display text-base md:text-lg font-black text-white uppercase tracking-widest">
-                    Próximos Passos & SLA
-                  </h3>
-                </div>
-
-                <div className="relative border-l border-white/[0.08] ml-3 pl-6 flex flex-col gap-8 py-2">
-                  {[
-                    {
-                      step: "01",
-                      title: "Diagnóstico Comercial",
-                      time: "Sessão de 1h - 2h",
-                      desc: "Mapeamos seus gargalos de vendas, funil atual, taxa de conversão e custo de aquisição (CAC)."
-                    },
-                    {
-                      step: "02",
-                      title: "Desenho da Solução",
-                      time: "Em até 48 horas",
-                      desc: "Desenvolvemos sua proposta sob medida com metas claras de OKRs e escopo detalhado de implantação."
-                    },
-                    {
-                      step: "03",
-                      title: "Setup & Onboarding",
-                      time: "Prazo de 10 a 15 dias",
-                      desc: "Integramos suas contas, criamos as automações dot.Sales e preparamos as primeiras campanhas."
-                    },
-                    {
-                      step: "04",
-                      title: "Escala & Acompanhamento",
-                      time: "Rotina Mensal",
-                      desc: "Analisamos dados de tráfego, acompanhamos o cumprimento de metas e otimizamos o funil continuamente."
-                    }
-                  ].map((item, idx) => (
-                    <div key={idx} className="relative group">
-                      {/* Badge Circular do Passo */}
-                      <div className="absolute -left-[35px] top-0.5 w-[18px] h-[18px] rounded-full bg-zinc-950 border-2 border-amber-500 flex items-center justify-center shadow-[0_0_8px_rgba(245,158,11,0.5)] group-hover:scale-110 transition-transform duration-300">
-                        <span className="text-[8px] font-mono font-bold text-amber-500">{item.step}</span>
-                      </div>
-                      
-                      <div className="flex flex-col gap-1.5">
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                          <h4 className="font-sans text-xs font-bold text-white uppercase tracking-wider">
-                            {item.title}
-                          </h4>
-                          <span className="self-start sm:self-auto text-[9px] font-mono text-amber-500/90 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">
-                            {item.time}
-                          </span>
-                        </div>
-                        <p className="text-zinc-400 text-[11px] leading-relaxed">
-                          {item.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
             {/* Frase de Rodapé com Glow */}
-            <div className="mt-12 pt-6 border-t border-white/[0.05] w-full max-w-5xl text-center">
-              <p className="font-serif italic text-xs sm:text-sm text-amber-500/80 drop-shadow-[0_2px_10px_rgba(245,158,11,0.15)] select-none">
+            <div className="mt-14 pt-4 border-t border-white/[0.05] w-full max-w-4xl text-center">
+              <p className="font-serif italic text-sm text-amber-500/80 drop-shadow-[0_2px_10px_rgba(245,158,11,0.15)] select-none">
                 "Nenhuma dúvida é pequena demais quando o objetivo é crescer de forma previsível."
               </p>
             </div>
           </div>
         </motion.section>
 
+        {/* Slide 16: Esteira de Produtos da FA */}
+        <motion.section 
+          className="relative w-full min-h-screen py-20 md:py-28 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* Ambient background glows */}
+          <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] rounded-full bg-amber-500/5 blur-[120px] pointer-events-none" />
+          <div className="absolute bottom-[20%] left-[10%] w-[400px] h-[400px] rounded-full bg-yellow-600/3 blur-[120px] pointer-events-none" />
 
-        
+          {/* Architectural grid background */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+
+          {/* Decorações douradas nos cantos (Keynote Style) */}
+          <div className="absolute top-0 left-0 w-64 h-64 pointer-events-none select-none opacity-40">
+            <svg className="w-full h-full text-amber-500/30" viewBox="0 0 200 200" fill="none">
+              <line x1="-50" y1="50" x2="150" y2="-150" stroke="currentColor" strokeWidth="0.75" />
+              <line x1="-30" y1="70" x2="170" y2="-130" stroke="currentColor" strokeWidth="0.75" />
+              <line x1="-10" y1="90" x2="190" y2="-110" stroke="currentColor" strokeWidth="0.75" />
+            </svg>
+          </div>
+          
+          <div className="absolute bottom-0 right-0 w-64 h-64 pointer-events-none select-none opacity-40">
+            <svg className="w-full h-full text-amber-500/30" viewBox="0 0 200 200" fill="none">
+              <line x1="50" y1="250" x2="250" y2="50" stroke="currentColor" strokeWidth="0.75" />
+              <line x1="70" y1="270" x2="270" y2="70" stroke="currentColor" strokeWidth="0.75" />
+            </svg>
+          </div>
+
+          {/* Logo FA no canto inferior direito */}
+          <div className="absolute bottom-8 right-12 z-10 select-none opacity-50">
+            <span className="font-display text-3xl font-extrabold tracking-tighter text-amber-500/60">FA</span>
+          </div>
+
+          <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 items-center justify-center text-center">
+            {/* Título Principal */}
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-600 bg-clip-text text-transparent uppercase tracking-wider mb-4 select-none leading-tight">
+              Esteira de Produtos da FA
+            </h2>
+
+                  {/* Linha/Grid de Produtos com Setas Conectivas (Grandes, Minimalistas e Monumentais) */}
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-3 w-full max-w-6xl">
+              {[
+                {
+                  title: "Produção de Conteúdo",
+                  subTitle: "Social Media",
+                  icon: Video,
+                },
+                {
+                  title: "Geração de Demanda",
+                  subTitle: "Tráfego Pago",
+                  icon: Target,
+                },
+                {
+                  title: "Treinamento de",
+                  subTitle: "Time Comercial",
+                  icon: GraduationCap,
+                },
+                {
+                  title: "Implementação de CRM",
+                  subTitle: "dot.Sales",
+                  icon: Laptop,
+                },
+                {
+                  title: "Consultoria do",
+                  subTitle: "Mecanismo GVD",
+                  icon: Compass,
+                }
+              ].map((product, index) => {
+                const IconComponent = product.icon;
+                const isLast = index === 4;
+                return (
+                  <div key={index} className="flex flex-col lg:flex-row items-center">
+                    {/* Card do Produto (Monumento Minimalista) */}
+                    <div className="w-[260px] lg:w-[195px] xl:w-[215px] h-[280px] lg:h-[260px] xl:h-[280px] flex flex-col items-center justify-center bg-zinc-950/40 border-2 border-amber-500/10 hover:border-amber-500/30 rounded-[2rem] p-6 backdrop-blur-md transition-all duration-500 hover:translate-y-[-6px] hover:shadow-[0_20px_40px_rgba(245,158,11,0.12)] group">
+                      {/* Círculo do Ícone Monumental */}
+                      <div className="w-20 h-20 xl:w-24 xl:h-24 rounded-full bg-amber-500/5 border border-amber-500/10 flex items-center justify-center mb-6 group-hover:bg-amber-500/10 group-hover:border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.02)] group-hover:shadow-[0_0_25px_rgba(245,158,11,0.12)] transition-all duration-500">
+                        <IconComponent className="w-9 h-9 xl:w-11 xl:h-11 text-amber-500/80 group-hover:text-amber-400 group-hover:scale-110 transition-all duration-500" />
+                      </div>
+                      
+                      {/* Linha Divisória Dourada */}
+                      <div className="w-8 h-[2px] bg-amber-500/30 mb-4 group-hover:w-14 group-hover:bg-amber-500/50 transition-all duration-500" />
+                      
+                      {/* Título e Subtítulo Grandes */}
+                      <div className="text-center select-none flex flex-col items-center justify-center h-12">
+                        <span className="text-[11px] sm:text-xs xl:text-sm font-black text-zinc-100 group-hover:text-white uppercase tracking-widest block leading-tight">
+                          {product.title}
+                        </span>
+                        <span className="text-[11px] sm:text-xs xl:text-sm font-black text-amber-500/80 group-hover:text-amber-500 uppercase tracking-widest block leading-tight mt-1">
+                          {product.subTitle}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Seta Conectiva Grande */}
+                    {!isLast && (
+                      <div className="flex items-center justify-center py-2 lg:py-0 lg:px-1">
+                        <ArrowRight className="w-5 h-5 text-amber-500/30 hidden lg:block animate-pulse" />
+                        <ArrowDown className="w-5 h-5 text-amber-500/30 lg:hidden animate-pulse" />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Slide 17: Preço x Valor */}
+        <motion.section 
+          className="relative w-full min-h-screen py-20 md:py-28 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* Ambient background glows */}
+          <div className="absolute top-[30%] left-[10%] w-[350px] h-[350px] rounded-full bg-zinc-800/10 blur-[120px] pointer-events-none" />
+          <div className="absolute bottom-[30%] right-[10%] w-[400px] h-[400px] rounded-full bg-amber-500/5 blur-[120px] pointer-events-none" />
+
+          {/* Architectural grid background */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+
+          {/* Decorações douradas nos cantos (Keynote Style) */}
+          <div className="absolute top-0 left-0 w-64 h-64 pointer-events-none select-none opacity-40">
+            <svg className="w-full h-full text-amber-500/30" viewBox="0 0 200 200" fill="none">
+              <line x1="-50" y1="50" x2="150" y2="-150" stroke="currentColor" strokeWidth="0.75" />
+              <line x1="-30" y1="70" x2="170" y2="-130" stroke="currentColor" strokeWidth="0.75" />
+              <line x1="-10" y1="90" x2="190" y2="-110" stroke="currentColor" strokeWidth="0.75" />
+            </svg>
+          </div>
+          
+          <div className="absolute bottom-0 right-0 w-64 h-64 pointer-events-none select-none opacity-40">
+            <svg className="w-full h-full text-amber-500/30" viewBox="0 0 200 200" fill="none">
+              <line x1="50" y1="250" x2="250" y2="50" stroke="currentColor" strokeWidth="0.75" />
+              <line x1="70" y1="270" x2="270" y2="70" stroke="currentColor" strokeWidth="0.75" />
+            </svg>
+          </div>
+
+          {/* Logo FA no canto inferior direito */}
+          <div className="absolute bottom-8 right-12 z-10 select-none opacity-50">
+            <span className="font-display text-3xl font-extrabold tracking-tighter text-amber-500/60">FA</span>
+          </div>
+
+          <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 items-center justify-center text-center">
+            {/* Título Principal */}
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-600 bg-clip-text text-transparent uppercase tracking-widest mb-16 select-none leading-tight">
+              Preço x Valor
+            </h2>
+
+            {/* Comparação Lado a Lado */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 w-full max-w-4xl items-stretch">
+              {/* Card 1: Preço */}
+              <div className="flex flex-col items-center justify-center bg-zinc-950/40 border border-white/[0.05] rounded-[2rem] p-8 md:p-12 transition-all duration-300 hover:border-white/[0.1] shadow-xl relative overflow-hidden select-none">
+                {/* Ícone sutil */}
+                <div className="w-16 h-16 rounded-full bg-white/[0.02] border border-white/[0.08] flex items-center justify-center mb-6">
+                  <DollarSign className="w-7 h-7 text-zinc-400" />
+                </div>
+                
+                <h3 className="font-display text-xl md:text-2xl font-bold text-zinc-300 uppercase tracking-widest mb-1">
+                  Preço
+                </h3>
+                <span className="text-[10px] md:text-xs font-mono text-zinc-500 uppercase tracking-[0.2em] mb-4">
+                  O que você paga
+                </span>
+                
+                <div className="w-8 h-[1.5px] bg-zinc-800 mb-6" />
+                
+                <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed max-w-sm">
+                  O investimento financeiro mensal, imediato e previsível necessário para operacionalizar as estratégias, canais e a plataforma.
+                </p>
+              </div>
+
+              {/* Card 2: Valor */}
+              <div className="flex flex-col items-center justify-center bg-gradient-to-b from-neutral-900/60 to-zinc-950/90 border-2 border-amber-500/20 rounded-[2rem] p-8 md:p-12 transition-all duration-500 hover:border-amber-500/40 shadow-[0_20px_50px_rgba(245,158,11,0.1)] relative overflow-hidden group select-none">
+                <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-600" />
+                
+                {/* Ícone luminoso */}
+                <div className="w-16 h-16 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(245,158,11,0.1)] group-hover:bg-amber-500/20 group-hover:border-amber-500/35 transition-all duration-500">
+                  <TrendingUp className="w-7 h-7 text-amber-500" />
+                </div>
+                
+                <h3 className="font-display text-xl md:text-2xl font-bold bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 bg-clip-text text-transparent uppercase tracking-widest mb-1">
+                  Valor
+                </h3>
+                <span className="text-[10px] md:text-xs font-mono text-amber-500/80 uppercase tracking-[0.2em] mb-4">
+                  O que você leva
+                </span>
+                
+                <div className="w-8 h-[1.5px] bg-amber-500/30 mb-6" />
+                
+                <p className="text-zinc-300 text-xs sm:text-sm md:text-base leading-relaxed max-w-sm mb-6">
+                  Estruturação de um ativo comercial definitivo e permanente: processos de vendas automatizados, qualificação automática por IA e previsibilidade real de faturamento.
+                </p>
+
+                {/* Tags de Ativos */}
+                <div className="flex flex-wrap justify-center gap-2 mt-2">
+                  <span className="text-[9px] font-mono font-bold text-amber-500 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/25">
+                    Ativo Permanente
+                  </span>
+                  <span className="text-[9px] font-mono font-bold text-amber-500 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/25">
+                    Processo Validado
+                  </span>
+                  <span className="text-[9px] font-mono font-bold text-amber-500 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/25">
+                    Escala & ROI
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
       </div>
     </div>
   );
