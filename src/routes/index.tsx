@@ -15,6 +15,9 @@ import { PivotSection } from "@/components/presentation/sections/PivotSection";
 import { AllocatorsSection } from "@/components/presentation/sections/AllocatorsSection";
 import { MethodologySection } from "@/components/presentation/sections/MethodologySection";
 import { ItapipocaCaseSection } from "@/components/presentation/sections/ItapipocaCaseSection";
+import { ValueAnchoringSection } from "@/components/presentation/sections/ValueAnchoringSection";
+import { DiscountRevealSection } from "@/components/presentation/sections/DiscountRevealSection";
+import { ProtagonistValueSection } from "@/components/presentation/sections/ProtagonistValueSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -71,6 +74,9 @@ function Keynote() {
         <AllocatorsSection />
         <MethodologySection containerRef={methodologyRef} scrollYProgress={scrollYProgress} />
         <ItapipocaCaseSection />
+        <ValueAnchoringSection />
+        <DiscountRevealSection />
+        <ProtagonistValueSection />
       </div>
     </motion.main>
   );

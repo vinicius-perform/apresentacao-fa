@@ -2019,63 +2019,44 @@ export function MethodologySection({
               Preço x Valor
             </h2>
 
-            {/* Comparação Lado a Lado */}
+            {/* Comparação Lado a Lado (Monumental e Minimalista) */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 w-full max-w-4xl items-stretch">
               {/* Card 1: Preço */}
-              <div className="flex flex-col items-center justify-center bg-zinc-950/40 border border-white/[0.05] rounded-[2rem] p-8 md:p-12 transition-all duration-300 hover:border-white/[0.1] shadow-xl relative overflow-hidden select-none">
-                {/* Ícone sutil */}
-                <div className="w-16 h-16 rounded-full bg-white/[0.02] border border-white/[0.08] flex items-center justify-center mb-6">
-                  <DollarSign className="w-7 h-7 text-zinc-400" />
+              <div className="w-full max-w-[360px] h-[340px] md:h-[380px] mx-auto flex flex-col items-center justify-center bg-zinc-950/40 border border-white/[0.05] rounded-[2.5rem] p-8 md:p-12 transition-all duration-300 hover:border-white/[0.1] shadow-xl relative overflow-hidden select-none">
+                {/* Ícone sutil gigante */}
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-white/[0.02] border border-white/[0.08] flex items-center justify-center mb-6">
+                  <DollarSign className="w-12 h-12 sm:w-14 sm:h-14 text-zinc-400" />
                 </div>
                 
-                <h3 className="font-display text-xl md:text-2xl font-bold text-zinc-300 uppercase tracking-widest mb-1">
+                {/* Linha Divisória */}
+                <div className="w-8 h-[2px] bg-zinc-800 mb-6" />
+                
+                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-black text-zinc-300 uppercase tracking-widest mb-1.5">
                   Preço
                 </h3>
-                <span className="text-[10px] md:text-xs font-mono text-zinc-500 uppercase tracking-[0.2em] mb-4">
+                <span className="text-[11px] sm:text-xs font-mono text-zinc-500 uppercase tracking-[0.25em]">
                   O que você paga
                 </span>
-                
-                <div className="w-8 h-[1.5px] bg-zinc-800 mb-6" />
-                
-                <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed max-w-sm">
-                  O investimento financeiro mensal, imediato e previsível necessário para operacionalizar as estratégias, canais e a plataforma.
-                </p>
               </div>
 
               {/* Card 2: Valor */}
-              <div className="flex flex-col items-center justify-center bg-gradient-to-b from-neutral-900/60 to-zinc-950/90 border-2 border-amber-500/20 rounded-[2rem] p-8 md:p-12 transition-all duration-500 hover:border-amber-500/40 shadow-[0_20px_50px_rgba(245,158,11,0.1)] relative overflow-hidden group select-none">
+              <div className="w-full max-w-[360px] h-[340px] md:h-[380px] mx-auto flex flex-col items-center justify-center bg-gradient-to-b from-neutral-900/60 to-zinc-950/90 border-2 border-amber-500/20 rounded-[2.5rem] p-8 md:p-12 transition-all duration-500 hover:border-amber-500/40 shadow-[0_20px_50px_rgba(245,158,11,0.1)] relative overflow-hidden group select-none">
                 <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-600" />
                 
-                {/* Ícone luminoso */}
-                <div className="w-16 h-16 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(245,158,11,0.1)] group-hover:bg-amber-500/20 group-hover:border-amber-500/35 transition-all duration-500">
-                  <TrendingUp className="w-7 h-7 text-amber-500" />
+                {/* Ícone luminoso gigante */}
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(245,158,11,0.1)] group-hover:bg-amber-500/20 group-hover:border-amber-500/35 transition-all duration-500">
+                  <TrendingUp className="w-12 h-12 sm:w-14 sm:h-14 text-amber-500 group-hover:text-amber-400 group-hover:scale-110 transition-all duration-500" />
                 </div>
                 
-                <h3 className="font-display text-xl md:text-2xl font-bold bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 bg-clip-text text-transparent uppercase tracking-widest mb-1">
+                {/* Linha Divisória Dourada */}
+                <div className="w-8 h-[2px] bg-amber-500/30 mb-6 group-hover:w-14 group-hover:bg-amber-500/60 transition-all duration-500" />
+                
+                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 bg-clip-text text-transparent uppercase tracking-widest mb-1.5">
                   Valor
                 </h3>
-                <span className="text-[10px] md:text-xs font-mono text-amber-500/80 uppercase tracking-[0.2em] mb-4">
+                <span className="text-[11px] sm:text-xs font-mono text-amber-500/80 uppercase tracking-[0.25em]">
                   O que você leva
                 </span>
-                
-                <div className="w-8 h-[1.5px] bg-amber-500/30 mb-6" />
-                
-                <p className="text-zinc-300 text-xs sm:text-sm md:text-base leading-relaxed max-w-sm mb-6">
-                  Estruturação de um ativo comercial definitivo e permanente: processos de vendas automatizados, qualificação automática por IA e previsibilidade real de faturamento.
-                </p>
-
-                {/* Tags de Ativos */}
-                <div className="flex flex-wrap justify-center gap-2 mt-2">
-                  <span className="text-[9px] font-mono font-bold text-amber-500 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/25">
-                    Ativo Permanente
-                  </span>
-                  <span className="text-[9px] font-mono font-bold text-amber-500 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/25">
-                    Processo Validado
-                  </span>
-                  <span className="text-[9px] font-mono font-bold text-amber-500 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/25">
-                    Escala & ROI
-                  </span>
-                </div>
               </div>
             </div>
           </div>
