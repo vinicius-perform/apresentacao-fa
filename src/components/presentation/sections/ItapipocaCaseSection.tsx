@@ -77,7 +77,7 @@ export function ItapipocaCaseSection() {
                 loop
                 preload="metadata"
               >
-                <source src="https://fazendoacontecer.site/wp-content/uploads/2026/06/video-completo.webm" type="video/webm" />
+                <source src="https://fazendoacontecer.site/wp-content/uploads/2026/06/0625.mp4" type="video/mp4" />
                 Seu navegador não suporta a reprodução de vídeos.
               </video>
               <div className="absolute inset-0 pointer-events-none rounded-3xl border border-white/5 ring-1 ring-white/10" />
