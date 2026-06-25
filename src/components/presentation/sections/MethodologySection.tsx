@@ -181,7 +181,7 @@ export function MethodologySection({
                       </div>
 
                       {/* Versão Desktop Unificada por Coordenadas Internas ao SVG (ForeignObject) */}
-                      <div className="hidden md:block w-full max-w-[98vw] h-[86vh]">
+                      <div className="hidden md:block w-full max-w-5xl mx-auto aspect-[10/4] h-auto mt-4">
                         <svg className="w-full h-full" viewBox="0 0 1000 400" fill="none">
                           
                           {/* Definições de Marcadores e Gradientes */}
@@ -193,33 +193,33 @@ export function MethodologySection({
 
                           {/* ---------------- LINHAS DE CONEXÃO ---------------- */}
                           {/* Curvas da Raiz para Posicionamento e Demanda */}
-                          <path d="M 190,200 C 235,200 240,100 270,100" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
-                          <path d="M 270,100 L 280,100" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" markerEnd="url(#arrow)" />
+                          <path d="M 210,200 C 245,200 245,100 280,100" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
+                          <path d="M 280,100 L 280,100" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" markerEnd="url(#arrow)" />
                           
-                          <path d="M 190,200 C 235,200 240,300 270,300" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
-                          <path d="M 270,300 L 280,300" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" markerEnd="url(#arrow)" />
+                          <path d="M 210,200 C 245,200 245,300 280,300" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
+                          <path d="M 280,300 L 280,300" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" markerEnd="url(#arrow)" />
 
                           {/* Linha Posicionamento -> Instagram */}
-                          <path d="M 435,100 L 480,100" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
+                          <path d="M 450,100 L 490,100" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
 
                           {/* Curvas Instagram -> Reels, Depoimento, Antes e Depois */}
-                          <path d="M 620,100 C 660,100 665,43 705,43" stroke="rgba(255,255,255,0.15)" strokeWidth="2" />
-                          <path d="M 620,100 L 705,100" stroke="rgba(255,255,255,0.15)" strokeWidth="2" />
-                          <path d="M 620,100 C 660,100 665,157 705,157" stroke="rgba(255,255,255,0.15)" strokeWidth="2" />
+                          <path d="M 650,100 C 675,100 675,43 700,43" stroke="rgba(255,255,255,0.15)" strokeWidth="2" />
+                          <path d="M 650,100 L 700,100" stroke="rgba(255,255,255,0.15)" strokeWidth="2" />
+                          <path d="M 650,100 C 675,100 675,157 700,157" stroke="rgba(255,255,255,0.15)" strokeWidth="2" />
 
                           {/* Linha Demanda -> Tráfego Pago */}
-                          <path d="M 435,300 L 480,300" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
+                          <path d="M 450,300 L 490,300" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
 
                           {/* Curvas Tráfego Pago -> Meta Ads e Google Ads */}
-                          <path d="M 600,300 C 635,300 645,250 680,250" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
-                          <path d="M 600,300 C 635,300 645,350 680,350" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
+                          <path d="M 640,300 C 665,300 665,250 690,250" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
+                          <path d="M 640,300 C 665,300 665,350 690,350" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
 
                           {/* ---------------- ELEMENTOS HTML INTERNOS (ForeignObjects) ---------------- */}
                           
                           {/* Coluna 1: Bloco Raiz */}
-                          <foreignObject x="10" y="165" width="180" height="70">
+                          <foreignObject x="10" y="150" width="200" height="100">
                             <div className="w-full h-full flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-600 to-yellow-500 shadow-[0_0_20px_rgba(245,158,11,0.25)] border border-amber-400/40 p-3 text-center">
-                              <span className="font-montserrat text-xs sm:text-sm font-bold text-white leading-tight uppercase">
+                              <span className="font-montserrat text-sm sm:text-base md:text-lg font-black text-white leading-tight uppercase">
                                 Geração de Demanda
                               </span>
                             </div>
@@ -227,18 +227,18 @@ export function MethodologySection({
 
                           {/* Coluna 2: Sub-raízes */}
                           {/* Bloco Posicionamento */}
-                          <foreignObject x="285" y="78" width="150" height="44">
+                          <foreignObject x="280" y="70" width="170" height="60">
                             <div className="w-full h-full flex items-center justify-center rounded-lg bg-black border border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.05)] text-center px-3 hover:border-amber-400 transition-colors duration-300">
-                              <span className="font-display text-[10px] md:text-xs font-bold text-white tracking-widest uppercase">
+                              <span className="font-display text-xs md:text-sm font-black text-white tracking-widest uppercase">
                                 Posicionamento
                               </span>
                             </div>
                           </foreignObject>
 
                           {/* Bloco Demanda */}
-                          <foreignObject x="285" y="278" width="150" height="44">
+                          <foreignObject x="280" y="270" width="170" height="60">
                             <div className="w-full h-full flex items-center justify-center rounded-lg bg-black border border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.05)] text-center px-3 hover:border-amber-400 transition-colors duration-300">
-                              <span className="font-display text-[10px] md:text-xs font-bold text-white tracking-widest uppercase">
+                              <span className="font-display text-xs md:text-sm font-black text-white tracking-widest uppercase">
                                 Demanda
                               </span>
                             </div>
@@ -246,27 +246,27 @@ export function MethodologySection({
 
                           {/* Coluna 3: Canais / Mecanismos */}
                           {/* Bloco Instagram (Alinhado com Posicionamento no Y) */}
-                          <foreignObject x="480" y="25" width="140" height="150">
+                          <foreignObject x="490" y="15" width="160" height="170">
                             <div className="w-full h-full flex flex-col items-center text-center">
                               {/* Logo Instagram */}
-                              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#f9ce71] via-[#ee305a] to-[#6228d7] flex items-center justify-center shadow-lg mb-1.5">
-                                <svg viewBox="0 0 24 24" className="w-5.5 h-5.5 text-white" fill="none" stroke="currentColor" strokeWidth="2.2">
+                              <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-[#f9ce71] via-[#ee305a] to-[#6228d7] flex items-center justify-center shadow-lg mb-1.5">
+                                <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2.2">
                                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                                 </svg>
                               </div>
-                              <span className="font-sans text-[11px] md:text-xs font-bold text-white">Instagram</span>
-                              <span className="font-sans text-[8px] md:text-[9px] font-semibold text-yellow-500 mt-1 leading-snug">
+                              <span className="font-sans text-xs md:text-sm font-black text-white">Instagram</span>
+                              <span className="font-sans text-[10px] md:text-xs font-extrabold text-yellow-500 mt-1.5 leading-snug">
                                 Stories Diários<br/>+ 3 Postagens<br/>por Semana
                               </span>
                             </div>
                           </foreignObject>
 
                           {/* Bloco Tráfego Pago (Alinhado com Demanda no Y) */}
-                          <foreignObject x="480" y="280" width="120" height="40">
+                          <foreignObject x="490" y="270" width="150" height="60">
                             <div className="w-full h-full flex items-center justify-center text-center">
-                              <span className="font-display text-xs md:text-sm font-bold text-white tracking-wide uppercase">
+                              <span className="font-display text-sm md:text-base font-black text-white tracking-wide uppercase">
                                 Tráfego Pago
                               </span>
                             </div>
@@ -274,17 +274,17 @@ export function MethodologySection({
 
                           {/* Coluna 4: Resultados / Plataformas */}
                           {/* Ramificação Instagram */}
-                          <foreignObject x="705" y="25" width="110" height="36">
+                          <foreignObject x="700" y="20" width="140" height="46">
                             <div className="w-full h-full flex items-center justify-center rounded-md bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] transition-colors duration-300 text-center">
                               <span className="font-sans text-[10px] md:text-xs font-semibold text-white/90">Reels</span>
                             </div>
                           </foreignObject>
-                          <foreignObject x="705" y="82" width="110" height="36">
+                          <foreignObject x="700" y="77" width="140" height="46">
                             <div className="w-full h-full flex items-center justify-center rounded-md bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] transition-colors duration-300 text-center">
                               <span className="font-sans text-[10px] md:text-xs font-semibold text-white/90">Depoimento</span>
                             </div>
                           </foreignObject>
-                          <foreignObject x="705" y="139" width="110" height="36">
+                          <foreignObject x="700" y="134" width="140" height="46">
                             <div className="w-full h-full flex items-center justify-center rounded-md bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] transition-colors duration-300 text-center">
                               <span className="font-sans text-[10px] md:text-xs font-semibold text-white/90">Antes e Depois</span>
                             </div>
@@ -292,7 +292,7 @@ export function MethodologySection({
 
                           {/* Ramificação Tráfego Pago */}
                           {/* Meta Ads */}
-                          <foreignObject x="680" y="230" width="110" height="40">
+                          <foreignObject x="690" y="225" width="150" height="50">
                             <div className="w-full h-full flex items-center justify-center gap-1.5 rounded-md bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] px-2 transition-colors duration-300">
                               <svg viewBox="0 0 24 24" className="w-4.5 h-4.5 text-[#0064e0]" fill="currentColor">
                                 <path d="M17.472 6c-1.39 0-2.673.684-3.528 1.83C13.09 6.683 11.808 6 10.418 6C8.016 6 6 8.016 6 10.418c0 1.347.608 2.553 1.572 3.359C6.444 14.542 5 16.275 5 18c0 .553.447 1 1 1s1-.447 1-1c0-1.748 1.942-3.582 4.418-3.582c.983 0 1.921-.295 2.672-.835c.751.54 1.69.835 2.672.835c2.476 0 4.418 1.834 4.418 3.582c0 .553.448 1 1 1s1-.447 1-1c0-1.725-1.444-3.458-2.572-4.223A4.412 4.412 0 0 0 20.144 10.42C20.144 8.016 18.128 6 15.726 6h1.746zm-7.054 6.836c-1.332 0-2.418-1.086-2.418-2.418s1.086-2.418 2.418-2.418s2.418 1.086 2.418 2.418s-1.086 2.418-2.418 2.418zm5.308 0c-1.332 0-2.418-1.086-2.418-2.418s1.086-2.418 2.418-2.418s2.418 1.086 2.418 2.418s-1.086 2.418-2.418 2.418z"/>
@@ -302,7 +302,7 @@ export function MethodologySection({
                           </foreignObject>
 
                           {/* Google Ads */}
-                          <foreignObject x="680" y="330" width="110" height="40">
+                          <foreignObject x="690" y="325" width="150" height="50">
                             <div className="w-full h-full flex items-center justify-center gap-1.5 rounded-md bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] px-2 transition-colors duration-300">
                               <svg viewBox="0 0 24 24" className="w-4.5 h-4.5">
                                 <path fill="#4285F4" d="M16.5 6L8.5 20h8l8-14z"/>
@@ -320,389 +320,244 @@ export function MethodologySection({
 
         {/* Slide 3: Vendas */}
         <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
-                    {/* Ambient background glows for Premium design */}
-                    <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
-                    <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
+  <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
+  <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
 
-                    {/* Cabeçalho do Slide 4 */}
-                    <div className="w-full flex justify-between items-center mb-2 md:mb-4 px-4 flex-shrink-0">
-                      <div className="flex flex-col">
-                        <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-amber-500 uppercase">Metodologia GVD</span>
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-white uppercase tracking-wider mt-1 select-none">
-                          Vendas
-                        </h2>
-                      </div>
-                      <span className="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-b from-amber-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_4px_12px_rgba(245,158,11,0.2)] select-none">
-                        GVD
-                      </span>
-                    </div>
+  <div className="w-full flex justify-between items-center mb-4 px-4 flex-shrink-0">
+    <div className="flex flex-col">
+      <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-amber-500 uppercase">Metodologia GVD</span>
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-white uppercase tracking-wider mt-1 select-none">
+        Vendas
+      </h2>
+    </div>
+    <span className="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-b from-amber-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_4px_12px_rgba(245,158,11,0.2)] select-none">
+      GVD
+    </span>
+  </div>
 
-                    {/* Vendas Content Box */}
-                    <div className="w-full flex-grow flex items-center justify-center relative pb-16">
-                      
-                      {/* Versão Mobile (Vertical Simplificada) */}
-                      <div className="flex md:hidden flex-col w-full h-[60vh] overflow-y-auto space-y-6 px-2 pb-16 no-scrollbar">
-                        {/* Bloco Raiz "Vendas" */}
-                        <div className="w-full bg-zinc-950/90 border border-amber-500/40 rounded-2xl py-3.5 text-center shadow-lg shadow-amber-500/5">
-                          <span className="font-montserrat text-xs sm:text-sm font-bold text-white uppercase tracking-[0.2em]">Vendas</span>
-                        </div>
+  <div className="w-full flex-grow flex items-center justify-center relative pb-16">
+    {/* Versão Mobile (Vertical Simplificada) */}
+    <div className="flex md:hidden flex-col w-full h-[60vh] overflow-y-auto space-y-6 px-2 pb-16 no-scrollbar">
+      <div className="w-full bg-zinc-950/90 border border-amber-500/40 rounded-2xl py-3.5 text-center shadow-lg shadow-amber-500/5">
+        <span className="font-montserrat text-xs sm:text-sm font-bold text-white uppercase tracking-[0.2em]">Vendas</span>
+      </div>
 
-                        {/* Coluna 1: Playbook de Vendas */}
-                        <div className="bg-gradient-to-b from-neutral-900/90 to-zinc-950/95 border border-white/[0.06] border-t-white/20 rounded-2xl p-5 shadow-xl backdrop-blur-md">
-                          <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/20 to-amber-500/10 border border-amber-500/30 rounded-xl py-2.5 px-4 text-center mb-4 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
-                            <h3 className="text-xs font-bold bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent uppercase tracking-widest">Playbook de Vendas</h3>
-                          </div>
-                          <div className="grid grid-cols-1 gap-1.5 text-xs">
-                            {[
-                              "MÉTODOS DE VENDAS",
-                              "SCRIPTS DE VENDAS",
-                              "FLUXO DE CADÊNCIA",
-                              "GATILHOS MENTAIS",
-                              "NÍVEIS DE CONSCIÊNCIA"
-                            ].map(item => (
-                              <div key={item} className="flex items-center gap-2.5 py-2 px-3.5 rounded-xl bg-white/[0.02] border border-white/[0.03] border-l-2 border-l-amber-500/30 active:border-l-amber-500 transition-all">
-                                <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
-                                <span className="font-sans text-[10px] tracking-wide text-zinc-300 font-bold uppercase">{item}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
+      {/* Coluna 1: Playbook de Vendas */}
+      <div className="bg-gradient-to-b from-neutral-900/90 to-zinc-950/95 border border-white/[0.06] border-t-white/20 rounded-2xl p-5 shadow-xl backdrop-blur-md">
+        <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/20 to-amber-500/10 border border-amber-500/30 rounded-xl py-2.5 px-4 text-center mb-4 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
+          <h3 className="text-xs font-bold bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent uppercase tracking-widest">Playbook de Vendas</h3>
+        </div>
+        <div className="grid grid-cols-1 gap-1.5 text-xs">
+          {[
+            "MÉTODOS DE VENDAS",
+            "SCRIPTS DE VENDAS",
+            "FLUXO DE CADÊNCIA",
+            "GATILHOS MENTAIS",
+            "NÍVEIS DE CONSCIÊNCIA"
+          ].map(item => (
+            <div key={item} className="flex items-center gap-2.5 py-2 px-3.5 rounded-xl bg-white/[0.02] border border-white/[0.03] border-l-2 border-l-amber-500/30 active:border-l-amber-500 transition-all">
+              <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
+              <span className="font-sans text-[10px] tracking-wide text-zinc-300 font-bold uppercase">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
 
-                        {/* Coluna 2: Rotinas */}
-                        <div className="bg-gradient-to-b from-neutral-900/90 to-zinc-950/95 border border-white/[0.06] border-t-white/20 rounded-2xl p-5 shadow-xl backdrop-blur-md">
-                          <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/20 to-amber-500/10 border border-amber-500/30 rounded-xl py-2.5 px-4 text-center mb-4 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
-                            <h3 className="text-xs font-bold bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent uppercase tracking-widest">Rotinas</h3>
-                          </div>
-                          <div className="grid grid-cols-1 gap-1.5 text-xs">
-                            {[
-                              "DAILY",
-                              "WEEKLY",
-                              "MONTHLY",
-                              "COACHING TÉCNICO",
-                              "ONE A ONE",
-                              "ROLE PLAY"
-                            ].map(item => (
-                              <div key={item} className="flex items-center gap-2.5 py-2 px-3.5 rounded-xl bg-white/[0.02] border border-white/[0.03] border-l-2 border-l-amber-500/30 active:border-l-amber-500 transition-all">
-                                <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
-                                <span className="font-sans text-[10px] tracking-wide text-zinc-300 font-bold uppercase">{item}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
+      {/* Coluna 2: Estruturação de OKR */}
+      <div className="bg-gradient-to-b from-neutral-900/90 to-zinc-950/95 border border-white/[0.06] border-t-white/20 rounded-2xl p-5 shadow-xl backdrop-blur-md">
+        <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/20 to-amber-500/10 border border-amber-500/30 rounded-xl py-2.5 px-4 text-center mb-4 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
+          <h3 className="text-xs font-bold bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent uppercase tracking-widest text-balance leading-tight">Estruturação de OKRs</h3>
+        </div>
+        <div className="grid grid-cols-1 gap-1.5 text-xs">
+          {[
+            "META MENSAL / ANUAL COMERCIAL",
+            "DESDOBRAMENTO EM METAS SEMANAIS",
+            "ACOMPANHAMENTO DOS INDICADORES",
+            "ALINHAMENTO DE GAP DA META",
+            "REVISÃO DE RESULTADOS",
+            "AÇÕES DIÁRIAS (MICRO METAS)"
+          ].map(item => (
+            <div key={item} className="flex items-center gap-2.5 py-2 px-3.5 rounded-xl bg-white/[0.02] border border-white/[0.03] border-l-2 border-l-amber-500/30 active:border-l-amber-500 transition-all">
+              <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
+              <span className="font-sans text-[10px] tracking-wide text-zinc-300 font-bold uppercase">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
 
-                      {/* Versão Desktop Unificada por Coordenadas Internas ao SVG (ForeignObject) */}
-                      <div className="hidden md:block w-full max-w-[98vw] h-[74vh]">
-                        <svg className="w-full h-full" viewBox="0 0 1000 400" fill="none">
-                          <style>{`
-                            @keyframes flow-pulse {
-                              to {
-                                stroke-dashoffset: -20;
-                              }
-                            }
-                            .flowing-fiber {
-                              stroke-dasharray: 6 10;
-                              animation: flow-pulse 1.2s linear infinite;
-                              filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.8));
-                            }
-                          `}</style>
-                          
-                          {/* Definições de Marcadores e Gradientes */}
-                          <defs>
-                            <marker id="arrow-v" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                              <path d="M 0 1.5 L 7 5 L 0 8.5 z" fill="rgba(255,255,255,0.4)" />
-                            </marker>
-                            <linearGradient id="amber-line" x1="0%" y1="0%" x2="100%" y2="100%">
-                              <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.9" />
-                              <stop offset="50%" stopColor="#d97706" stopOpacity="0.6" />
-                              <stop offset="100%" stopColor="#b45309" stopOpacity="0.3" />
-                            </linearGradient>
-                          </defs>
+      {/* Coluna 3: Rotinas */}
+      <div className="bg-gradient-to-b from-neutral-900/90 to-zinc-950/95 border border-white/[0.06] border-t-white/20 rounded-2xl p-5 shadow-xl backdrop-blur-md">
+        <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/20 to-amber-500/10 border border-amber-500/30 rounded-xl py-2.5 px-4 text-center mb-4 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
+          <h3 className="text-xs font-bold bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent uppercase tracking-widest">Rotinas Comerciais</h3>
+        </div>
+        <div className="grid grid-cols-1 gap-1.5 text-xs">
+          {[
+            "DAILY (MICRO DIÁRIAS)",
+            "WEEKLY (SEMANAL)",
+            "MONTHLY (MENSAL)",
+            "COACHING TÉCNICO",
+            "ONE A ONE (FEEDBACK)",
+            "ROLE PLAY (SIMULAÇÕES)"
+          ].map(item => (
+            <div key={item} className="flex items-center gap-2.5 py-2 px-3.5 rounded-xl bg-white/[0.02] border border-white/[0.03] border-l-2 border-l-amber-500/30 active:border-l-amber-500 transition-all">
+              <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
+              <span className="font-sans text-[10px] tracking-wide text-zinc-300 font-bold uppercase">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
 
-                          {/* Linhas Conectivas com Curvas Suaves - Efeito Neon Glow Symmetrical */}
-                          {/* Coluna Esquerda (Playbook) */}
-                          <path d="M 500,55 L 500,75 Q 500,90 485,90 L 325,90 Q 310,90 310,98 L 310,106" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
-                          <path d="M 500,55 L 500,75 Q 500,90 485,90 L 325,90 Q 310,90 310,98 L 310,106" stroke="url(#amber-line)" strokeWidth="1.5" className="flowing-fiber" fill="none" />
+    {/* Versão Desktop */}
+    <div className="hidden md:block w-full max-w-5xl mx-auto aspect-[10/4.5] h-auto mt-4">
+      <svg className="w-full h-full" viewBox="0 0 1000 450" fill="none">
+        <style>{`
+          @keyframes flow-pulse-v {
+            to {
+              stroke-dashoffset: -20;
+            }
+          }
+          .flowing-fiber-v {
+            stroke-dasharray: 6 10;
+            animation: flow-pulse-v 1.2s linear infinite;
+            filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.8));
+          }
+        `}</style>
+        
+        <defs>
+          <marker id="arrow-v" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 7 5 L 0 8.5 z" fill="rgba(255,255,255,0.4)" />
+          </marker>
+          <linearGradient id="amber-line-v" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.9" />
+            <stop offset="50%" stopColor="#d97706" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#b45309" stopOpacity="0.3" />
+          </linearGradient>
+        </defs>
 
-                          {/* Coluna Direita (Rotinas) */}
-                          <path d="M 500,55 L 500,75 Q 500,90 515,90 L 675,90 Q 690,90 690,98 L 690,106" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
-                          <path d="M 500,55 L 500,75 Q 500,90 515,90 L 675,90 Q 690,90 690,98 L 690,106" stroke="url(#amber-line)" strokeWidth="1.5" className="flowing-fiber" fill="none" />
+        {/* Coluna Esquerda (Playbook) */}
+        <path d="M 500,55 L 500,70 C 500,85 450,85 180,85 L 180,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
+        <path d="M 500,55 L 500,70 C 500,85 450,85 180,85 L 180,100" stroke="url(#amber-line-v)" strokeWidth="1.5" className="flowing-fiber-v" fill="none" />
+        <path d="M 180,92 L 180,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" markerEnd="url(#arrow-v)" />
 
-                          {/* Bloco Raiz "VENDAS" no topo centralizado - Glassmorphism com borda neon e glow */}
-                          <foreignObject x="380" y="5" width="240" height="65">
-                            <div className="w-full h-full flex items-center justify-center p-2 select-none">
-                              <div className="relative overflow-hidden w-[180px] h-[42px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/50 shadow-[0_0_20px_rgba(245,158,11,0.3),inset_0_1px_1px_rgba(255,255,255,0.15)] text-center transition-all duration-300 hover:scale-[1.03] hover:border-amber-400 hover:shadow-[0_0_25px_rgba(245,158,11,0.5)]">
-                                {/* Top highlight bevel */}
-                                <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-amber-400 to-transparent" />
-                                <span className="font-montserrat text-[11px] font-black tracking-[0.35em] bg-gradient-to-r from-amber-300 via-white to-yellow-400 bg-clip-text text-transparent drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
-                                  VENDAS
-                                </span>
-                              </div>
-                            </div>
-                          </foreignObject>
+        {/* Coluna Central (OKR) */}
+        <path d="M 500,55 L 500,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
+        <path d="M 500,55 L 500,100" stroke="url(#amber-line-v)" strokeWidth="1.5" className="flowing-fiber-v" fill="none" markerEnd="url(#arrow-v)" />
 
-                          {/* Coluna 1: Playbook de Vendas */}
-                          {/* Título */}
-                          <foreignObject x="180" y="98" width="260" height="60">
-                            <div className="w-full h-full flex items-center justify-center p-1.5 select-none text-center">
-                              <div className="w-[242px] h-[44px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15),inset_0_1px_1px_rgba(255,255,255,0.1)] hover:border-amber-500/60 hover:scale-[1.02] transition-all duration-300">
-                                <span className="font-display text-[10px] md:text-xs font-black bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent tracking-widest uppercase leading-tight">
-                                  PLAYBOOK DE VENDAS
-                                </span>
-                              </div>
-                            </div>
-                          </foreignObject>
-                          {/* Conteúdo */}
-                          <foreignObject x="180" y="152" width="260" height="210">
-                            <div className="w-full h-full flex items-center justify-center p-2 select-none">
-                              <div className="w-[242px] h-[192px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-950/60 to-zinc-950/80 backdrop-blur-md border border-white/[0.06] border-t-white/15 p-4 shadow-[0_15px_35px_rgba(0,0,0,0.6)] hover:border-amber-500/30 hover:scale-[1.02] hover:shadow-[0_20px_45px_rgba(245,158,11,0.06)] transition-all duration-300">
-                                <div className="flex flex-col gap-1.5 w-full">
-                                  {[
-                                    "MÉTODOS DE VENDAS",
-                                    "SCRIPTS DE VENDAS",
-                                    "FLUXO DE CADÊNCIA",
-                                    "GATILHOS MENTAIS",
-                                    "NÍVEIS DE CONSCIÊNCIA"
-                                  ].map(item => (
-                                    <div key={item} className="flex items-center gap-2.5 py-1.5 px-3 rounded-xl bg-white/[0.02] border border-white/[0.03] border-l-2 border-l-amber-500/30 hover:border-l-amber-500 hover:bg-gradient-to-r hover:from-amber-500/10 hover:to-transparent hover:border-white/[0.06] hover:translate-x-1.5 transition-all duration-300 group/item">
-                                      <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)] group-hover/item:scale-110 transition-all duration-300" />
-                                      <span className="font-sans text-[9px] md:text-[10px] tracking-wide text-zinc-300 font-bold uppercase transition-colors duration-300 group-hover/item:text-white">{item}</span>
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
-                          </foreignObject>
+        {/* Coluna Direita (Rotinas) */}
+        <path d="M 500,55 L 500,70 C 500,85 550,85 820,85 L 820,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
+        <path d="M 500,55 L 500,70 C 500,85 550,85 820,85 L 820,100" stroke="url(#amber-line-v)" strokeWidth="1.5" className="flowing-fiber-v" fill="none" />
+        <path d="M 820,92 L 820,100" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" markerEnd="url(#arrow-v)" />
 
-                          {/* Coluna 2: Rotinas */}
-                          {/* Título */}
-                          <foreignObject x="560" y="98" width="260" height="60">
-                            <div className="w-full h-full flex items-center justify-center p-1.5 select-none text-center">
-                              <div className="w-[242px] h-[44px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15),inset_0_1px_1px_rgba(255,255,255,0.1)] hover:border-amber-500/60 hover:scale-[1.02] transition-all duration-300">
-                                <span className="font-display text-[10px] md:text-xs font-black bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent tracking-widest uppercase leading-tight">
-                                  ROTINAS
-                                </span>
-                              </div>
-                            </div>
-                          </foreignObject>
-                          {/* Conteúdo */}
-                          <foreignObject x="560" y="152" width="260" height="210">
-                            <div className="w-full h-full flex items-center justify-center p-2 select-none">
-                              <div className="w-[242px] h-[192px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-950/60 to-zinc-950/80 backdrop-blur-md border border-white/[0.06] border-t-white/15 p-4 shadow-[0_15px_35px_rgba(0,0,0,0.6)] hover:border-amber-500/30 hover:scale-[1.02] hover:shadow-[0_20px_45px_rgba(245,158,11,0.06)] transition-all duration-300">
-                                <div className="flex flex-col gap-1 w-full">
-                                  {[
-                                    "DAILY",
-                                    "WEEKLY",
-                                    "MONTHLY",
-                                    "COACHING TÉCNICO",
-                                    "ONE A ONE",
-                                    "ROLE PLAY"
-                                  ].map(item => (
-                                    <div key={item} className="flex items-center gap-2.5 py-1 px-3 rounded-xl bg-white/[0.02] border border-white/[0.03] border-l-2 border-l-amber-500/30 hover:border-l-amber-500 hover:bg-gradient-to-r hover:from-amber-500/10 hover:to-transparent hover:border-white/[0.06] hover:translate-x-1.5 transition-all duration-300 group/item">
-                                      <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)] group-hover/item:scale-110 transition-all duration-300" />
-                                      <span className="font-sans text-[9px] md:text-[10px] tracking-wide text-zinc-300 font-bold uppercase transition-colors duration-300 group-hover/item:text-white">{item}</span>
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
-                          </foreignObject>
+        {/* Bloco Raiz */}
+        <foreignObject x="400" y="5" width="200" height="55">
+          <div className="w-full h-full flex items-center justify-center p-2 select-none">
+            <div className="relative overflow-hidden w-[160px] h-[38px] flex items-center justify-center rounded-xl bg-zinc-950/95 border border-amber-500/50 shadow-[0_0_20px_rgba(245,158,11,0.3)] text-center">
+              <span className="font-montserrat text-[10px] sm:text-xs font-black tracking-[0.35em] bg-gradient-to-r from-amber-300 via-white to-yellow-400 bg-clip-text text-transparent">
+                VENDAS
+              </span>
+            </div>
+          </div>
+        </foreignObject>
 
-                        </svg>
-                      </div>
+        {/* Coluna 1: Playbook de Vendas */}
+        <foreignObject x="50" y="100" width="260" height="54">
+          <div className="w-full h-full flex items-center justify-center p-1.5 select-none text-center">
+            <div className="w-[242px] h-[40px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
+              <span className="font-display text-[9px] md:text-[10px] font-black bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent tracking-widest uppercase leading-tight">
+                PLAYBOOK DE VENDAS
+              </span>
+            </div>
+          </div>
+        </foreignObject>
+        <foreignObject x="50" y="154" width="260" height="290">
+          <div className="w-full h-full flex items-center justify-center p-2 select-none">
+            <div className="w-[242px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-950/70 to-zinc-950/90 border border-white/[0.06] p-4 shadow-[0_15px_35px_rgba(0,0,0,0.6)]">
+              <div className="flex flex-col gap-2 w-full">
+                {[
+                  "MÉTODOS DE VENDAS",
+                  "SCRIPTS DE VENDAS",
+                  "FLUXO DE CADÊNCIA",
+                  "GATILHOS MENTAIS",
+                  "NÍVEIS DE CONSCIÊNCIA"
+                ].map(item => (
+                  <div key={item} className="flex items-start gap-2 py-1.5 px-3 rounded-lg bg-white/[0.01] border border-white/[0.02] border-l-2 border-l-amber-500/30 hover:border-l-amber-500 hover:bg-gradient-to-r hover:from-amber-500/10 hover:to-transparent hover:translate-x-1 transition-all duration-300 group/item">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)] mt-1.5 flex-shrink-0" />
+                    <span className="font-sans text-[10px] md:text-[11px] tracking-wide text-zinc-300 font-extrabold uppercase transition-colors duration-300 group-hover/item:text-white leading-normal">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </foreignObject>
 
-                    </div>
-                  </div></motion.section>
+        {/* Coluna 2: Estruturação de OKR */}
+        <foreignObject x="370" y="100" width="260" height="54">
+          <div className="w-full h-full flex items-center justify-center p-1.5 select-none text-center">
+            <div className="w-[242px] h-[40px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
+              <span className="font-display text-[9px] md:text-[10px] font-black bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent tracking-widest uppercase leading-tight">
+                ESTRUTURAÇÃO DE OKR
+              </span>
+            </div>
+          </div>
+        </foreignObject>
+        <foreignObject x="370" y="154" width="260" height="290">
+          <div className="w-full h-full flex items-center justify-center p-2 select-none">
+            <div className="w-[242px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-950/70 to-zinc-950/90 border border-white/[0.06] p-4 shadow-[0_15px_35px_rgba(0,0,0,0.6)]">
+              <div className="flex flex-col gap-2 w-full">
+                {[
+                  "META MENSAL / ANUAL COMERCIAL",
+                  "DESDOBRAMENTO EM METAS SEMANAIS",
+                  "ACOMPANHAMENTO DOS INDICADORES",
+                  "ALINHAMENTO DE GAP DA META",
+                  "REVISÃO DE RESULTADOS",
+                  "AÇÕES DIÁRIAS (MICRO METAS)"
+                ].map(item => (
+                  <div key={item} className="flex items-start gap-2 py-1.5 px-3 rounded-lg bg-white/[0.01] border border-white/[0.02] border-l-2 border-l-amber-500/30 hover:border-l-amber-500 hover:bg-gradient-to-r hover:from-amber-500/10 hover:to-transparent hover:translate-x-1 transition-all duration-300 group/item">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)] mt-1.5 flex-shrink-0" />
+                    <span className="font-sans text-[10px] md:text-[11px] tracking-wide text-zinc-300 font-extrabold uppercase transition-colors duration-300 group-hover/item:text-white leading-normal">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </foreignObject>
 
-        {/* Slide 4: Rotinas */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
-                    {/* Ambient background glows for Premium design */}
-                    <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
-                    <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
-
-                    {/* Cabeçalho do Slide 5 */}
-                    <div className="w-full flex justify-between items-center mb-2 md:mb-4 px-4 flex-shrink-0">
-                      <div className="flex flex-col">
-                        <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-amber-500 uppercase">Metodologia GVD</span>
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-white uppercase tracking-wider mt-1 select-none">
-                          Rotinas Comerciais
-                        </h2>
-                      </div>
-                      <span className="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-b from-amber-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_4px_12px_rgba(245,158,11,0.2)] select-none">
-                        GVD
-                      </span>
-                    </div>
-
-                    {/* Rotinas Detail Content Box */}
-                    <div className="w-full flex-grow flex items-center justify-center relative pb-16">
-                      
-                      {/* Versão Mobile (Vertical Simplificada) */}
-                      <div className="flex md:hidden flex-col w-full h-[60vh] overflow-y-auto space-y-6 px-2 pb-16 no-scrollbar">
-                        {/* Bloco Raiz "Rotinas" */}
-                        <div className="w-full bg-zinc-950/90 border border-amber-500/40 rounded-2xl py-3.5 text-center shadow-lg shadow-amber-500/5">
-                          <span className="font-montserrat text-xs sm:text-sm font-bold text-white uppercase tracking-[0.2em]">Rotinas</span>
-                        </div>
-
-                        {/* Coluna 1: Daily */}
-                        <div className="bg-gradient-to-b from-neutral-900/90 to-zinc-950/95 border border-white/[0.06] border-t-white/20 rounded-2xl p-5 shadow-xl backdrop-blur-md">
-                          <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/20 to-amber-500/10 border border-amber-500/30 rounded-xl py-2.5 px-4 text-center mb-4 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
-                            <h3 className="text-xs font-bold bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent uppercase tracking-widest text-balance leading-tight">Daily / Diária (de 9h a 9h30)</h3>
-                          </div>
-                          <div className="grid grid-cols-1 gap-1.5 text-xs">
-                            {[
-                              "Quantidade de ligação realizada.",
-                              "Tempo em linha.",
-                              "Número de Leads do dia anterior.",
-                              "Evolução no funil de vendas.",
-                              "Meta do mês/dia (ações micro diárias para resultado)."
-                            ].map(item => (
-                              <div key={item} className="flex items-center gap-2.5 py-2 px-3.5 rounded-xl bg-white/[0.02] border border-white/[0.03] border-l-2 border-l-amber-500/30 active:border-l-amber-500 transition-all">
-                                <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
-                                <span className="font-sans text-[10px] tracking-wide text-zinc-300 font-bold uppercase">{item}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Coluna 2: Weekly */}
-                        <div className="bg-gradient-to-b from-neutral-900/90 to-zinc-950/95 border border-white/[0.06] border-t-white/20 rounded-2xl p-5 shadow-xl backdrop-blur-md">
-                          <div className="bg-gradient-to-r from-amber-500/10 via-amber-500/20 to-amber-500/10 border border-amber-500/30 rounded-xl py-2.5 px-4 text-center mb-4 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
-                            <h3 className="text-xs font-bold bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent uppercase tracking-widest text-balance leading-tight">Weekly / Semanal</h3>
-                          </div>
-                          <div className="grid grid-cols-1 gap-1.5 text-xs">
-                            {[
-                              "REUNIÃO DE OKRS",
-                              "ENCAMINHAMENTOS",
-                              "COBRANÇA DE ENCAMINHAMENTOS"
-                            ].map(item => (
-                              <div key={item} className="flex items-center gap-2.5 py-2 px-3.5 rounded-xl bg-white/[0.02] border border-white/[0.03] border-l-2 border-l-amber-500/30 active:border-l-amber-500 transition-all">
-                                <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
-                                <span className="font-sans text-[10px] tracking-wide text-zinc-300 font-bold uppercase">{item}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Versão Desktop Unificada por Coordenadas Internas ao SVG (ForeignObject) */}
-                      <div className="hidden md:block w-full max-w-[98vw] h-[74vh]">
-                        <svg className="w-full h-full" viewBox="0 0 1000 400" fill="none">
-                          <style>{`
-                            @keyframes flow-pulse {
-                              to {
-                                stroke-dashoffset: -20;
-                              }
-                            }
-                            .flowing-fiber {
-                              stroke-dasharray: 6 10;
-                              animation: flow-pulse 1.2s linear infinite;
-                              filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.8));
-                            }
-                          `}</style>
-                          
-                          {/* Definições de Marcadores e Gradientes */}
-                          <defs>
-                            <marker id="arrow-v" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                              <path d="M 0 1.5 L 7 5 L 0 8.5 z" fill="rgba(255,255,255,0.4)" />
-                            </marker>
-                            <linearGradient id="amber-line" x1="0%" y1="0%" x2="100%" y2="100%">
-                              <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.9" />
-                              <stop offset="50%" stopColor="#d97706" stopOpacity="0.6" />
-                              <stop offset="100%" stopColor="#b45309" stopOpacity="0.3" />
-                            </linearGradient>
-                          </defs>
-
-                          {/* Linhas Conectivas com Curvas Suaves - Efeito Neon Glow Symmetrical */}
-                          {/* Coluna Esquerda (Daily) */}
-                          <path d="M 500,55 L 500,65 Q 500,70 485,70 L 325,70 Q 310,70 310,78 L 310,86" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
-                          <path d="M 500,55 L 500,65 Q 500,70 485,70 L 325,70 Q 310,70 310,78 L 310,86" stroke="url(#amber-line)" strokeWidth="1.5" className="flowing-fiber" fill="none" />
-
-                          {/* Coluna Direita (Weekly) */}
-                          <path d="M 500,55 L 500,65 Q 500,70 515,70 L 675,70 Q 690,70 690,78 L 690,86" stroke="#f59e0b" strokeWidth="4" strokeOpacity="0.1" fill="none" />
-                          <path d="M 500,55 L 500,65 Q 500,70 515,70 L 675,70 Q 690,70 690,78 L 690,86" stroke="url(#amber-line)" strokeWidth="1.5" className="flowing-fiber" fill="none" />
-
-                          {/* Bloco Raiz "ROTINAS" no topo centralizado - Glassmorphism com borda neon e glow */}
-                          <foreignObject x="380" y="5" width="240" height="65">
-                            <div className="w-full h-full flex items-center justify-center p-2 select-none">
-                              <div className="relative overflow-hidden w-[180px] h-[42px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/50 shadow-[0_0_20px_rgba(245,158,11,0.3),inset_0_1px_1px_rgba(255,255,255,0.15)] text-center transition-all duration-300 hover:scale-[1.03] hover:border-amber-400 hover:shadow-[0_0_25px_rgba(245,158,11,0.5)]">
-                                {/* Top highlight bevel */}
-                                <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-amber-400 to-transparent" />
-                                <span className="font-montserrat text-[11px] font-black tracking-[0.35em] bg-gradient-to-r from-amber-300 via-white to-yellow-400 bg-clip-text text-transparent drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
-                                  ROTINAS
-                                </span>
-                              </div>
-                            </div>
-                          </foreignObject>
-
-                          {/* Coluna 1: Daily */}
-                          {/* Título */}
-                          <foreignObject x="180" y="78" width="260" height="60">
-                            <div className="w-full h-full flex items-center justify-center p-1.5 select-none text-center">
-                              <div className="w-[242px] h-[44px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15),inset_0_1px_1px_rgba(255,255,255,0.1)] hover:border-amber-500/60 hover:scale-[1.02] transition-all duration-300">
-                                <span className="font-display text-[10px] md:text-xs font-black bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent tracking-widest uppercase leading-tight">
-                                  DAILY / DIÁRIA (9h - 9h30)
-                                </span>
-                              </div>
-                            </div>
-                          </foreignObject>
-                          {/* Conteúdo */}
-                          <foreignObject x="180" y="132" width="260" height="265">
-                            <div className="w-full h-full flex items-center justify-center p-2 select-none">
-                              <div className="w-[242px] h-[245px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-950/60 to-zinc-950/80 backdrop-blur-md border border-white/[0.06] border-t-white/15 p-4 shadow-[0_15px_35px_rgba(0,0,0,0.6)] hover:border-amber-500/30 hover:scale-[1.02] hover:shadow-[0_20px_45px_rgba(245,158,11,0.06)] transition-all duration-300">
-                                <div className="flex flex-col gap-1.5 w-full">
-                                  {[
-                                    "Quantidade de ligação realizada.",
-                                    "Tempo em linha.",
-                                    "Número de Leads do dia anterior.",
-                                    "Evolução no funil de vendas.",
-                                    "Meta do mês/dia (ações micro diárias)."
-                                  ].map(item => (
-                                    <div key={item} className="flex items-start gap-2 py-1 px-2.5 rounded-lg bg-white/[0.01] border border-white/[0.02] border-l-2 border-l-amber-500/30 hover:border-l-amber-500 hover:bg-gradient-to-r hover:from-amber-500/10 hover:to-transparent hover:border-white/[0.05] hover:translate-x-1 transition-all duration-300 group/item">
-                                      <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)] mt-1.5 flex-shrink-0 group-hover/item:scale-110 transition-all duration-300" />
-                                      <span className="font-sans text-[8.5px] md:text-[9.5px] tracking-wide text-zinc-300 font-bold uppercase transition-colors duration-300 group-hover/item:text-white leading-normal">{item}</span>
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
-                          </foreignObject>
-
-                          {/* Coluna 2: Weekly */}
-                          {/* Título */}
-                          <foreignObject x="560" y="78" width="260" height="60">
-                            <div className="w-full h-full flex items-center justify-center p-1.5 select-none text-center">
-                              <div className="w-[242px] h-[44px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15),inset_0_1px_1px_rgba(255,255,255,0.1)] hover:border-amber-500/60 hover:scale-[1.02] transition-all duration-300">
-                                <span className="font-display text-[10px] md:text-xs font-black bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent tracking-widest uppercase leading-tight">
-                                  WEEKLY / SEMANAL
-                                </span>
-                              </div>
-                            </div>
-                          </foreignObject>
-                          {/* Conteúdo */}
-                          <foreignObject x="560" y="132" width="260" height="265">
-                            <div className="w-full h-full flex items-center justify-center p-2 select-none">
-                              <div className="w-[242px] h-[245px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-950/60 to-zinc-950/80 backdrop-blur-md border border-white/[0.06] border-t-white/15 p-4 shadow-[0_15px_35px_rgba(0,0,0,0.6)] hover:border-amber-500/30 hover:scale-[1.02] hover:shadow-[0_20px_45px_rgba(245,158,11,0.06)] transition-all duration-300">
-                                <div className="flex flex-col gap-1.5 w-full">
-                                  {[
-                                    "REUNIÃO DE OKRS",
-                                    "ENCAMINHAMENTOS",
-                                    "COBRANÇA DE ENCAMINHAMENTOS"
-                                  ].map(item => (
-                                    <div key={item} className="flex items-start gap-2 py-2 px-2.5 rounded-lg bg-white/[0.01] border border-white/[0.02] border-l-2 border-l-amber-500/30 hover:border-l-amber-500 hover:bg-gradient-to-r hover:from-amber-500/10 hover:to-transparent hover:border-white/[0.05] hover:translate-x-1 transition-all duration-300 group/item">
-                                      <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)] mt-1.5 flex-shrink-0 group-hover/item:scale-110 transition-all duration-300" />
-                                      <span className="font-sans text-[8.5px] md:text-[9.5px] tracking-wide text-zinc-300 font-bold uppercase transition-colors duration-300 group-hover/item:text-white leading-normal">{item}</span>
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
-                          </foreignObject>
-
-                        </svg>
-                      </div>
-
-                    </div>
-                  </div></motion.section>
+        {/* Coluna 3: Rotinas */}
+        <foreignObject x="690" y="100" width="260" height="54">
+          <div className="w-full h-full flex items-center justify-center p-1.5 select-none text-center">
+            <div className="w-[242px] h-[40px] flex items-center justify-center rounded-xl bg-zinc-950/90 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
+              <span className="font-display text-[9px] md:text-[10px] font-black bg-gradient-to-r from-white via-amber-100 to-amber-200 bg-clip-text text-transparent tracking-widest uppercase leading-tight">
+                ROTINAS
+              </span>
+            </div>
+          </div>
+        </foreignObject>
+        <foreignObject x="690" y="154" width="260" height="290">
+          <div className="w-full h-full flex items-center justify-center p-2 select-none">
+            <div className="w-[242px] h-[270px] flex flex-col justify-start rounded-2xl bg-gradient-to-b from-neutral-950/70 to-zinc-950/90 border border-white/[0.06] p-4 shadow-[0_15px_35px_rgba(0,0,0,0.6)]">
+              <div className="flex flex-col gap-2 w-full">
+                {[
+                  "DAILY (MICRO DIÁRIAS)",
+                  "WEEKLY (SEMANAL)",
+                  "MONTHLY (MENSAL)",
+                  "COACHING TÉCNICO",
+                  "ONE A ONE (FEEDBACK)",
+                  "ROLE PLAY (SIMULAÇÕES)"
+                ].map(item => (
+                  <div key={item} className="flex items-start gap-2 py-1.5 px-3 rounded-lg bg-white/[0.01] border border-white/[0.02] border-l-2 border-l-amber-500/30 hover:border-l-amber-500 hover:bg-gradient-to-r hover:from-amber-500/10 hover:to-transparent hover:translate-x-1 transition-all duration-300 group/item">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-[0_0_8px_rgba(245,158,11,0.8)] mt-1.5 flex-shrink-0" />
+                    <span className="font-sans text-[10px] md:text-[11px] tracking-wide text-zinc-300 font-extrabold uppercase transition-colors duration-300 group-hover/item:text-white leading-normal">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </foreignObject>
+      </svg>
+    </div>
+  </div>
+</div></motion.section>
 
         {/* Slide 5: Daily Diária 5 Passos */}
         <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
@@ -1009,7 +864,7 @@ export function MethodologySection({
                         </div>
 
                         {/* Versão Desktop Unificada por Coordenadas Internas ao SVG (ForeignObject) */}
-                        <div className="hidden md:block w-full max-w-[98vw] h-[65vh]">
+                        <div className="hidden md:block w-full max-w-5xl mx-auto aspect-[10/4] h-auto mt-4">
                           <svg className="w-full h-full" viewBox="0 0 1000 430" fill="none">
                             <style>{`
                               @keyframes flow-pulse-dados {
