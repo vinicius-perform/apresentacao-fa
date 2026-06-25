@@ -71,7 +71,7 @@ export function MethodologySection({
       {/* Círculos de Fundo Comuns (Comum a todos os slides escuros) */}
       <div className="relative w-full">
         {/* Slide 0: Introdução GVD */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-between h-full w-full py-8 md:py-16 text-center" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-between   py-8 md:py-16 text-center">
                     {/* Texto Superior */}
                     <span className="font-display text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-[0.45em] text-fg-dim uppercase">
                       Metodologia única e validada
@@ -90,10 +90,10 @@ export function MethodologySection({
                       <span className="hidden sm:inline text-white/20">|</span>
                       <span>DADOS</span>
                     </div>
-                  </motion.section>
+                  </div></motion.section>
 
         {/* Slide 1: Geração de Demanda */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
                     {/* Cabeçalho do Slide 2 */}
                     <div className="w-full flex justify-between items-center mb-8 md:mb-12 px-4">
                       <div className="flex flex-col">
@@ -316,96 +316,10 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.section>
-
-        {/* Slide 2: DotSales CRM */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
-                    {/* Cabeçalho do Slide 3 */}
-                    <div className="w-full flex justify-between items-center mb-8 md:mb-10 px-4 flex-shrink-0">
-                      <div className="flex flex-col">
-                        <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-amber-500 uppercase">Cérebro Comercial</span>
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-white uppercase tracking-wider mt-1 select-none">
-                          DotSales CRM
-                        </h2>
-                      </div>
-                      <span className="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-b from-amber-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_4px_12px_rgba(245,158,11,0.2)] select-none">
-                        DotSales
-                      </span>
-                    </div>
-
-                    {/* DotSales Content Box */}
-                    <div className="w-full flex-grow flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 px-4 overflow-y-auto no-scrollbar pb-16">
-                      
-                      {/* Left Side: Mockup & Action */}
-                      <div className="w-full md:w-[48%] flex flex-col items-center text-center">
-                        {/* Browser mockup */}
-                        <div className="w-full rounded-xl bg-neutral-900 border border-white/[0.08] shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden">
-                          {/* Browser Top Bar */}
-                          <div className="flex items-center gap-1.5 px-4 py-3 bg-neutral-950/80 border-b border-white/[0.04] w-full">
-                            <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                            <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                            <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
-                            <div className="h-4 w-40 rounded bg-white/[0.03] border border-white/[0.05] mx-auto flex items-center justify-center">
-                              <span className="text-[7px] text-zinc-500 font-mono tracking-wide">sales.dottech.ai/funil</span>
-                            </div>
-                          </div>
-                          {/* Image */}
-                          <div className="relative aspect-[16/10] bg-black/40 overflow-hidden group">
-                            <img src={crmFunil} alt="DotSales Pipeline" className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-                          </div>
-                        </div>
-
-                        {/* Action button */}
-                        <a 
-                          href="https://sales.dottech.ai/dashboard/pipeline/funil?id=71479906-111c-462c-af1d-69e76009057b"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-3 px-8 py-3.5 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-black font-extrabold rounded-full transition-all duration-300 uppercase tracking-wider text-xs md:text-sm hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] mt-6 cursor-pointer border-0"
-                        >
-                          <span>Acessar DotSales na Prática</span>
-                          <ArrowUpRight className="w-4 h-4" />
-                        </a>
-                      </div>
-
-                      {/* Right Side: Features Grid */}
-                      <div className="w-full md:w-[52%] grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {[
-                          {
-                            title: "Pipeline Inteligente",
-                            desc: "Mapeamento visual de cada estágio da negociação para tomada de decisão ágil e gestão de gargalos no funil.",
-                            idx: "01"
-                          },
-                          {
-                            title: "Cadência Automática",
-                            desc: "Régua de relacionamento automatizada que orienta o time comercial na rotina diária de contatos.",
-                            idx: "02"
-                          },
-                          {
-                            title: "Métricas de Performance",
-                            desc: "Indicadores precisos de conversão por vendedor, volume sob gestão, CAC e tempos de resposta.",
-                            idx: "03"
-                          },
-                          {
-                            title: "Histórico Centralizado",
-                            desc: "Inteligência de dados através da gravação de históricos completos das jornadas e interações dos leads.",
-                            idx: "04"
-                          }
-                        ].map(feat => (
-                          <div key={feat.idx} className="relative p-5 rounded-xl border border-white/[0.04] bg-neutral-950/60 backdrop-blur-sm hover:border-amber-500/20 hover:bg-neutral-950/80 transition-all duration-300 group">
-                            {/* Tech index */}
-                            <span className="font-mono text-[9px] text-amber-500/70 group-hover:text-amber-500 transition-colors tracking-widest block mb-2">[ {feat.idx} ]</span>
-                            <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider group-hover:text-amber-500 transition-colors">{feat.title}</h4>
-                            <p className="text-xs text-fg-muted/70 group-hover:text-zinc-300 transition-colors mt-2 leading-relaxed">{feat.desc}</p>
-                          </div>
-                        ))}
-                      </div>
-
-                    </div>
-                  </motion.section>
+                  </div></motion.section>
 
         {/* Slide 3: Vendas */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
                     {/* Ambient background glows for Premium design */}
                     <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
@@ -598,10 +512,10 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.section>
+                  </div></motion.section>
 
         {/* Slide 4: Rotinas */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
                     {/* Ambient background glows for Premium design */}
                     <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
@@ -788,10 +702,10 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.section>
+                  </div></motion.section>
 
         {/* Slide 5: Daily Diária 5 Passos */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
                     {/* Ambient background glows for Premium design */}
                     <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
@@ -921,10 +835,10 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.section>
+                  </div></motion.section>
 
         {/* Slide 6: Rituais */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
                     {/* Ambient background glows for Premium design */}
                     <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
@@ -985,10 +899,10 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.section>
+                  </div></motion.section>
 
         {/* Slide 7: Dados */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
                     {/* Ambient background glows for Premium design */}
                     <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
@@ -1264,11 +1178,11 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.section>
+                  </div></motion.section>
                                 ) :
 
         {/* Slide 8: DotSales Intro */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left overflow-y-auto no-scrollbar" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left overflow-y-auto no-scrollbar">
                     <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
 
@@ -1313,11 +1227,11 @@ export function MethodologySection({
                           </div>
                         </div>
                     </div>
-                  </motion.section>
+                  </div></motion.section>
 ) :
 
         {/* Slide 9: DotSales Stats (Fundo Branco) */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black relative z-10 flex flex-col justify-center items-center h-full w-full text-center overflow-hidden bg-[#FAFAFA]" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#FAFAFA]">
                     {/* Very subtle architectural grid background */}
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
@@ -1371,11 +1285,11 @@ export function MethodologySection({
                         Fontes: Chat Commerce Report 2025 (OmniChat) · Opinion Box · Meta
                       </div>
                     </div>
-                  </motion.section>
+                  </div></motion.section>
                 ) :
 
         {/* Slide 10: DotSales Problem (Fundo Branco) */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black relative z-10 flex flex-col justify-center items-center h-full w-full text-center overflow-hidden bg-[#FAFAFA]" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#FAFAFA]">
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
                     <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
@@ -1448,11 +1362,11 @@ export function MethodologySection({
                         Fontes: HubSpot · InsideSales
                       </div>
                     </div>
-                  </motion.section>
+                  </div></motion.section>
                 ) :
 
         {/* Slide 11: DotSales Features (Fundo Branco) */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black relative z-10 flex flex-col justify-center items-center h-full w-full text-center overflow-hidden bg-[#FAFAFA]" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#FAFAFA]">
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
                     <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
@@ -1519,11 +1433,11 @@ export function MethodologySection({
                         </div>
                       </div>
                     </div>
-                  </motion.section>
+                  </div></motion.section>
 ) :
 
         {/* Slide 12: DotSales SLA (Fundo Branco) */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black relative z-10 flex flex-col justify-center items-center h-full w-full text-center overflow-hidden bg-[#FAFAFA]" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#FAFAFA]">
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
                     <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
@@ -1601,11 +1515,11 @@ export function MethodologySection({
                         Fontes: HubSpot · InsideSales · Lead Response Management
                       </div>
                     </div>
-                  </motion.section>
+                  </div></motion.section>
                 ) :
 
         {/* Slide 13: Depoimentos */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
                     {/* Ambient background glows for Premium design */}
                     <div className="absolute top-[30%] left-[20%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[20%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
@@ -1679,11 +1593,11 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.section>
+                  </div></motion.section>
                 ) :
 
         {/* Slide 14: Valor x Preço */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-center" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-center">
                     {/* Ambient background glows */}
                     <div className="absolute top-[25%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[95px] pointer-events-none" />
                     <div className="absolute bottom-[25%] right-[25%] w-[250px] h-[250px] rounded-full bg-emerald-500/5 blur-[95px] pointer-events-none" />
@@ -1756,11 +1670,11 @@ export function MethodologySection({
 
                       </div>
                     </div>
-                  </motion.section>
+                  </div></motion.section>
                 ) :
 
         {/* Slide 15: Investimento */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-4 text-left" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-4 text-left">
                     {/* Ambient background glows */}
                     <div className="absolute top-[20%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[95px] pointer-events-none" />
                     <div className="absolute bottom-[20%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-500/5 blur-[95px] pointer-events-none" />
@@ -1856,11 +1770,11 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.section>
+                  </div></motion.section>
                 ) :
 
         {/* Slide 17: Desconto */}
-        <motion.section ref={discountRef} className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-center overflow-hidden" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section ref={discountRef} className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-center overflow-hidden">
                     {/* Pulsating background glows (heartbeat feeling) */}
                     <motion.div
                       animate={{ 
@@ -1962,11 +1876,11 @@ export function MethodologySection({
                       </motion.div>
 
                     </div>
-                  </motion.section>
+                  </div></motion.section>
                 ) :
 
         {/* Slide 18: Transição Protagonista */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-center h-full w-full py-8 text-center px-4 max-w-4xl mx-auto" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-center   py-8 text-center px-4 max-w-4xl mx-auto">
                     {/* Ambient background glows */}
                     <div className="absolute top-[30%] left-[30%] w-[300px] h-[300px] rounded-full bg-amber-500/5 blur-[100px] pointer-events-none" />
                     <div className="absolute bottom-[30%] right-[30%] w-[300px] h-[300px] rounded-full bg-amber-600/5 blur-[100px] pointer-events-none" />
@@ -1998,10 +1912,10 @@ export function MethodologySection({
                         </span>
                       </motion.div>
                     </div>
-                  </motion.section>
+                  </div></motion.section>
 
         {/* Slide Final: Valor Protagonista */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white relative z-10 flex flex-col items-center justify-start h-full w-full py-4 text-center px-4 max-w-4xl mx-auto" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-4 text-center px-4 max-w-4xl mx-auto">
                     {/* Ambient background glows */}
                     <div className="absolute top-[25%] left-[25%] w-[300px] h-[300px] rounded-full bg-emerald-500/5 blur-[100px] pointer-events-none" />
                     <div className="absolute bottom-[25%] right-[25%] w-[300px] h-[300px] rounded-full bg-amber-500/5 blur-[100px] pointer-events-none" />
@@ -2068,7 +1982,7 @@ export function MethodologySection({
                       </div>
 
                     </div>
-                  </motion.section>
+                  </div></motion.section>
       </div>
     </div>
   );
