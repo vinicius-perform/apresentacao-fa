@@ -93,7 +93,7 @@ export function MethodologySection({
                   </div></motion.section>
 
         {/* Slide 1: Geração de Demanda */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
+        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-[90vw] mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left">
                     {/* Cabeçalho do Slide 2 */}
                     <div className="w-full flex justify-between items-center mb-8 md:mb-12 px-4">
                       <div className="flex flex-col">
@@ -181,7 +181,7 @@ export function MethodologySection({
                       </div>
 
                       {/* Versão Desktop Unificada por Coordenadas Internas ao SVG (ForeignObject) */}
-                      <div className="hidden md:block w-full max-w-5xl mx-auto aspect-[10/4] h-auto mt-4">
+                      <div className="hidden md:block w-full max-w-full mx-auto aspect-[10/4] h-auto mt-4">
                         <svg className="w-full h-full" viewBox="0 0 1000 400" fill="none">
                           
                           {/* Definições de Marcadores e Gradientes */}
@@ -607,53 +607,6 @@ export function MethodologySection({
   </div>
 </div></motion.section>
 
-        {/* Slide 8: DotSales Intro */}
-        <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#050505] text-white" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col items-center justify-start   py-6 text-left overflow-y-auto no-scrollbar">
-                    <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
-                    <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
-
-                    <div className="w-full flex justify-between items-center mb-8 px-4 flex-shrink-0">
-                      <div className="flex flex-col">
-                        <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-amber-500 uppercase">Cérebro Comercial</span>
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-white uppercase tracking-wider mt-1 select-none">
-                          DotSales CRM
-                        </h2>
-                      </div>
-                      <span className="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-b from-amber-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_4px_12px_rgba(245,158,11,0.2)] select-none">
-                        DotSales
-                      </span>
-                    </div>
-
-                    <div className="w-full max-w-[90vw] 2xl:max-w-7xl flex-grow flex flex-col items-center justify-center gap-8 px-4 pb-16">
-                        <div className="w-full max-w-5xl rounded-3xl bg-neutral-900 border border-white/[0.08] shadow-[0_30px_60px_rgba(0,0,0,0.6)] overflow-hidden hover:border-amber-500/30 transition-colors duration-500 group relative">
-                          {/* Browser Top Bar */}
-                          <div className="flex items-center gap-2 px-6 py-4 bg-neutral-950/90 border-b border-white/[0.04] w-full">
-                            <div className="w-3.5 h-3.5 rounded-full bg-red-500/80" />
-                            <div className="w-3.5 h-3.5 rounded-full bg-yellow-500/80" />
-                            <div className="w-3.5 h-3.5 rounded-full bg-green-500/80" />
-                            <div className="h-6 w-64 rounded-md bg-white/[0.03] border border-white/[0.05] mx-auto flex items-center justify-center">
-                              <span className="text-[10px] text-zinc-500 font-mono tracking-wider">sales.dottech.ai</span>
-                            </div>
-                          </div>
-                          {/* Image */}
-                          <div className="relative aspect-[16/9] bg-black/40 overflow-hidden">
-                            <img src={crmFunil} alt="DotSales Pipeline" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-                            
-                            <div className="absolute bottom-10 left-0 right-0 flex justify-center z-10">
-                                <a 
-                                  href="https://sales.dottech.ai/dashboard/pipeline/funil?id=71479906-111c-462c-af1d-69e76009057b"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-black rounded-full transition-all duration-300 uppercase tracking-widest text-sm shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:shadow-[0_0_50px_rgba(245,158,11,0.6)] hover:scale-105 cursor-pointer border-0"
-                                >
-                                  <span>ACESSAR DOTSALES</span>
-                                </a>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                  </div></motion.section>
 
 {/* Slide 9: DotSales Stats (Fundo Branco) */}
         <motion.section  className="relative w-full min-h-screen py-16 md:py-24 flex flex-col justify-center items-center overflow-hidden bg-[#FAFAFA] text-black" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}><div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col relative z-10 flex flex-col justify-center items-center   text-center overflow-hidden bg-[#FAFAFA]">
