@@ -35,8 +35,8 @@ export function NovaSedeSection() {
               playsInline
               poster="https://fazendoacontecer.site/wp-content/uploads/2026/06/fe62b053-4107-419d-877b-3fb76ff26be2.webp"
             >
-              {/* Prioriza o vídeo local /videos/nova-sede.mp4 e usa um fallback corporativo de alta qualidade online */}
-              <source src="https://fazendoacontecer.site/wp-content/uploads/2026/06/PONTO-FA.webm" type="video/webm" />
+              {/* Prioriza o vídeo da nova sede fornecido pelo usuário */}
+              <source src="https://fazendoacontecer.site/wp-content/uploads/2026/06/video-completo.webm" type="video/webm" />
               <source src="/videos/nova-sede.mp4" type="video/mp4" />
               <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-office-space-with-people-working-40348-large.mp4" type="video/mp4" />
               Seu navegador não suporta a reprodução de vídeos.
