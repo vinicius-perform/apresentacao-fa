@@ -620,34 +620,34 @@ export function MethodologySection({
 
           {/* Círculos Artísticos e Translúcidos no Lado Direito */}
           <div className="absolute top-0 right-0 w-[50%] h-full pointer-events-none overflow-hidden hidden md:block">
-            <div className="absolute top-[10%] right-[-20%] w-[500px] h-[500px] rounded-full bg-purple-200/20 blur-[100px]" />
-            <div className="absolute bottom-[10%] right-[-10%] w-[450px] h-[450px] rounded-full bg-indigo-200/30 blur-[120px]" />
-            <div className="absolute top-[30%] right-[5%] w-[350px] h-[350px] rounded-full bg-purple-300/10 blur-[80px]" />
+            <div className="absolute top-[10%] right-[-20%] w-[500px] h-[500px] rounded-full bg-amber-200/20 blur-[100px]" />
+            <div className="absolute bottom-[10%] right-[-10%] w-[450px] h-[450px] rounded-full bg-yellow-200/20 blur-[120px]" />
+            <div className="absolute top-[30%] right-[5%] w-[350px] h-[350px] rounded-full bg-amber-300/10 blur-[80px]" />
             {/* Formas geométricas mais nítidas para imitar o Keynote */}
-            <div className="absolute top-[5%] right-[-25%] w-[600px] h-[600px] rounded-full border border-purple-500/10 bg-purple-100/10 backdrop-blur-sm" />
-            <div className="absolute bottom-[-15%] right-[-15%] w-[500px] h-[500px] rounded-full border border-indigo-500/10 bg-indigo-100/10 backdrop-blur-sm" />
+            <div className="absolute top-[5%] right-[-25%] w-[600px] h-[600px] rounded-full border border-amber-500/10 bg-amber-100/5 backdrop-blur-sm" />
+            <div className="absolute bottom-[-15%] right-[-15%] w-[500px] h-[500px] rounded-full border border-yellow-500/10 bg-yellow-100/5 backdrop-blur-sm" />
           </div>
 
           {/* Logo dot.Sales Top Left */}
           <div className="absolute top-10 left-10 md:top-14 md:left-16 flex items-center z-20 select-none">
             <span className="font-display text-lg md:text-xl font-bold tracking-tight text-neutral-900">
-              dot<span className="text-[#a855f7] font-extrabold">.Sales</span>
+              dot<span className="text-amber-500 font-extrabold">.Sales</span>
             </span>
           </div>
 
           {/* Conteúdo Principal (Alinhado à esquerda) */}
           <div className="w-full max-w-6xl mx-auto px-6 md:px-16 flex flex-col justify-center items-start space-y-8 z-10">
-            {/* Três pontos roxos/rosa */}
+            {/* Três pontos amarelos/dourados */}
             <div className="flex gap-1.5 pt-4">
-              <span className="w-2 h-2 rounded-full bg-[#d946ef]" />
-              <span className="w-2 h-2 rounded-full bg-[#d946ef]" />
-              <span className="w-2 h-2 rounded-full bg-[#d946ef]" />
+              <span className="w-2 h-2 rounded-full bg-amber-500" />
+              <span className="w-2 h-2 rounded-full bg-amber-500" />
+              <span className="w-2 h-2 rounded-full bg-amber-500" />
             </div>
 
             {/* Título Principal */}
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] max-w-4xl text-left text-neutral-900">
               Do caos das mensagens <br className="hidden md:inline" />
-              <span className="bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent">
                 ao controle das vendas
               </span>
             </h1>
@@ -659,11 +659,11 @@ export function MethodologySection({
 
             {/* Badge Kayo Cruz */}
             <div className="pt-8">
-              <div className="bg-white/80 border border-purple-500/20 rounded-2xl px-6 py-4 flex flex-col gap-1 shadow-[0_10px_30px_rgba(0,0,0,0.03)] backdrop-blur-md">
+              <div className="bg-white/80 border border-amber-500/20 rounded-2xl px-6 py-4 flex flex-col gap-1 shadow-[0_10px_30px_rgba(0,0,0,0.03)] backdrop-blur-md">
                 <span className="font-sans text-sm md:text-base font-bold text-neutral-900 tracking-wide">
                   Kayo Cruz
                 </span>
-                <span className="font-sans text-xs text-purple-600/80">
+                <span className="font-sans text-xs text-amber-600/90">
                   Fundador da Dottech · Criador do dot.Sales
                 </span>
               </div>
