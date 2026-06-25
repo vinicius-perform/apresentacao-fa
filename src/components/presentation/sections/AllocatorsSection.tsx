@@ -10,13 +10,13 @@ export function AllocatorsSection() {
         <defs>
           <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#FFFFFF" />
-            <stop offset="50%" stopColor="#A3FF8D" />
-            <stop offset="100%" stopColor="#7CFF5B" />
+            <stop offset="50%" stopColor="#FBBF24" />
+            <stop offset="100%" stopColor="#F59E0B" />
           </linearGradient>
         </defs>
       </svg>
 
-      {/* Luz de fundo decorativa verde neon sutil */}
+      {/* Luz de fundo decorativa neon sutil */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[500px] md:h-[500px] rounded-full bg-neon/5 blur-[120px] pointer-events-none z-0" />
       <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
 
@@ -51,10 +51,10 @@ export function AllocatorsSection() {
           <Reveal delay={0.55} className="w-full">
             <motion.div
               whileHover={{ y: -12, scale: 1.02 }}
-              className="relative flex flex-col items-center justify-between p-8 min-h-[420px] rounded-2xl border border-white/[0.05] bg-gradient-to-b from-neutral-950/80 to-neutral-950/20 backdrop-blur-xl transition-all duration-500 hover:border-neon/30 hover:shadow-[0_0_50px_rgba(124,255,91,0.06),_inset_0_1px_2px_rgba(255,255,255,0.05)] group cursor-pointer overflow-hidden"
+              className="relative flex flex-col items-center justify-between p-8 min-h-[420px] rounded-2xl border border-white/[0.05] bg-gradient-to-b from-neutral-950/80 to-neutral-950/20 backdrop-blur-xl transition-all duration-500 hover:border-neon/30 hover:shadow-[0_0_50px_rgba(245,158,11,0.06),_inset_0_1px_2px_rgba(255,255,255,0.05)] group cursor-pointer overflow-hidden"
             >
-              {/* Efeito de brilho radial verde neon interno ao passar o mouse */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(124,255,91,0.08)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+              {/* Efeito de brilho radial neon interno ao passar o mouse */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.08)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               
               {/* Grid cibernético de fundo no hover */}
               <div className="absolute inset-0 grid-bg opacity-0 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none" />
@@ -83,13 +83,13 @@ export function AllocatorsSection() {
                   transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
                   className="relative z-10 flex items-center justify-center"
                 >
-                  <Clock className="w-14 h-14 text-neon drop-shadow-[0_0_15px_rgba(124,255,91,0.5)] group-hover:drop-shadow-[0_0_25px_rgba(124,255,91,0.8)] transition-all duration-500" strokeWidth={1.5} stroke="url(#neonGradient)" />
+                  <Clock className="w-14 h-14 text-neon drop-shadow-[0_0_15px_rgba(245,158,11,0.5)] group-hover:drop-shadow-[0_0_25px_rgba(245,158,11,0.8)] transition-all duration-500" strokeWidth={1.5} stroke="url(#neonGradient)" />
                 </motion.div>
               </div>
 
               {/* Card Body */}
               <div className="relative z-10 text-center w-full flex-grow flex flex-col justify-center">
-                <h3 className="font-display text-xl sm:text-2xl font-bold tracking-[0.2em] text-white uppercase group-hover:text-neon group-hover:drop-shadow-[0_0_10px_rgba(124,255,91,0.2)] transition-colors duration-500">
+                <h3 className="font-display text-xl sm:text-2xl font-bold tracking-[0.2em] text-white uppercase group-hover:text-neon group-hover:drop-shadow-[0_0_10px_rgba(245,158,11,0.2)] transition-colors duration-500">
                   Tempo
                 </h3>
                 <p className="text-xs sm:text-sm text-fg-muted/80 group-hover:text-white transition-colors duration-500 leading-relaxed max-w-[240px] mx-auto mt-3">
@@ -110,10 +110,10 @@ export function AllocatorsSection() {
           <Reveal delay={0.65} className="w-full">
             <motion.div
               whileHover={{ y: -12, scale: 1.02 }}
-              className="relative flex flex-col items-center justify-between p-8 min-h-[420px] rounded-2xl border border-white/[0.05] bg-gradient-to-b from-neutral-950/80 to-neutral-950/20 backdrop-blur-xl transition-all duration-500 hover:border-neon/30 hover:shadow-[0_0_50px_rgba(124,255,91,0.06),_inset_0_1px_2px_rgba(255,255,255,0.05)] group cursor-pointer overflow-hidden"
+              className="relative flex flex-col items-center justify-between p-8 min-h-[420px] rounded-2xl border border-white/[0.05] bg-gradient-to-b from-neutral-950/80 to-neutral-950/20 backdrop-blur-xl transition-all duration-500 hover:border-neon/30 hover:shadow-[0_0_50px_rgba(245,158,11,0.06),_inset_0_1px_2px_rgba(255,255,255,0.05)] group cursor-pointer overflow-hidden"
             >
-              {/* Efeito de brilho radial verde neon interno ao passar o mouse */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(124,255,91,0.08)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+              {/* Efeito de brilho radial neon interno ao passar o mouse */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.08)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               
               {/* Grid cibernético de fundo no hover */}
               <div className="absolute inset-0 grid-bg opacity-0 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none" />
@@ -142,13 +142,13 @@ export function AllocatorsSection() {
                   transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
                   className="relative z-10 flex items-center justify-center"
                 >
-                  <Zap className="w-14 h-14 text-neon drop-shadow-[0_0_15px_rgba(124,255,91,0.5)] group-hover:drop-shadow-[0_0_25px_rgba(124,255,91,0.8)] transition-all duration-500" strokeWidth={1.5} stroke="url(#neonGradient)" />
+                  <Zap className="w-14 h-14 text-neon drop-shadow-[0_0_15px_rgba(245,158,11,0.5)] group-hover:drop-shadow-[0_0_25px_rgba(245,158,11,0.8)] transition-all duration-500" strokeWidth={1.5} stroke="url(#neonGradient)" />
                 </motion.div>
               </div>
 
               {/* Card Body */}
               <div className="relative z-10 text-center w-full flex-grow flex flex-col justify-center">
-                <h3 className="font-display text-xl sm:text-2xl font-bold tracking-[0.2em] text-white uppercase group-hover:text-neon group-hover:drop-shadow-[0_0_10px_rgba(124,255,91,0.2)] transition-colors duration-500">
+                <h3 className="font-display text-xl sm:text-2xl font-bold tracking-[0.2em] text-white uppercase group-hover:text-neon group-hover:drop-shadow-[0_0_10px_rgba(245,158,11,0.2)] transition-colors duration-500">
                   Energia
                 </h3>
                 <p className="text-xs sm:text-sm text-fg-muted/80 group-hover:text-white transition-colors duration-500 leading-relaxed max-w-[240px] mx-auto mt-3">
@@ -169,10 +169,10 @@ export function AllocatorsSection() {
           <Reveal delay={0.75} className="w-full">
             <motion.div
               whileHover={{ y: -12, scale: 1.02 }}
-              className="relative flex flex-col items-center justify-between p-8 min-h-[420px] rounded-2xl border border-white/[0.05] bg-gradient-to-b from-neutral-950/80 to-neutral-950/20 backdrop-blur-xl transition-all duration-500 hover:border-neon/30 hover:shadow-[0_0_50px_rgba(124,255,91,0.06),_inset_0_1px_2px_rgba(255,255,255,0.05)] group cursor-pointer overflow-hidden"
+              className="relative flex flex-col items-center justify-between p-8 min-h-[420px] rounded-2xl border border-white/[0.05] bg-gradient-to-b from-neutral-950/80 to-neutral-950/20 backdrop-blur-xl transition-all duration-500 hover:border-neon/30 hover:shadow-[0_0_50px_rgba(245,158,11,0.06),_inset_0_1px_2px_rgba(255,255,255,0.05)] group cursor-pointer overflow-hidden"
             >
-              {/* Efeito de brilho radial verde neon interno ao passar o mouse */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(124,255,91,0.08)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+              {/* Efeito de brilho radial neon interno ao passar o mouse */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.08)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               
               {/* Grid cibernético de fundo no hover */}
               <div className="absolute inset-0 grid-bg opacity-0 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none" />
@@ -201,13 +201,13 @@ export function AllocatorsSection() {
                   transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
                   className="relative z-10 flex items-center justify-center"
                 >
-                  <DollarSign className="w-14 h-14 text-neon drop-shadow-[0_0_15px_rgba(124,255,91,0.5)] group-hover:drop-shadow-[0_0_25px_rgba(124,255,91,0.8)] transition-all duration-500" strokeWidth={1.5} stroke="url(#neonGradient)" />
+                  <DollarSign className="w-14 h-14 text-neon drop-shadow-[0_0_15px_rgba(245,158,11,0.5)] group-hover:drop-shadow-[0_0_25px_rgba(245,158,11,0.8)] transition-all duration-500" strokeWidth={1.5} stroke="url(#neonGradient)" />
                 </motion.div>
               </div>
 
               {/* Card Body */}
               <div className="relative z-10 text-center w-full flex-grow flex flex-col justify-center">
-                <h3 className="font-display text-xl sm:text-2xl font-bold tracking-[0.2em] text-white uppercase group-hover:text-neon group-hover:drop-shadow-[0_0_10px_rgba(124,255,91,0.2)] transition-colors duration-500">
+                <h3 className="font-display text-xl sm:text-2xl font-bold tracking-[0.2em] text-white uppercase group-hover:text-neon group-hover:drop-shadow-[0_0_10px_rgba(245,158,11,0.2)] transition-colors duration-500">
                   Dinheiro
                 </h3>
                 <p className="text-xs sm:text-sm text-fg-muted/80 group-hover:text-white transition-colors duration-500 leading-relaxed max-w-[240px] mx-auto mt-3">

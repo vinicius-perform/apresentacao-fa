@@ -1,5 +1,5 @@
 import { useState, useEffect, RefObject } from "react";
-import { ArrowUpRight, X, ChevronLeft, ChevronRight, Phone, MessageSquare, Eye } from "lucide-react";
+import { ArrowUpRight, X, ChevronLeft, ChevronRight, Phone, MessageSquare, Eye, XCircle, Inbox, Kanban, Bot, Zap, CheckCircle2 } from "lucide-react";
 import { Reveal, Section } from "../primitives";
 import { presentationContent } from "@/lib/presentation-content";
 import { motion, AnimatePresence, useTransform, type MotionValue } from "motion/react";
@@ -14,13 +14,13 @@ export function MethodologySection({
 }) {
   const c = presentationContent.methodologyGvd;
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeSlide, setActiveSlide] = useState(0); // 0: Introdução GVD, 1: Geração de Demanda, 2: DotSales CRM, 3: Vendas, 4: Rotinas, 5: Daily (5 Passos), 6: Rituais, 7: Dados, 8: Depoimento, 9: Valor x Preço, 10: Investimento, 11: Desconto, 12: Transição Protagonista, 13: Valor Protagonista
+  const [activeSlide, setActiveSlide] = useState(0); // 0: Introdução GVD, 1: Geração de Demanda, 2: DotSales CRM, 3: Vendas, 4: Rotinas, 5: Daily (5 Passos), 6: Rituais, 7: Dados, 8: DotSales Intro, 9: DotSales Stats, 10: DotSales Problem, 11: DotSales Features, 12: Depoimento, 13: Valor x Preço, 14: Investimento, 15: Desconto, 16: Transição, 17: Valor
 
   const [timeLeft, setTimeLeft] = useState(300); // 5 minutos (300 segundos)
   const [showTotalPrice, setShowTotalPrice] = useState(false);
 
   useEffect(() => {
-    if (activeSlide !== 11) return;
+    if (activeSlide !== 17) return;
     
     // Reinicia o timer ao entrar no slide de desconto
     setTimeLeft(300);
@@ -66,7 +66,7 @@ export function MethodologySection({
 
   // Reinicia a exibição do preço ao mudar de slide
   useEffect(() => {
-    if (activeSlide !== 10) {
+    if (activeSlide !== 16) {
       setShowTotalPrice(false);
     }
   }, [activeSlide]);
@@ -75,7 +75,7 @@ export function MethodologySection({
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isModalOpen) return;
-      if (e.key === "ArrowRight" && activeSlide < 13) {
+      if (e.key === "ArrowRight" && activeSlide < 16) {
         setActiveSlide(prev => prev + 1);
       } else if (e.key === "ArrowLeft" && activeSlide > 0) {
         setActiveSlide(prev => prev - 1);
@@ -145,7 +145,7 @@ export function MethodologySection({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-[#050505] z-50 flex flex-col justify-center items-center select-none overflow-hidden"
+            className={`fixed inset-0 z-50 flex flex-col justify-center items-center select-none overflow-hidden transition-colors duration-500 ${(activeSlide >= 8 && activeSlide <= 12) ? "bg-[#FAFAFA]" : "bg-[#050505]"}`}
             onClick={() => setIsModalOpen(false)}
           >
             <motion.div
@@ -159,7 +159,7 @@ export function MethodologySection({
               {/* Botão de Fechar */}
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="absolute top-6 right-6 text-white/40 hover:text-white bg-white/5 hover:bg-white/10 p-3 rounded-full transition-all duration-300 cursor-pointer z-30 border-0"
+                className={`absolute top-6 right-6 p-3 rounded-full transition-all duration-300 cursor-pointer z-50 border-0 ${(activeSlide >= 8 && activeSlide <= 12) ? "text-black/40 hover:text-black bg-black/5 hover:bg-black/10" : "text-white/40 hover:text-white bg-white/5 hover:bg-white/10"}`}
               >
                 <X className="w-6 h-6" />
               </button>
@@ -168,17 +168,17 @@ export function MethodologySection({
               {activeSlide > 0 && (
                 <button
                   onClick={() => setActiveSlide(prev => prev - 1)}
-                  className="absolute left-6 top-1/2 -translate-y-1/2 text-white/40 hover:text-white bg-white/5 hover:bg-white/10 p-4 rounded-full transition-all duration-300 cursor-pointer border-0 z-40"
+                  className={`absolute left-6 top-1/2 -translate-y-1/2 p-4 rounded-full transition-all duration-300 cursor-pointer border-0 z-50 ${(activeSlide >= 8 && activeSlide <= 12) ? "text-black/40 hover:text-black bg-black/5 hover:bg-black/10" : "text-white/40 hover:text-white bg-white/5 hover:bg-white/10"}`}
                   title="Slide Anterior (Seta Esquerda)"
                 >
                   <ChevronLeft className="w-8 h-8" />
                 </button>
               )}
 
-              {activeSlide < 13 && (
+              {activeSlide < 16 && (
                 <button
                   onClick={() => setActiveSlide(prev => prev + 1)}
-                  className="absolute right-6 top-1/2 -translate-y-1/2 text-white/40 hover:text-white bg-white/5 hover:bg-white/10 p-4 rounded-full transition-all duration-300 cursor-pointer border-0 z-40"
+                  className={`absolute right-6 top-1/2 -translate-y-1/2 p-4 rounded-full transition-all duration-300 cursor-pointer border-0 z-50 ${(activeSlide >= 8 && activeSlide <= 12) ? "text-black/40 hover:text-black bg-black/5 hover:bg-black/10" : "text-white/40 hover:text-white bg-white/5 hover:bg-white/10"}`}
                   title="Próximo Slide (Seta Direita)"
                 >
                   <ChevronRight className="w-8 h-8" />
@@ -1454,7 +1454,374 @@ export function MethodologySection({
 
                     </div>
                   </motion.div>
-                ) : activeSlide === 8 ? (
+                                ) : activeSlide === 8 ? (
+                  /* Slide 8: DotSales Intro */
+                  <motion.div
+                    key="slide-dotsales-intro"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative z-10 flex flex-col items-center justify-start h-full w-full py-6 text-left overflow-y-auto no-scrollbar"
+                  >
+                    <div className="absolute top-[30%] left-[25%] w-[250px] h-[250px] rounded-full bg-amber-500/5 blur-[90px] pointer-events-none" />
+                    <div className="absolute bottom-[30%] right-[25%] w-[250px] h-[250px] rounded-full bg-orange-600/5 blur-[90px] pointer-events-none" />
+
+                    <div className="w-full flex justify-between items-center mb-8 px-4 flex-shrink-0">
+                      <div className="flex flex-col">
+                        <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-amber-500 uppercase">Cérebro Comercial</span>
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-white uppercase tracking-wider mt-1 select-none">
+                          DotSales CRM
+                        </h2>
+                      </div>
+                      <span className="font-montserrat text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-b from-amber-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_4px_12px_rgba(245,158,11,0.2)] select-none">
+                        DotSales
+                      </span>
+                    </div>
+
+                    <div className="w-full max-w-[90vw] 2xl:max-w-7xl flex-grow flex flex-col items-center justify-center gap-8 px-4 pb-16">
+                        <div className="w-full max-w-5xl rounded-3xl bg-neutral-900 border border-white/[0.08] shadow-[0_30px_60px_rgba(0,0,0,0.6)] overflow-hidden hover:border-amber-500/30 transition-colors duration-500 group relative">
+                          {/* Browser Top Bar */}
+                          <div className="flex items-center gap-2 px-6 py-4 bg-neutral-950/90 border-b border-white/[0.04] w-full">
+                            <div className="w-3.5 h-3.5 rounded-full bg-red-500/80" />
+                            <div className="w-3.5 h-3.5 rounded-full bg-yellow-500/80" />
+                            <div className="w-3.5 h-3.5 rounded-full bg-green-500/80" />
+                            <div className="h-6 w-64 rounded-md bg-white/[0.03] border border-white/[0.05] mx-auto flex items-center justify-center">
+                              <span className="text-[10px] text-zinc-500 font-mono tracking-wider">sales.dottech.ai</span>
+                            </div>
+                          </div>
+                          {/* Image */}
+                          <div className="relative aspect-[16/9] bg-black/40 overflow-hidden">
+                            <img src={crmFunil} alt="DotSales Pipeline" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                            
+                            <div className="absolute bottom-10 left-0 right-0 flex justify-center z-10">
+                                <a 
+                                  href="https://sales.dottech.ai/dashboard/pipeline/funil?id=71479906-111c-462c-af1d-69e76009057b"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-black rounded-full transition-all duration-300 uppercase tracking-widest text-sm shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:shadow-[0_0_50px_rgba(245,158,11,0.6)] hover:scale-105 cursor-pointer border-0"
+                                >
+                                  <span>ACESSAR DOTSALES</span>
+                                </a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </motion.div>
+) : activeSlide === 9 ? (
+                  /* Slide 9: DotSales Stats (White/Minimalist) */
+                  <motion.div
+                    key="slide-dotsales-stats"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="relative z-10 flex flex-col justify-center items-center h-full w-full text-center overflow-hidden bg-[#FAFAFA]"
+                  >
+                    {/* Very subtle architectural grid background */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+
+                    {/* Header Top Left */}
+                    <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
+                      <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-600 uppercase mb-0.5">Cérebro Comercial</span>
+                      <h2 className="text-lg sm:text-xl font-bold text-neutral-900 uppercase tracking-widest flex items-center">
+                        <span>dot</span>
+                        <span className="text-amber-500">.Sales</span>
+                      </h2>
+                    </div>
+
+                    <div className="w-full max-w-6xl px-8 relative z-10 flex flex-col items-center justify-center min-h-[60vh] mt-12">
+                      {/* Main Headline */}
+                      <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] text-neutral-900 mb-6 max-w-4xl text-balance">
+                        O balcão da sua loja mudou de lugar
+                      </h1>
+
+                      {/* Professional Subtitle */}
+                      <p className="font-sans text-neutral-500 text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-16 leading-relaxed text-balance">
+                        O cliente não entra pela porta. Ele manda mensagem. É aí que a venda é ganha — ou perdida.
+                      </p>
+
+                      {/* Stats Cards */}
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-4">
+                        {/* Card 1 */}
+                        <div className="flex flex-col items-center justify-center text-center bg-white border border-neutral-200 rounded-2xl p-8 sm:p-10 shadow-sm hover:shadow-md transition-shadow duration-300">
+                          <span className="text-6xl sm:text-7xl font-display font-black text-amber-500 mb-4 tracking-tighter drop-shadow-sm">95%</span>
+                          <span className="text-neutral-600 font-sans text-sm sm:text-base leading-relaxed">
+                            das interações entre marcas e consumidores no Brasil acontecem no WhatsApp
+                          </span>
+                        </div>
+                        {/* Card 2 */}
+                        <div className="flex flex-col items-center justify-center text-center bg-white border border-neutral-200 rounded-2xl p-8 sm:p-10 shadow-sm hover:shadow-md transition-shadow duration-300">
+                          <span className="text-6xl sm:text-7xl font-display font-black text-amber-500 mb-4 tracking-tighter drop-shadow-sm">98%</span>
+                          <span className="text-neutral-600 font-sans text-sm sm:text-base leading-relaxed">
+                            de taxa de leitura das mensagens — contra ~20% do e-mail
+                          </span>
+                        </div>
+                        {/* Card 3 */}
+                        <div className="flex flex-col items-center justify-center text-center bg-white border border-neutral-200 rounded-2xl p-8 sm:p-10 shadow-sm hover:shadow-md transition-shadow duration-300">
+                          <span className="text-6xl sm:text-7xl font-display font-black text-amber-500 mb-4 tracking-tighter drop-shadow-sm">6x</span>
+                          <span className="text-neutral-600 font-sans text-sm sm:text-base leading-relaxed">
+                            mais conversão que o e-commerce tradicional
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Footer text */}
+                      <div className="mt-16 text-neutral-400 text-xs sm:text-sm font-sans tracking-wide">
+                        Fontes: Chat Commerce Report 2025 (OmniChat) · Opinion Box · Meta
+                      </div>
+                    </div>
+                  </motion.div>
+                ) : activeSlide === 10 ? (
+                  /* Slide 10: DotSales Problem (White/Minimalist) */
+                  <motion.div
+                    key="slide-dotsales-problem"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="relative z-10 flex flex-col justify-center items-center h-full w-full text-center overflow-hidden bg-[#FAFAFA]"
+                  >
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+
+                    <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
+                      <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-600 uppercase mb-0.5">Cérebro Comercial</span>
+                      <h2 className="text-lg sm:text-xl font-bold text-neutral-900 uppercase tracking-widest flex items-center">
+                        <span>dot</span><span className="text-amber-500">.Sales</span>
+                      </h2>
+                    </div>
+
+                    <div className="w-full max-w-6xl px-8 relative z-10 flex flex-col items-start justify-center min-h-[60vh] mt-12 text-left">
+                      <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-neutral-900 mb-4 max-w-5xl">
+                        O problema não é gerar contato. <br/>É o que vem depois.
+                      </h1>
+                      
+                      <div className="flex gap-2 mb-10">
+                        <div className="w-2 h-2 rounded-full bg-amber-500" />
+                        <div className="w-2 h-2 rounded-full bg-amber-500" />
+                        <div className="w-2 h-2 rounded-full bg-amber-500" />
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+                        {/* Left Card: Red/Amber Tint */}
+                        <div className="flex flex-col bg-red-50/50 border border-red-200 rounded-3xl p-8 sm:p-10 shadow-sm">
+                          <h3 className="text-xl sm:text-2xl font-bold text-red-500 mb-8 font-display">Como a maioria opera hoje</h3>
+                          <ul className="flex flex-col gap-6">
+                            <li className="flex items-center gap-4 text-neutral-700 font-medium text-sm sm:text-base">
+                              <XCircle className="w-6 h-6 text-red-500 flex-shrink-0" />
+                              Lead cai numa caixa geral — ninguém é o dono
+                            </li>
+                            <li className="flex items-center gap-4 text-neutral-700 font-medium text-sm sm:text-base">
+                              <XCircle className="w-6 h-6 text-red-500 flex-shrink-0" />
+                              Vários vendedores no mesmo número, conversas perdidas
+                            </li>
+                            <li className="flex items-center gap-4 text-neutral-700 font-medium text-sm sm:text-base">
+                              <XCircle className="w-6 h-6 text-red-500 flex-shrink-0" />
+                              Resposta sai horas depois
+                            </li>
+                            <li className="flex items-center gap-4 text-neutral-700 font-medium text-sm sm:text-base">
+                              <XCircle className="w-6 h-6 text-red-500 flex-shrink-0" />
+                              Não dá pra saber quem vende, quanto e por quê
+                            </li>
+                            <li className="flex items-center gap-4 text-neutral-700 font-medium text-sm sm:text-base">
+                              <XCircle className="w-6 h-6 text-red-500 flex-shrink-0" />
+                              Cliente some e ninguém faz follow-up
+                            </li>
+                          </ul>
+                        </div>
+
+                        {/* Right Card: Dark Corporate */}
+                        <div className="flex flex-col bg-zinc-950 border border-amber-500/30 rounded-3xl p-8 sm:p-10 shadow-xl relative overflow-hidden">
+                          <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-amber-400 to-amber-600" />
+                          <h3 className="text-xl sm:text-2xl font-bold text-amber-500 mb-8 font-display ml-2">O custo invisível disso</h3>
+                          
+                          <div className="flex flex-col ml-2">
+                            <span className="text-7xl sm:text-[100px] font-black text-white font-display leading-none mb-4">21x</span>
+                            <span className="text-zinc-300 font-medium text-sm sm:text-lg leading-relaxed mb-8">
+                              mais chance de converter um lead respondido em até 5 minutos, comparado a 30 minutos de espera.
+                            </span>
+                            
+                            <div className="w-full h-px bg-zinc-800 my-6" />
+                            
+                            <span className="text-zinc-400 font-medium text-sm sm:text-base">
+                              <span className="text-amber-500 font-bold">23%</span> das empresas nem respondem o 1º contato.
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mt-8 text-neutral-400 text-xs sm:text-sm font-sans tracking-wide">
+                        Fontes: HubSpot · InsideSales
+                      </div>
+                    </div>
+                  </motion.div>
+                ) : activeSlide === 11 ? (
+                  /* Slide 11: DotSales Features (White/Minimalist) */
+                  <motion.div
+                    key="slide-dotsales-features"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="relative z-10 flex flex-col justify-center items-center h-full w-full text-center overflow-hidden bg-[#FAFAFA]"
+                  >
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+
+                    <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
+                      <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-600 uppercase mb-0.5">Cérebro Comercial</span>
+                      <h2 className="text-lg sm:text-xl font-bold text-neutral-900 uppercase tracking-widest flex items-center">
+                        <span>dot</span><span className="text-amber-500">.Sales</span>
+                      </h2>
+                    </div>
+
+                    <div className="w-full max-w-6xl px-8 relative z-10 flex flex-col items-start justify-center min-h-[60vh] mt-12 text-left">
+                      <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-neutral-900 mb-4 max-w-5xl">
+                        Tudo entre o primeiro "oi" e o fechamento, num só lugar
+                      </h1>
+                      
+                      <div className="flex gap-2 mb-10">
+                        <div className="w-2 h-2 rounded-full bg-amber-500" />
+                        <div className="w-2 h-2 rounded-full bg-amber-500" />
+                        <div className="w-2 h-2 rounded-full bg-amber-500" />
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                        {/* Caixa única */}
+                        <div className="flex items-start gap-6 bg-white border border-neutral-200 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300 group">
+                          <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                            <Inbox className="w-8 h-8 text-amber-600" />
+                          </div>
+                          <div className="flex flex-col pt-1">
+                            <h3 className="text-xl font-bold text-neutral-900 mb-2">Caixa única</h3>
+                            <p className="text-neutral-500 text-sm sm:text-base leading-relaxed">WhatsApp, Instagram e Facebook numa só inbox do time.</p>
+                          </div>
+                        </div>
+                        
+                        {/* Funil visual */}
+                        <div className="flex items-start gap-6 bg-white border border-neutral-200 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300 group">
+                          <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                            <Kanban className="w-8 h-8 text-amber-600" />
+                          </div>
+                          <div className="flex flex-col pt-1">
+                            <h3 className="text-xl font-bold text-neutral-900 mb-2">Funil visual</h3>
+                            <p className="text-neutral-500 text-sm sm:text-base leading-relaxed">Arrasta-e-solta entre etapas. Você vê onde cada lead está.</p>
+                          </div>
+                        </div>
+
+                        {/* Agente de IA */}
+                        <div className="flex items-start gap-6 bg-white border border-neutral-200 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300 group">
+                          <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                            <Bot className="w-8 h-8 text-amber-600" />
+                          </div>
+                          <div className="flex flex-col pt-1">
+                            <h3 className="text-xl font-bold text-neutral-900 mb-2">Agente de IA</h3>
+                            <p className="text-neutral-500 text-sm sm:text-base leading-relaxed">Responde 24/7, qualifica e move o lead sozinho.</p>
+                          </div>
+                        </div>
+
+                        {/* Automações */}
+                        <div className="flex items-start gap-6 bg-white border border-neutral-200 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300 group">
+                          <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                            <Zap className="w-8 h-8 text-amber-600" />
+                          </div>
+                          <div className="flex flex-col pt-1">
+                            <h3 className="text-xl font-bold text-neutral-900 mb-2">Automações</h3>
+                            <p className="text-neutral-500 text-sm sm:text-base leading-relaxed">Follow-up e mensagens disparados sem ninguém tocar.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+) : activeSlide === 12 ? (
+                  /* Slide 12: SLA & Chart (White/Minimalist) */
+                  <motion.div
+                    key="slide-dotsales-sla"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="relative z-10 flex flex-col justify-center items-center h-full w-full text-center overflow-hidden bg-[#FAFAFA]"
+                  >
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+
+                    <div className="absolute top-8 left-8 md:top-12 md:left-12 flex flex-col text-left z-20">
+                      <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] text-amber-600 uppercase mb-0.5">Cérebro Comercial</span>
+                      <h2 className="text-lg sm:text-xl font-bold text-neutral-900 uppercase tracking-widest flex items-center">
+                        <span>dot</span><span className="text-amber-500">.Sales</span>
+                      </h2>
+                    </div>
+
+                    <div className="w-full max-w-6xl px-8 relative z-10 flex flex-col items-start justify-center min-h-[60vh] mt-12 text-left">
+                      <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight leading-[1.1] text-neutral-900 mb-4 max-w-5xl">
+                        O que separa quem cresce: medir e cobrar tempo de resposta
+                      </h1>
+                      
+                      <div className="flex gap-2 mb-10">
+                        <div className="w-2 h-2 rounded-full bg-amber-500" />
+                        <div className="w-2 h-2 rounded-full bg-amber-500" />
+                        <div className="w-2 h-2 rounded-full bg-amber-500" />
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+                        {/* Left Card: SLA */}
+                        <div className="flex flex-col bg-white border border-neutral-200 rounded-3xl p-8 sm:p-10 shadow-sm">
+                          <h3 className="text-xl sm:text-2xl font-bold text-amber-600 mb-4 font-display">SLA: sua promessa de resposta, medida</h3>
+                          <p className="text-neutral-500 text-sm sm:text-base leading-relaxed mb-8">
+                            É o tempo máximo que sua operação aceita levar para responder um lead. Sem ferramenta, é só discurso. Com dot.Sales, vira número.
+                          </p>
+                          <ul className="flex flex-col gap-6">
+                            <li className="flex items-center gap-4 text-neutral-800 font-bold text-sm sm:text-base">
+                              <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0" />
+                              Define a meta (ex.: responder em 5 min)
+                            </li>
+                            <li className="flex items-center gap-4 text-neutral-800 font-bold text-sm sm:text-base">
+                              <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0" />
+                              O sistema mede cada atendimento
+                            </li>
+                            <li className="flex items-center gap-4 text-neutral-800 font-bold text-sm sm:text-base">
+                              <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0" />
+                              Alerta antes de estourar o prazo
+                            </li>
+                            <li className="flex items-center gap-4 text-neutral-800 font-bold text-sm sm:text-base">
+                              <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0" />
+                              Dashboard mostra conversão, ticket e ranking
+                            </li>
+                          </ul>
+                        </div>
+
+                        {/* Right Card: Chart */}
+                        <div className="flex flex-col bg-zinc-950 border border-amber-500/30 rounded-3xl p-8 sm:p-10 shadow-xl relative overflow-hidden">
+                          <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-amber-400 to-amber-600" />
+                          <h3 className="text-xl sm:text-2xl font-bold text-amber-500 mb-2 font-display ml-2">Por que isso é dinheiro</h3>
+                          <p className="text-zinc-400 text-xs sm:text-sm mb-10 ml-2">Chance relativa de converter por tempo de resposta</p>
+                          
+                          <div className="flex items-end justify-around h-48 w-full border-b border-zinc-800 pb-2 px-4">
+                            <div className="flex flex-col items-center gap-2 group">
+                              <span className="text-white font-bold text-lg group-hover:text-amber-400 transition-colors">100</span>
+                              <div className="w-16 sm:w-20 bg-amber-500 h-32 rounded-t-sm" />
+                              <span className="text-zinc-400 text-xs sm:text-sm mt-2">até 5 min</span>
+                            </div>
+                            <div className="flex flex-col items-center gap-2 group">
+                              <span className="text-white font-bold text-lg group-hover:text-amber-400 transition-colors">25</span>
+                              <div className="w-16 sm:w-20 bg-amber-500/50 h-8 rounded-t-sm" />
+                              <span className="text-zinc-400 text-xs sm:text-sm mt-2">10 min</span>
+                            </div>
+                            <div className="flex flex-col items-center gap-2 group">
+                              <span className="text-white font-bold text-lg group-hover:text-amber-400 transition-colors">5</span>
+                              <div className="w-16 sm:w-20 bg-amber-500/20 h-2 rounded-t-sm" />
+                              <span className="text-zinc-400 text-xs sm:text-sm mt-2">30 min</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mt-8 text-neutral-400 text-xs sm:text-sm font-sans tracking-wide">
+                        Fontes: HubSpot · InsideSales · Lead Response Management
+                      </div>
+                    </div>
+                  </motion.div>
+                ) : activeSlide === 13 ? (
                   /* Slide 9: Depoimento */
                   <motion.div
                     key="slide-depoimento"
@@ -1538,7 +1905,7 @@ export function MethodologySection({
 
                     </div>
                   </motion.div>
-                ) : activeSlide === 9 ? (
+                ) : activeSlide === 14 ? (
                   /* Slide 10: Valor x Preço */
                   <motion.div
                     key="slide-valor-preco"
@@ -1621,7 +1988,7 @@ export function MethodologySection({
                       </div>
                     </div>
                   </motion.div>
-                ) : activeSlide === 10 ? (
+                ) : activeSlide === 15 ? (
                   /* Slide 11: Investimento */
                   <motion.div
                     key="slide-investimento"
@@ -1711,7 +2078,7 @@ export function MethodologySection({
                                 className="px-5 py-2.5 rounded-xl bg-zinc-900/90 border border-white/[0.06] shadow-md flex items-center gap-3"
                               >
                                 <span className="font-sans text-xs font-bold text-zinc-400 uppercase tracking-widest">Total:</span>
-                                <span className="font-sans text-lg sm:text-xl font-black text-white tracking-wide">R$ 63.497,00</span>
+                                <span className="font-sans text-lg sm:text-xl font-black text-white tracking-wide">R$ 19.990,00</span>
                               </motion.div>
                             )}
                           </AnimatePresence>
@@ -1727,7 +2094,7 @@ export function MethodologySection({
 
                     </div>
                   </motion.div>
-                ) : activeSlide === 11 ? (
+                ) : activeSlide === 17 ? (
                   /* Slide 12: Desconto (Sentimento de Ansiedade) */
                   <motion.div
                     key="slide-desconto-ansiedade"
@@ -1839,7 +2206,7 @@ export function MethodologySection({
 
                     </div>
                   </motion.div>
-                ) : activeSlide === 12 ? (
+                ) : activeSlide === 18 ? (
                   /* Slide 13: Transição Protagonista */
                   <motion.div
                     key="slide-transicao-protagonista"

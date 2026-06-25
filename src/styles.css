@@ -57,6 +57,7 @@
   --line: rgba(255, 255, 255, 0.08);
   --neon: #7CFF5B;
   --neon-soft: rgba(124, 255, 91, 0.18);
+  --neon-glow: rgba(124, 255, 91, 0.35);
   --radius: 12px;
 }
 
@@ -95,7 +96,7 @@
 }
 @utility neon-text {
   color: var(--neon);
-  text-shadow: 0 0 24px rgba(124, 255, 91, 0.35);
+  text-shadow: 0 0 24px var(--neon-glow);
 }
 
 @utility hairline {

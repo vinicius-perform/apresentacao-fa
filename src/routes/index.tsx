@@ -6,14 +6,15 @@ import { ProgressRail } from "@/components/presentation/ProgressRail";
 import { TopBar } from "@/components/presentation/TopBar";
 import { HeroSection } from "@/components/presentation/sections/HeroSection";
 import { WhatIsSection } from "@/components/presentation/sections/WhatIsSection";
-import { CultureSection } from "@/components/presentation/sections/CultureSection";
+
 import { FutureSection } from "@/components/presentation/sections/FutureSection";
 import { NovaSedeSection } from "@/components/presentation/sections/NovaSedeSection";
-import { AndarSuperiorSection } from "@/components/presentation/sections/AndarSuperiorSection";
+
 import { ExpansionSection } from "@/components/presentation/sections/ExpansionSection";
 import { PivotSection } from "@/components/presentation/sections/PivotSection";
 import { AllocatorsSection } from "@/components/presentation/sections/AllocatorsSection";
 import { MethodologySection } from "@/components/presentation/sections/MethodologySection";
+import { ItapipocaCaseSection } from "@/components/presentation/sections/ItapipocaCaseSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -58,14 +59,19 @@ function Keynote() {
 
       <HeroSection />
       <WhatIsSection />
-      <CultureSection />
+
       <FutureSection />
-      <NovaSedeSection />
-      <AndarSuperiorSection />
-      <ExpansionSection />
-      <PivotSection />
-      <AllocatorsSection />
-      <MethodologySection containerRef={methodologyRef} scrollYProgress={scrollYProgress} />
+
+      {/* A partir daqui, a identidade muda para a "nova fase" dourada */}
+      <div style={{ '--neon': '#F59E0B', '--neon-soft': 'rgba(245, 158, 11, 0.18)', '--neon-glow': 'rgba(245, 158, 11, 0.35)' } as React.CSSProperties}>
+        <NovaSedeSection />
+        
+        <ExpansionSection />
+        <PivotSection />
+        <AllocatorsSection />
+        <MethodologySection containerRef={methodologyRef} scrollYProgress={scrollYProgress} />
+        <ItapipocaCaseSection />
+      </div>
     </motion.main>
   );
 }
