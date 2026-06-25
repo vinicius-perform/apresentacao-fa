@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#000000" },
-      { title: "FA Apresentação" },
+      { title: "FA - Aceleração Comercial" },
       {
         name: "description",
         content:
@@ -86,8 +86,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "FA Apresentação" },
-      { name: "twitter:title", content: "FA Apresentação" },
+      { property: "og:title", content: "FA - Aceleração Comercial" },
+      { name: "twitter:title", content: "FA - Aceleração Comercial" },
       { name: "description", content: "A premium, fullscreen web application that tells the story of FA's growth and introduces DotSales." },
       { property: "og:description", content: "A premium, fullscreen web application that tells the story of FA's growth and introduces DotSales." },
       { name: "twitter:description", content: "A premium, fullscreen web application that tells the story of FA's growth and introduces DotSales." },

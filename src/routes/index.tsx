@@ -18,13 +18,13 @@ import { MethodologySection } from "@/components/presentation/sections/Methodolo
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "FA × DotSales — Keynote" },
+      { title: "FA - Aceleração Comercial" },
       {
         name: "description",
         content:
           "A história da Fazendo Acontecer e a revelação do DotSales — o cérebro comercial que escala a operação.",
       },
-      { property: "og:title", content: "FA × DotSales — Keynote" },
+      { property: "og:title", content: "FA - Aceleração Comercial" },
       {
         property: "og:description",
         content: "Uma jornada cinematográfica sobre crescimento, processos e tecnologia.",
